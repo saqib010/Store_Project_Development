@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Store
 {
+    //Attribute commit check
     public class Attribute
     {
 
