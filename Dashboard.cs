@@ -16,7 +16,7 @@ namespace Store
         {
             InitializeComponent();
             pnl_home.Visible = true;
-            pnl_home.SetBounds(293, 02, 1079, 790);//pnl_home.SetBounds(293, 02, 1079, 590)
+            pnl_home.SetBounds(302, 02, 1055, 624);//pnl_home.SetBounds(293, 02, 1079, 590)
             TakeOrderPanel.Visible = false;
             DisplayPanel.Visible = false;
             DisplaySupplierPanel.Visible = false;
@@ -38,7 +38,7 @@ namespace Store
         private void btn_Home_Click(object sender, EventArgs e)
         {
             pnl_home.Visible = true;
-            pnl_home.SetBounds(293, 02, 1079, 790);
+            pnl_home.SetBounds(302, 02, 1055, 624);
            
             AddRecordPanel.Visible = false;
             pnl_home.Visible = false;
@@ -52,7 +52,7 @@ namespace Store
 
         private void btn_Add_main_Click(object sender, EventArgs e)
         {
-            AddRecordPanel.SetBounds(293, 02, 1079, 790);
+            AddRecordPanel.SetBounds(302, 02, 1055, 624);
             AddRecordPanel.Visible = true;
             pnl_home.Visible = false;
             //AddCustomerPanel.Visible = false;
@@ -65,7 +65,7 @@ namespace Store
 
         private void AddSupplierButton_Click(object sender, EventArgs e)
         {
-            AddSupplierPanel.SetBounds(293, 02, 1079, 790);
+            AddSupplierPanel.SetBounds(302, 02, 1055, 624);
             AddSupplierPanel.Visible = true;
             AddProductPanel.Visible = false;
             AddCustomerPanel.Visible = false;
@@ -82,7 +82,7 @@ namespace Store
         private void AddProductButton_Click(object sender, EventArgs e)
         {
 
-            AddProductPanel.SetBounds(293, 02, 1079, 790);
+            AddProductPanel.SetBounds(302, 02, 1055, 624);
             AddProductPanel.Visible = true;
             AddSupplierPanel.Visible = false;
             AddRecordPanel.Visible = false;
@@ -92,7 +92,7 @@ namespace Store
 
         private void AddCustomerButton_Click(object sender, EventArgs e)
         {
-            AddCustomerPanel.SetBounds(293, 02, 1079, 790);
+            AddCustomerPanel.SetBounds(302, 02, 1055, 624);
             AddCustomerPanel.Visible = true;
             AddProductPanel.Visible = false;
             AddSupplierPanel.Visible = false;
@@ -107,7 +107,7 @@ namespace Store
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AddRecordPanel.SetBounds(293, 02, 1079, 790);
+            AddRecordPanel.SetBounds(302, 02, 1055, 624);
             AddRecordPanel.Visible = true;
             AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
@@ -117,7 +117,7 @@ namespace Store
 
         private void btn_back_from_supplier_Click(object sender, EventArgs e)
         {
-            AddRecordPanel.SetBounds(293, 02, 1079, 790);
+            AddRecordPanel.SetBounds(302, 02, 1055, 624);
             AddRecordPanel.Visible = true;
             AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
@@ -127,7 +127,7 @@ namespace Store
 
         private void button11_Click(object sender, EventArgs e)
         {
-            AddRecordPanel.SetBounds(293, 02, 1079, 790);
+            AddRecordPanel.SetBounds(302, 02, 1055, 624);
             AddRecordPanel.Visible = true;
             AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
@@ -137,7 +137,7 @@ namespace Store
 
         private void btn_display_Main_Click(object sender, EventArgs e)
         {
-            DisplayPanel.SetBounds(293, 02, 1079, 790);
+            DisplayPanel.SetBounds(302, 02, 1055, 624);
             DisplayPanel.Visible = true;
             AddRecordPanel.Visible = false;
             pnl_home.Visible = false;
@@ -149,7 +149,7 @@ namespace Store
 
         private void btn_Cust_View_Click(object sender, EventArgs e)
         {
-            DisplaySupplierPanel.SetBounds(293, 02, 1079, 790);
+            DisplaySupplierPanel.SetBounds(302, 02, 1055, 624);
             DisplaySupplierPanel.Visible = true;
             //DisplayCustomerPanel.Visible = false;
             DisplayPanel.Visible = false;
@@ -169,7 +169,7 @@ namespace Store
 
         private void btn_Suplier_view_Click(object sender, EventArgs e)
         {
-            DisplaySupplierPanel.SetBounds(293, 02, 1079, 790);
+            DisplaySupplierPanel.SetBounds(302, 02, 1055, 624);
             DisplaySupplierPanel.Visible = true;
            // DisplayCustomerPanel.Visible = false;
             DisplayPanel.Visible = false;
@@ -183,7 +183,7 @@ namespace Store
 
         private void btn_bk_Customer_Click(object sender, EventArgs e)
         {
-            DisplayPanel.SetBounds(293, 02, 1079, 790);
+            DisplayPanel.SetBounds(302, 02, 1055, 624);
             DisplayPanel.Visible = true;
             DisplaySupplierPanel.Visible = false;
             //DisplayCustomerPanel.Visible = false;
@@ -198,7 +198,7 @@ namespace Store
 
         private void button18_Click(object sender, EventArgs e)
         {
-            DisplayPanel.SetBounds(293, 02, 1079, 790);
+            DisplayPanel.SetBounds(302, 02, 1055, 624);
             DisplayPanel.Visible = true;
             DisplaySupplierPanel.Visible = false;
             //DisplayCustomerPanel.Visible = false;
@@ -212,7 +212,7 @@ namespace Store
 
         private void btn_Order_View_Click(object sender, EventArgs e)
         {
-            DisplaySupplierPanel.SetBounds(293, 02, 1079, 790);
+            DisplaySupplierPanel.SetBounds(302, 02, 1055, 624);
             DisplaySupplierPanel.Visible = true;
             //DisplayCustomerPanel.Visible = false;
             DisplayPanel.Visible = false;
@@ -231,7 +231,7 @@ namespace Store
 
         private void btn_prod_view_Click(object sender, EventArgs e)
         {
-            DisplaySupplierPanel.SetBounds(293, 02, 1079, 790);
+            DisplaySupplierPanel.SetBounds(302, 02, 1055, 624);
             DisplaySupplierPanel.Visible = true;
             //DisplayCustomerPanel.Visible = false;
             DisplayPanel.Visible = false;
@@ -245,7 +245,7 @@ namespace Store
 
         private void btn_Stok_View_Click(object sender, EventArgs e)
         {
-            DisplaySupplierPanel.SetBounds(293, 02, 1079, 790);
+            DisplaySupplierPanel.SetBounds(302, 02, 1055, 624);
             DisplaySupplierPanel.Visible = true;
             //DisplayCustomerPanel.Visible = false;
             DisplayPanel.Visible = false;
@@ -259,7 +259,7 @@ namespace Store
 
         private void btn_Take_Order_Click(object sender, EventArgs e)
         {
-            TakeOrderPanel.SetBounds(293, 02, 1079, 790);
+            TakeOrderPanel.SetBounds(302, 02, 1055, 624);
             TakeOrderPanel.Visible = true;
             DisplaySupplierPanel.Visible = false;
             //DisplayCustomerPanel.Visible = false;
@@ -270,6 +270,11 @@ namespace Store
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
 
+        }
+
+        private void btn_EXIT_App_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

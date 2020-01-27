@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Day = new System.Windows.Forms.Label();
@@ -272,15 +273,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btn_EXIT_App);
             this.panel1.Controls.Add(this.btn_display_Main);
             this.panel1.Controls.Add(this.btn_Add_main);
             this.panel1.Controls.Add(this.btn_Home);
-            this.panel1.Location = new System.Drawing.Point(0, 2);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(296, 561);
+            this.panel1.Size = new System.Drawing.Size(294, 622);
             this.panel1.TabIndex = 7;
             // 
             // panel3
@@ -294,7 +294,7 @@
             this.panel3.Controls.Add(this.tableLayoutPanel2);
             this.panel3.Location = new System.Drawing.Point(0, 18);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(224, 133);
+            this.panel3.Size = new System.Drawing.Size(285, 140);
             this.panel3.TabIndex = 4;
             // 
             // Day
@@ -302,7 +302,7 @@
             this.Day.BackColor = System.Drawing.Color.Black;
             this.Day.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Day.ForeColor = System.Drawing.Color.SteelBlue;
-            this.Day.Location = new System.Drawing.Point(9, 104);
+            this.Day.Location = new System.Drawing.Point(28, 104);
             this.Day.Name = "Day";
             this.Day.Size = new System.Drawing.Size(155, 29);
             this.Day.TabIndex = 12;
@@ -313,7 +313,7 @@
             this.Seconds.BackColor = System.Drawing.Color.Black;
             this.Seconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Seconds.ForeColor = System.Drawing.Color.SteelBlue;
-            this.Seconds.Location = new System.Drawing.Point(164, 33);
+            this.Seconds.Location = new System.Drawing.Point(183, 33);
             this.Seconds.Name = "Seconds";
             this.Seconds.Size = new System.Drawing.Size(60, 37);
             this.Seconds.TabIndex = 11;
@@ -325,7 +325,7 @@
             this.Date.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Date.ForeColor = System.Drawing.Color.SteelBlue;
-            this.Date.Location = new System.Drawing.Point(11, 70);
+            this.Date.Location = new System.Drawing.Point(30, 70);
             this.Date.Name = "Date";
             this.Date.Size = new System.Drawing.Size(159, 37);
             this.Date.TabIndex = 10;
@@ -336,7 +336,7 @@
             this.Time.BackColor = System.Drawing.Color.Black;
             this.Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Time.ForeColor = System.Drawing.Color.SteelBlue;
-            this.Time.Location = new System.Drawing.Point(-2, 10);
+            this.Time.Location = new System.Drawing.Point(17, 10);
             this.Time.Name = "Time";
             this.Time.Size = new System.Drawing.Size(186, 60);
             this.Time.TabIndex = 9;
@@ -365,15 +365,15 @@
             this.btn_EXIT_App.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EXIT_App.ForeColor = System.Drawing.Color.SteelBlue;
             this.btn_EXIT_App.ImageIndex = 4;
-            this.btn_EXIT_App.Location = new System.Drawing.Point(15, 484);
+            this.btn_EXIT_App.Location = new System.Drawing.Point(6, 520);
             this.btn_EXIT_App.Name = "btn_EXIT_App";
             this.btn_EXIT_App.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_EXIT_App.Size = new System.Drawing.Size(270, 45);
+            this.btn_EXIT_App.Size = new System.Drawing.Size(279, 45);
             this.btn_EXIT_App.TabIndex = 3;
             this.btn_EXIT_App.Text = "E&XIT   ";
-            this.btn_EXIT_App.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_EXIT_App.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_EXIT_App.UseVisualStyleBackColor = false;
+            this.btn_EXIT_App.Click += new System.EventHandler(this.btn_EXIT_App_Click);
             // 
             // btn_display_Main
             // 
@@ -381,12 +381,11 @@
             this.btn_display_Main.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_display_Main.ForeColor = System.Drawing.Color.SteelBlue;
             this.btn_display_Main.ImageIndex = 5;
-            this.btn_display_Main.Location = new System.Drawing.Point(15, 394);
+            this.btn_display_Main.Location = new System.Drawing.Point(6, 430);
             this.btn_display_Main.Name = "btn_display_Main";
-            this.btn_display_Main.Size = new System.Drawing.Size(270, 48);
+            this.btn_display_Main.Size = new System.Drawing.Size(279, 48);
             this.btn_display_Main.TabIndex = 2;
             this.btn_display_Main.Text = "DI&SPLAY";
-            this.btn_display_Main.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_display_Main.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_display_Main.UseVisualStyleBackColor = false;
             this.btn_display_Main.Click += new System.EventHandler(this.btn_display_Main_Click);
@@ -397,12 +396,11 @@
             this.btn_Add_main.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add_main.ForeColor = System.Drawing.Color.SteelBlue;
             this.btn_Add_main.ImageIndex = 1;
-            this.btn_Add_main.Location = new System.Drawing.Point(15, 302);
+            this.btn_Add_main.Location = new System.Drawing.Point(6, 338);
             this.btn_Add_main.Name = "btn_Add_main";
-            this.btn_Add_main.Size = new System.Drawing.Size(270, 50);
+            this.btn_Add_main.Size = new System.Drawing.Size(279, 50);
             this.btn_Add_main.TabIndex = 1;
             this.btn_Add_main.Text = "A&DD";
-            this.btn_Add_main.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Add_main.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Add_main.UseVisualStyleBackColor = false;
             this.btn_Add_main.Click += new System.EventHandler(this.btn_Add_main_Click);
@@ -413,12 +411,11 @@
             this.btn_Home.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Home.ForeColor = System.Drawing.Color.SteelBlue;
             this.btn_Home.ImageIndex = 6;
-            this.btn_Home.Location = new System.Drawing.Point(15, 209);
+            this.btn_Home.Location = new System.Drawing.Point(6, 245);
             this.btn_Home.Name = "btn_Home";
-            this.btn_Home.Size = new System.Drawing.Size(270, 50);
+            this.btn_Home.Size = new System.Drawing.Size(279, 50);
             this.btn_Home.TabIndex = 0;
             this.btn_Home.Text = "H&OME";
-            this.btn_Home.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Home.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Home.UseVisualStyleBackColor = false;
             this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
@@ -846,9 +843,9 @@
             this.pnl_home.BackColor = System.Drawing.Color.DarkCyan;
             this.pnl_home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnl_home.Controls.Add(this.label26);
-            this.pnl_home.Location = new System.Drawing.Point(718, 25);
+            this.pnl_home.Location = new System.Drawing.Point(302, 2);
             this.pnl_home.Name = "pnl_home";
-            this.pnl_home.Size = new System.Drawing.Size(26, 22);
+            this.pnl_home.Size = new System.Drawing.Size(1055, 624);
             this.pnl_home.TabIndex = 70;
             this.pnl_home.Visible = false;
             this.pnl_home.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_home_Paint);
@@ -2511,33 +2508,33 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle40.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle40.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle40.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle40;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle41.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle41;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.GridColor = System.Drawing.Color.Silver;
             this.dataGridView1.Location = new System.Drawing.Point(201, 42);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle42.BackColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle42;
             this.dataGridView1.RowTemplate.DefaultCellStyle.NullValue = null;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -2575,16 +2572,18 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.Net_sale, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.button23, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.button24, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btn_Take_Order, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button25, 3, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 566);
+            this.tableLayoutPanel1.Controls.Add(this.Net_sale, 4, 0);
+            this.tableLayoutPanel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 630);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1357, 76);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1355, 76);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // Net_sale
@@ -2595,9 +2594,9 @@
             this.Net_sale.ForeColor = System.Drawing.Color.SteelBlue;
             this.Net_sale.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Net_sale.ImageIndex = 7;
-            this.Net_sale.Location = new System.Drawing.Point(1087, 9);
+            this.Net_sale.Location = new System.Drawing.Point(1084, 9);
             this.Net_sale.Name = "Net_sale";
-            this.Net_sale.Size = new System.Drawing.Size(267, 57);
+            this.Net_sale.Size = new System.Drawing.Size(263, 57);
             this.Net_sale.TabIndex = 8;
             this.Net_sale.Text = "TRANSACTIONS";
             this.Net_sale.UseVisualStyleBackColor = false;
@@ -2608,9 +2607,9 @@
             this.button23.BackColor = System.Drawing.Color.Black;
             this.button23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button23.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button23.Location = new System.Drawing.Point(545, 9);
+            this.button23.Location = new System.Drawing.Point(546, 9);
             this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(265, 57);
+            this.button23.Size = new System.Drawing.Size(263, 57);
             this.button23.TabIndex = 6;
             this.button23.Text = "WEEKLY REPORT";
             this.button23.UseVisualStyleBackColor = false;
@@ -2621,9 +2620,9 @@
             this.button24.BackColor = System.Drawing.Color.Black;
             this.button24.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button24.ForeColor = System.Drawing.Color.SteelBlue;
-            this.button24.Location = new System.Drawing.Point(274, 9);
+            this.button24.Location = new System.Drawing.Point(277, 9);
             this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(265, 57);
+            this.button24.Size = new System.Drawing.Size(263, 57);
             this.button24.TabIndex = 5;
             this.button24.Text = "MONTHLY REPORT";
             this.button24.UseVisualStyleBackColor = false;
@@ -2636,9 +2635,9 @@
             this.btn_Take_Order.ForeColor = System.Drawing.Color.SteelBlue;
             this.btn_Take_Order.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Take_Order.ImageIndex = 1;
-            this.btn_Take_Order.Location = new System.Drawing.Point(3, 9);
+            this.btn_Take_Order.Location = new System.Drawing.Point(8, 9);
             this.btn_Take_Order.Name = "btn_Take_Order";
-            this.btn_Take_Order.Size = new System.Drawing.Size(265, 57);
+            this.btn_Take_Order.Size = new System.Drawing.Size(263, 57);
             this.btn_Take_Order.TabIndex = 4;
             this.btn_Take_Order.Text = "TAKE O&RDER";
             this.btn_Take_Order.UseVisualStyleBackColor = false;
@@ -2652,9 +2651,9 @@
             this.button25.ForeColor = System.Drawing.Color.SteelBlue;
             this.button25.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button25.ImageIndex = 0;
-            this.button25.Location = new System.Drawing.Point(816, 9);
+            this.button25.Location = new System.Drawing.Point(815, 9);
             this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(265, 57);
+            this.button25.Size = new System.Drawing.Size(263, 57);
             this.button25.TabIndex = 7;
             this.button25.Text = "ACCOUNTS";
             this.button25.UseVisualStyleBackColor = false;
@@ -2819,7 +2818,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1088, 634);
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ClientSize = new System.Drawing.Size(1356, 709);
             this.Controls.Add(this.TakeOrderPanel);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.DisplaySupplierPanel);
@@ -2830,7 +2831,10 @@
             this.Controls.Add(this.AddRecordPanel);
             this.Controls.Add(this.AddSupplierPanel);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Dashboard";
+            this.Padding = new System.Windows.Forms.Padding(5);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "v";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panel1.ResumeLayout(false);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.usernamelabel = new System.Windows.Forms.Label();
             this.password = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -40,9 +41,11 @@
             // usernamelabel
             // 
             this.usernamelabel.AutoSize = true;
-            this.usernamelabel.Location = new System.Drawing.Point(252, 96);
+            this.usernamelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernamelabel.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.usernamelabel.Location = new System.Drawing.Point(248, 157);
             this.usernamelabel.Name = "usernamelabel";
-            this.usernamelabel.Size = new System.Drawing.Size(53, 13);
+            this.usernamelabel.Size = new System.Drawing.Size(79, 17);
             this.usernamelabel.TabIndex = 0;
             this.usernamelabel.Text = "username";
             this.usernamelabel.Click += new System.EventHandler(this.label1_Click);
@@ -50,30 +53,32 @@
             // password
             // 
             this.password.AutoSize = true;
-            this.password.Location = new System.Drawing.Point(252, 145);
+            this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.password.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.password.Location = new System.Drawing.Point(248, 203);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(52, 13);
+            this.password.Size = new System.Drawing.Size(76, 17);
             this.password.TabIndex = 0;
             this.password.Text = "password";
             this.password.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(355, 96);
+            this.textBox1.Location = new System.Drawing.Point(346, 156);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(155, 20);
             this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(355, 142);
+            this.textBox2.Location = new System.Drawing.Point(346, 202);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(155, 20);
             this.textBox2.TabIndex = 1;
             // 
             // resetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(355, 203);
+            this.resetButton.Location = new System.Drawing.Point(346, 263);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(75, 23);
             this.resetButton.TabIndex = 2;
@@ -82,7 +87,7 @@
             // 
             // logInButton
             // 
-            this.logInButton.Location = new System.Drawing.Point(455, 203);
+            this.logInButton.Location = new System.Drawing.Point(427, 263);
             this.logInButton.Name = "logInButton";
             this.logInButton.Size = new System.Drawing.Size(75, 23);
             this.logInButton.TabIndex = 2;
@@ -96,7 +101,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Rockwell", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label1.Location = new System.Drawing.Point(285, 22);
+            this.label1.Location = new System.Drawing.Point(325, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(196, 59);
             this.label1.TabIndex = 15;
@@ -106,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.DarkBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logInButton);
@@ -116,6 +121,7 @@
             this.Controls.Add(this.password);
             this.Controls.Add(this.usernamelabel);
             this.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.LoginForm_Load);
@@ -130,9 +136,9 @@
         private System.Windows.Forms.Label password;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.Button logInButton;
-        private System.Windows.Forms.Label label1;
     }
 }
 

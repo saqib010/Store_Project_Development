@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Loading_Page));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LoadPageLabel = new System.Windows.Forms.Label();
@@ -53,7 +54,7 @@
             // LoadPageLabel
             // 
             this.LoadPageLabel.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPageLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.LoadPageLabel.ForeColor = System.Drawing.SystemColors.Control;
             this.LoadPageLabel.Location = new System.Drawing.Point(197, 203);
             this.LoadPageLabel.Name = "LoadPageLabel";
             this.LoadPageLabel.Size = new System.Drawing.Size(381, 23);
@@ -65,11 +66,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ClientSize = new System.Drawing.Size(1356, 709);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.LoadPageLabel);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Loading_Page";
             this.Text = "Loading_Page";
             this.Load += new System.EventHandler(this.Loading_Page_Load);
