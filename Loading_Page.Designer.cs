@@ -38,9 +38,9 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(88, 242);
+            this.panel1.Location = new System.Drawing.Point(221, 284);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(625, 6);
+            this.panel1.Size = new System.Drawing.Size(632, 18);
             this.panel1.TabIndex = 4;
             // 
             // panel2
@@ -48,16 +48,16 @@
             this.panel2.BackColor = System.Drawing.Color.Cyan;
             this.panel2.Location = new System.Drawing.Point(366, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(233, 10);
+            this.panel2.Size = new System.Drawing.Size(233, 18);
             this.panel2.TabIndex = 1;
             // 
             // LoadPageLabel
             // 
             this.LoadPageLabel.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoadPageLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.LoadPageLabel.Location = new System.Drawing.Point(197, 203);
+            this.LoadPageLabel.Location = new System.Drawing.Point(330, 245);
             this.LoadPageLabel.Name = "LoadPageLabel";
-            this.LoadPageLabel.Size = new System.Drawing.Size(381, 23);
+            this.LoadPageLabel.Size = new System.Drawing.Size(388, 24);
             this.LoadPageLabel.TabIndex = 3;
             this.LoadPageLabel.Text = "Loading Please &Wait";
             this.LoadPageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -67,7 +67,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1356, 709);
+            this.ClientSize = new System.Drawing.Size(1184, 561);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.LoadPageLabel);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;

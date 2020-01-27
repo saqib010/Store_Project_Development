@@ -17,11 +17,11 @@ namespace Store
             InitializeComponent();
             pnl_home.Visible = true;
             pnl_home.SetBounds(302, 02, 1055, 624);//pnl_home.SetBounds(293, 02, 1079, 590)
-            TakeOrderPanel.Visible = false;
+          //  TakeOrderPanel.Visible = false;
             DisplayPanel.Visible = false;
             DisplaySupplierPanel.Visible = false;
             AddRecordPanel.Visible = false;
-            AddCustomerPanel.Visible = false;
+           // AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
         }
 
@@ -41,13 +41,12 @@ namespace Store
             pnl_home.SetBounds(302, 02, 1055, 624);
            
             AddRecordPanel.Visible = false;
-            pnl_home.Visible = false;
-            AddCustomerPanel.Visible = false;
+           // AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
             DisplayPanel.Visible = false;
             DisplaySupplierPanel.Visible = false;
-            TakeOrderPanel.Visible = false;
+          //  TakeOrderPanel.Visible = false;
         }
 
         private void btn_Add_main_Click(object sender, EventArgs e)
@@ -59,7 +58,7 @@ namespace Store
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
             DisplayPanel.Visible = false;
-            TakeOrderPanel.Visible = false;
+           // TakeOrderPanel.Visible = false;
           
         }
 
@@ -68,10 +67,10 @@ namespace Store
             AddSupplierPanel.SetBounds(302, 02, 1055, 624);
             AddSupplierPanel.Visible = true;
             AddProductPanel.Visible = false;
-            AddCustomerPanel.Visible = false;
+           // AddCustomerPanel.Visible = false;
             AddRecordPanel.Visible = false;
             pnl_home.Visible = false;
-            TakeOrderPanel.Visible = false;
+           // TakeOrderPanel.Visible = false;
         }
 
         private void AddRecordPanel_Paint(object sender, PaintEventArgs e)
@@ -87,10 +86,10 @@ namespace Store
             AddSupplierPanel.Visible = false;
             AddRecordPanel.Visible = false;
             pnl_home.Visible = false;
-            AddCustomerPanel.Visible = false;
+           // AddCustomerPanel.Visible = false;
         }
 
-        private void AddCustomerButton_Click(object sender, EventArgs e)
+       /* private void AddCustomerButton_Click(object sender, EventArgs e)
         {
             AddCustomerPanel.SetBounds(302, 02, 1055, 624);
             AddCustomerPanel.Visible = true;
@@ -98,7 +97,7 @@ namespace Store
             AddSupplierPanel.Visible = false;
             AddRecordPanel.Visible = false;
             pnl_home.Visible = false;
-        }
+        }*/
 
         private void AddProductPanel_Paint(object sender, PaintEventArgs e)
         {
@@ -109,7 +108,7 @@ namespace Store
         {
             AddRecordPanel.SetBounds(302, 02, 1055, 624);
             AddRecordPanel.Visible = true;
-            AddCustomerPanel.Visible = false;
+           // AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
 
@@ -119,7 +118,7 @@ namespace Store
         {
             AddRecordPanel.SetBounds(302, 02, 1055, 624);
             AddRecordPanel.Visible = true;
-            AddCustomerPanel.Visible = false;
+           // AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
 
@@ -129,7 +128,7 @@ namespace Store
         {
             AddRecordPanel.SetBounds(302, 02, 1055, 624);
             AddRecordPanel.Visible = true;
-            AddCustomerPanel.Visible = false;
+           // AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
 
@@ -141,13 +140,13 @@ namespace Store
             DisplayPanel.Visible = true;
             AddRecordPanel.Visible = false;
             pnl_home.Visible = false;
-            AddCustomerPanel.Visible = false;
+           // AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
 
         }
 
-        private void btn_Cust_View_Click(object sender, EventArgs e)
+      /*  private void btn_Cust_View_Click(object sender, EventArgs e)
         {
             DisplaySupplierPanel.SetBounds(302, 02, 1055, 624);
             DisplaySupplierPanel.Visible = true;
@@ -155,12 +154,12 @@ namespace Store
             DisplayPanel.Visible = false;
             AddRecordPanel.Visible = false;
             pnl_home.Visible = false;
-            AddCustomerPanel.Visible = false;
+            //AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
             label98.Text = "CUSTOMER RECORDS";
 
-        }
+        }*/
 
         private void label98_Click(object sender, EventArgs e)
         {
@@ -175,7 +174,7 @@ namespace Store
             DisplayPanel.Visible = false;
             AddRecordPanel.Visible = false;
             pnl_home.Visible = false;
-            AddCustomerPanel.Visible = false;
+           // AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
             label98.Text = "SUPPLIER RECORDS";
@@ -189,7 +188,7 @@ namespace Store
             //DisplayCustomerPanel.Visible = false;
             AddRecordPanel.Visible = false;
             pnl_home.Visible = false;
-            AddCustomerPanel.Visible = false;
+           // AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
 
@@ -204,7 +203,7 @@ namespace Store
             //DisplayCustomerPanel.Visible = false;
             AddRecordPanel.Visible = false;
             pnl_home.Visible = false;
-            AddCustomerPanel.Visible = false;
+            //AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
 
@@ -218,7 +217,7 @@ namespace Store
             DisplayPanel.Visible = false;
             AddRecordPanel.Visible = false;
             pnl_home.Visible = false;
-            AddCustomerPanel.Visible = false;
+            //AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
             label98.Text = "ORDER RECORDS";
@@ -237,7 +236,7 @@ namespace Store
             DisplayPanel.Visible = false;
             AddRecordPanel.Visible = false;
             pnl_home.Visible = false;
-            AddCustomerPanel.Visible = false;
+            //AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
             label98.Text = "PRODUCT RECORDS";
@@ -251,7 +250,7 @@ namespace Store
             DisplayPanel.Visible = false;
             AddRecordPanel.Visible = false;
             pnl_home.Visible = false;
-            AddCustomerPanel.Visible = false;
+            //AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
             label98.Text = "STOCK";
@@ -259,14 +258,14 @@ namespace Store
 
         private void btn_Take_Order_Click(object sender, EventArgs e)
         {
-            TakeOrderPanel.SetBounds(302, 02, 1055, 624);
-            TakeOrderPanel.Visible = true;
+           //// TakeOrderPanel.SetBounds(302, 02, 1055, 624);
+         // TakeOrderPanel.Visible = true;
             DisplaySupplierPanel.Visible = false;
             //DisplayCustomerPanel.Visible = false;
             DisplayPanel.Visible = false;
             AddRecordPanel.Visible = false;
             pnl_home.Visible = false;
-            AddCustomerPanel.Visible = false;
+           // AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
 

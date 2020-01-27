@@ -56,6 +56,9 @@
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
+    <Compile Include="gradientColor.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

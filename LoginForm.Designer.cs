@@ -101,7 +101,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Rockwell", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label1.Location = new System.Drawing.Point(325, 49);
+            this.label1.Location = new System.Drawing.Point(323, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(196, 59);
             this.label1.TabIndex = 15;
@@ -111,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkBlue;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logInButton);
@@ -123,7 +123,7 @@
             this.ForeColor = System.Drawing.SystemColors.WindowText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
-            this.Text = "Form1";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
