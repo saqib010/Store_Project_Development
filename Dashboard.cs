@@ -258,8 +258,8 @@ namespace Store
 
         private void btn_Take_Order_Click(object sender, EventArgs e)
         {
-           //// TakeOrderPanel.SetBounds(302, 02, 1055, 624);
-         // TakeOrderPanel.Visible = true;
+            TakeOrderPanel.SetBounds(302, 02, 1055, 624);
+         TakeOrderPanel.Visible = true;
             DisplaySupplierPanel.Visible = false;
             //DisplayCustomerPanel.Visible = false;
             DisplayPanel.Visible = false;
@@ -274,6 +274,22 @@ namespace Store
         private void btn_EXIT_App_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            pnl_home.SetBounds(302, 02, 1055, 624);
+            pnl_home.Visible = true;
+            TakeOrderPanel.Visible = false;
+            DisplaySupplierPanel.Visible = false;
+            //DisplayCustomerPanel.Visible = false;
+            DisplayPanel.Visible = false;
+            AddRecordPanel.Visible = false;
+            pnl_home.Visible = false;
+            // AddCustomerPanel.Visible = false;
+            AddSupplierPanel.Visible = false;
+            AddProductPanel.Visible = false;
+
         }
     }
 }
