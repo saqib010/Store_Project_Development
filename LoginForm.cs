@@ -15,7 +15,9 @@ namespace Store
         public LoginForm()
         {
             //Changed
+          //  pnl_change_pass.Visible = false;
             InitializeComponent();
+            pnl_change_pass.Visible = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -78,6 +80,52 @@ namespace Store
         private void resetButton_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void btn_change_pass_Click(object sender, EventArgs e)
+        {
+            pnl_change_pass.SetBounds(92, 23, 643, 350);
+            pnl_change_pass.Visible = true;
+
+        }
+
+        private void btn_chng_pass_back_Click(object sender, EventArgs e)
+        {
+            pnl_change_pass.Visible = false;
+        }
+
+        private void btn_chng_pass_update_Click(object sender, EventArgs e)
+        {
+            if (txt_user.Text != "" && IsAlphas_Only(txt_user.Text) && txt_oldpass.Text != "" && txt_newpass.Text != "")
+            {
+                if (!txt_oldpass.Text.Equals(txt_newpass.Text))
+                {
+                    Store.Login_Class log = new Store.Login_Class();
+
+                    if (log.update(txt_user.Text, txt_oldpass.Text, txt_newpass.Text))
+                    {
+                        MessageBox.Show("Password changed successfully ! ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        pnl_change_pass.Visible = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("username or oldpassword is incorrent ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clear();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("oldpassword and newpassword sholud not be same ", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Clear();
+                }
+                   
+            }
+            // }
+            else
+            {
+                MessageBox.Show("please enter correct username and password", "alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Clear();
+            }
         }
     }
 }

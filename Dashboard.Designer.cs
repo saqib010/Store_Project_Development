@@ -435,7 +435,7 @@
             this.DisplayPanel.Controls.Add(this.btn_Order_View);
             this.DisplayPanel.Location = new System.Drawing.Point(345, 60);
             this.DisplayPanel.Name = "DisplayPanel";
-            this.DisplayPanel.Size = new System.Drawing.Size(23, 21);
+            this.DisplayPanel.Size = new System.Drawing.Size(35, 18);
             this.DisplayPanel.TabIndex = 71;
             this.DisplayPanel.Visible = false;
             this.DisplayPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.DisplayPanel_Paint);
@@ -525,7 +525,7 @@
             this.DisplaySupplierPanel.Controls.Add(this.textBox49);
             this.DisplaySupplierPanel.Location = new System.Drawing.Point(436, 60);
             this.DisplaySupplierPanel.Name = "DisplaySupplierPanel";
-            this.DisplaySupplierPanel.Size = new System.Drawing.Size(82, 45);
+            this.DisplaySupplierPanel.Size = new System.Drawing.Size(36, 32);
             this.DisplaySupplierPanel.TabIndex = 72;
             this.DisplaySupplierPanel.Visible = false;
             // 
@@ -1512,7 +1512,7 @@
             this.TakeOrderPanel.Controls.Add(this.textBox56);
             this.TakeOrderPanel.Location = new System.Drawing.Point(319, 91);
             this.TakeOrderPanel.Name = "TakeOrderPanel";
-            this.TakeOrderPanel.Size = new System.Drawing.Size(20, 208);
+            this.TakeOrderPanel.Size = new System.Drawing.Size(30, 51);
             this.TakeOrderPanel.TabIndex = 73;
             this.TakeOrderPanel.Visible = false;
             // 
@@ -1892,7 +1892,7 @@
             this.pnl_home.ColorBottom = System.Drawing.Color.Red;
             this.pnl_home.ColorTop = System.Drawing.Color.Black;
             this.pnl_home.Controls.Add(this.label26);
-            this.pnl_home.Location = new System.Drawing.Point(608, 19);
+            this.pnl_home.Location = new System.Drawing.Point(690, 14);
             this.pnl_home.Name = "pnl_home";
             this.pnl_home.Size = new System.Drawing.Size(100, 40);
             this.pnl_home.TabIndex = 74;

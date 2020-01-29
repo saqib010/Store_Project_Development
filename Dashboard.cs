@@ -15,14 +15,8 @@ namespace Store
         public Dashboard()
         {
             InitializeComponent();
+            pnl_home.SetBounds(302, 02, 1055, 624);
             pnl_home.Visible = true;
-            pnl_home.SetBounds(302, 02, 1055, 624);//pnl_home.SetBounds(293, 02, 1079, 590)
-          //  TakeOrderPanel.Visible = false;
-            DisplayPanel.Visible = false;
-            DisplaySupplierPanel.Visible = false;
-            AddRecordPanel.Visible = false;
-           // AddCustomerPanel.Visible = false;
-            AddSupplierPanel.Visible = false;
         }
 
         private void Dashboard_Load(object sender, EventArgs e)

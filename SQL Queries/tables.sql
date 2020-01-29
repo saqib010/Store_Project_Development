@@ -31,3 +31,11 @@ insert into Stock(Supplier_ID,Product_ID,Quantity,Unit_price) values(1,1,9,350.4
 select  * from Supplier
 select  * from Product
 select  * from Stock
+select  * from tb_login
+
+
+
+
+UPDATE tb_login
+SET username = 'aaa'
+WHERE username = 'a1';
