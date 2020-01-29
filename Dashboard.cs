@@ -106,12 +106,7 @@ namespace Store
 
         private void button5_Click(object sender, EventArgs e)
         {
-            AddRecordPanel.SetBounds(302, 02, 1055, 624);
-            AddRecordPanel.Visible = true;
-           // AddCustomerPanel.Visible = false;
-            AddSupplierPanel.Visible = false;
-            AddProductPanel.Visible = false;
-
+            btn_Add_main_Click(sender, e);
         }
 
         private void btn_back_from_supplier_Click(object sender, EventArgs e)
@@ -143,6 +138,7 @@ namespace Store
            // AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
+            TakeOrderPanel.Visible = false;
 
         }
 
@@ -197,15 +193,7 @@ namespace Store
 
         private void button18_Click(object sender, EventArgs e)
         {
-            DisplayPanel.SetBounds(302, 02, 1055, 624);
-            DisplayPanel.Visible = true;
-            DisplaySupplierPanel.Visible = false;
-            //DisplayCustomerPanel.Visible = false;
-            AddRecordPanel.Visible = false;
-            pnl_home.Visible = false;
-            //AddCustomerPanel.Visible = false;
-            AddSupplierPanel.Visible = false;
-            AddProductPanel.Visible = false;
+            btn_display_Main_Click(sender, e);
 
         }
 
@@ -259,7 +247,7 @@ namespace Store
         private void btn_Take_Order_Click(object sender, EventArgs e)
         {
             TakeOrderPanel.SetBounds(302, 02, 1055, 624);
-         TakeOrderPanel.Visible = true;
+            TakeOrderPanel.Visible = true;
             DisplaySupplierPanel.Visible = false;
             //DisplayCustomerPanel.Visible = false;
             DisplayPanel.Visible = false;
@@ -285,11 +273,16 @@ namespace Store
             //DisplayCustomerPanel.Visible = false;
             DisplayPanel.Visible = false;
             AddRecordPanel.Visible = false;
-            pnl_home.Visible = false;
+          //  pnl_home.Visible = false;
             // AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
 
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            btn_Add_main_Click(sender, e);
         }
     }
 }
