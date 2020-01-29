@@ -17,7 +17,7 @@ namespace Store
         ///*********INSERT QUERY TABLE
         public Boolean insert(List<String> attributes)
         {
-            string query="";
+            string query="Exec Add_"+tableName ;
             String q;
             /**IF table name is customer and all fields **/
 
@@ -26,11 +26,23 @@ namespace Store
                 query = " ";
 
 
-            }
-            else if (tableName == "Suppliers")
-            {
-                query = " ";
+            } //EXEC add_Supplier 'dada','chota@gmail.com',456,'asd564','sdf',456,'2018-12-23'
 
+            else if (tableName == "supplier")
+            {
+                query += " ";
+                for (int i = 0; i < attributes.Count; i++)
+                {
+                    if(i==attributes.Count-1)
+                    {
+                        query += "'" + attributes[i] + "'";
+                    }
+                    else
+                    {
+                        query += "'" + attributes[i] + "'" + ",";
+                    }
+                }
+                query += "";
             }
 
             else if (tableName == "Products")

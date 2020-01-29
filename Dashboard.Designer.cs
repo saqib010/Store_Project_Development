@@ -136,9 +136,9 @@
             this.btn_back_suppler = new System.Windows.Forms.Button();
             this.ClearSupButton = new System.Windows.Forms.Button();
             this.AddSupButton = new System.Windows.Forms.Button();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.SupplierPhoneTextBox = new System.Windows.Forms.TextBox();
+            this.SupplierAddressTextBox = new System.Windows.Forms.TextBox();
+            this.SupplierNameTextBox = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -157,10 +157,9 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.textBox56 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gradientColor1 = new Store.gradientColor();
-            this.button24 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
-            this.Net_sale = new System.Windows.Forms.Button();
             this.btn_Take_Order = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
             this.panel1 = new Store.gradientColor();
@@ -188,6 +187,7 @@
             this.panel11.SuspendLayout();
             this.AddSupplierPanel.SuspendLayout();
             this.TakeOrderPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gradientColor1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -507,6 +507,7 @@
             // DisplaySupplierPanel
             // 
             this.DisplaySupplierPanel.BackColor = System.Drawing.Color.Maroon;
+            this.DisplaySupplierPanel.Controls.Add(this.dataGridView1);
             this.DisplaySupplierPanel.Controls.Add(this.panel6);
             this.DisplaySupplierPanel.Controls.Add(this.panel7);
             this.DisplaySupplierPanel.Controls.Add(this.panel8);
@@ -523,9 +524,9 @@
             this.DisplaySupplierPanel.Controls.Add(this.button21);
             this.DisplaySupplierPanel.Controls.Add(this.button22);
             this.DisplaySupplierPanel.Controls.Add(this.textBox49);
-            this.DisplaySupplierPanel.Location = new System.Drawing.Point(436, 60);
+            this.DisplaySupplierPanel.Location = new System.Drawing.Point(426, 38);
             this.DisplaySupplierPanel.Name = "DisplaySupplierPanel";
-            this.DisplaySupplierPanel.Size = new System.Drawing.Size(36, 32);
+            this.DisplaySupplierPanel.Size = new System.Drawing.Size(22, 21);
             this.DisplaySupplierPanel.TabIndex = 72;
             this.DisplaySupplierPanel.Visible = false;
             // 
@@ -1290,7 +1291,7 @@
             this.label98.Name = "label98";
             this.label98.Size = new System.Drawing.Size(811, 40);
             this.label98.TabIndex = 33;
-            this.label98.Text = "Take Order";
+            this.label98.Text = "Display Supplier";
             this.label98.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label98.Click += new System.EventHandler(this.label98_Click);
             // 
@@ -1370,16 +1371,16 @@
             this.AddSupplierPanel.Controls.Add(this.btn_back_suppler);
             this.AddSupplierPanel.Controls.Add(this.ClearSupButton);
             this.AddSupplierPanel.Controls.Add(this.AddSupButton);
-            this.AddSupplierPanel.Controls.Add(this.textBox16);
-            this.AddSupplierPanel.Controls.Add(this.textBox17);
-            this.AddSupplierPanel.Controls.Add(this.textBox18);
+            this.AddSupplierPanel.Controls.Add(this.SupplierPhoneTextBox);
+            this.AddSupplierPanel.Controls.Add(this.SupplierAddressTextBox);
+            this.AddSupplierPanel.Controls.Add(this.SupplierNameTextBox);
             this.AddSupplierPanel.Controls.Add(this.label21);
             this.AddSupplierPanel.Controls.Add(this.label22);
             this.AddSupplierPanel.Controls.Add(this.label23);
             this.AddSupplierPanel.Controls.Add(this.label24);
-            this.AddSupplierPanel.Location = new System.Drawing.Point(384, 147);
+            this.AddSupplierPanel.Location = new System.Drawing.Point(650, 83);
             this.AddSupplierPanel.Name = "AddSupplierPanel";
-            this.AddSupplierPanel.Size = new System.Drawing.Size(21, 28);
+            this.AddSupplierPanel.Size = new System.Drawing.Size(28, 29);
             this.AddSupplierPanel.TabIndex = 70;
             this.AddSupplierPanel.Visible = false;
             // 
@@ -1409,6 +1410,7 @@
             this.ClearSupButton.TabIndex = 42;
             this.ClearSupButton.Text = "CLEAR";
             this.ClearSupButton.UseVisualStyleBackColor = false;
+            this.ClearSupButton.Click += new System.EventHandler(this.ClearSupButton_Click);
             // 
             // AddSupButton
             // 
@@ -1421,30 +1423,31 @@
             this.AddSupButton.TabIndex = 41;
             this.AddSupButton.Text = "ADD";
             this.AddSupButton.UseVisualStyleBackColor = false;
+            this.AddSupButton.Click += new System.EventHandler(this.AddSupButton_Click);
             // 
-            // textBox16
+            // SupplierPhoneTextBox
             // 
-            this.textBox16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.Location = new System.Drawing.Point(301, 245);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(176, 27);
-            this.textBox16.TabIndex = 40;
+            this.SupplierPhoneTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SupplierPhoneTextBox.Location = new System.Drawing.Point(301, 245);
+            this.SupplierPhoneTextBox.Name = "SupplierPhoneTextBox";
+            this.SupplierPhoneTextBox.Size = new System.Drawing.Size(176, 27);
+            this.SupplierPhoneTextBox.TabIndex = 40;
             // 
-            // textBox17
+            // SupplierAddressTextBox
             // 
-            this.textBox17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(670, 164);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(176, 27);
-            this.textBox17.TabIndex = 38;
+            this.SupplierAddressTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SupplierAddressTextBox.Location = new System.Drawing.Point(670, 164);
+            this.SupplierAddressTextBox.Name = "SupplierAddressTextBox";
+            this.SupplierAddressTextBox.Size = new System.Drawing.Size(176, 27);
+            this.SupplierAddressTextBox.TabIndex = 38;
             // 
-            // textBox18
+            // SupplierNameTextBox
             // 
-            this.textBox18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(301, 160);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(176, 27);
-            this.textBox18.TabIndex = 37;
+            this.SupplierNameTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SupplierNameTextBox.Location = new System.Drawing.Point(301, 160);
+            this.SupplierNameTextBox.Name = "SupplierNameTextBox";
+            this.SupplierNameTextBox.Size = new System.Drawing.Size(176, 27);
+            this.SupplierNameTextBox.TabIndex = 37;
             // 
             // label21
             // 
@@ -1510,9 +1513,9 @@
             this.TakeOrderPanel.Controls.Add(this.button13);
             this.TakeOrderPanel.Controls.Add(this.button26);
             this.TakeOrderPanel.Controls.Add(this.textBox56);
-            this.TakeOrderPanel.Location = new System.Drawing.Point(319, 91);
+            this.TakeOrderPanel.Location = new System.Drawing.Point(955, 30);
             this.TakeOrderPanel.Name = "TakeOrderPanel";
-            this.TakeOrderPanel.Size = new System.Drawing.Size(30, 51);
+            this.TakeOrderPanel.Size = new System.Drawing.Size(14, 20);
             this.TakeOrderPanel.TabIndex = 73;
             this.TakeOrderPanel.Visible = false;
             // 
@@ -1648,14 +1651,20 @@
             this.textBox56.Size = new System.Drawing.Size(153, 20);
             this.textBox56.TabIndex = 16;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(296, 59);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(676, 487);
+            this.dataGridView1.TabIndex = 57;
+            // 
             // gradientColor1
             // 
             this.gradientColor1.BackColor = System.Drawing.Color.Transparent;
             this.gradientColor1.ColorBottom = System.Drawing.Color.Red;
             this.gradientColor1.ColorTop = System.Drawing.Color.Black;
-            this.gradientColor1.Controls.Add(this.button24);
             this.gradientColor1.Controls.Add(this.button23);
-            this.gradientColor1.Controls.Add(this.Net_sale);
             this.gradientColor1.Controls.Add(this.btn_Take_Order);
             this.gradientColor1.Controls.Add(this.button25);
             this.gradientColor1.Location = new System.Drawing.Point(2, 630);
@@ -1663,46 +1672,18 @@
             this.gradientColor1.Size = new System.Drawing.Size(1360, 76);
             this.gradientColor1.TabIndex = 76;
             // 
-            // button24
-            // 
-            this.button24.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button24.BackColor = System.Drawing.Color.Gray;
-            this.button24.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button24.ForeColor = System.Drawing.Color.Black;
-            this.button24.Location = new System.Drawing.Point(279, 8);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(262, 57);
-            this.button24.TabIndex = 5;
-            this.button24.Text = "INCOME";
-            this.button24.UseVisualStyleBackColor = false;
-            // 
             // button23
             // 
             this.button23.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button23.BackColor = System.Drawing.Color.Gray;
             this.button23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button23.ForeColor = System.Drawing.Color.Black;
-            this.button23.Location = new System.Drawing.Point(548, 8);
+            this.button23.Location = new System.Drawing.Point(688, 13);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(262, 57);
             this.button23.TabIndex = 6;
             this.button23.Text = "WEEKLY REPORT";
             this.button23.UseVisualStyleBackColor = false;
-            // 
-            // Net_sale
-            // 
-            this.Net_sale.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Net_sale.BackColor = System.Drawing.Color.Gray;
-            this.Net_sale.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Net_sale.ForeColor = System.Drawing.Color.Black;
-            this.Net_sale.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Net_sale.ImageIndex = 7;
-            this.Net_sale.Location = new System.Drawing.Point(1086, 8);
-            this.Net_sale.Name = "Net_sale";
-            this.Net_sale.Size = new System.Drawing.Size(266, 57);
-            this.Net_sale.TabIndex = 8;
-            this.Net_sale.Text = "TRANSACTIONS";
-            this.Net_sale.UseVisualStyleBackColor = false;
             // 
             // btn_Take_Order
             // 
@@ -1712,7 +1693,7 @@
             this.btn_Take_Order.ForeColor = System.Drawing.Color.Black;
             this.btn_Take_Order.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Take_Order.ImageIndex = 1;
-            this.btn_Take_Order.Location = new System.Drawing.Point(6, 8);
+            this.btn_Take_Order.Location = new System.Drawing.Point(335, 13);
             this.btn_Take_Order.Name = "btn_Take_Order";
             this.btn_Take_Order.Size = new System.Drawing.Size(262, 57);
             this.btn_Take_Order.TabIndex = 4;
@@ -1728,7 +1709,7 @@
             this.button25.ForeColor = System.Drawing.Color.Black;
             this.button25.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button25.ImageIndex = 0;
-            this.button25.Location = new System.Drawing.Point(817, 8);
+            this.button25.Location = new System.Drawing.Point(1027, 8);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(262, 57);
             this.button25.TabIndex = 7;
@@ -1955,6 +1936,7 @@
             this.AddSupplierPanel.PerformLayout();
             this.TakeOrderPanel.ResumeLayout(false);
             this.TakeOrderPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gradientColor1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -2002,13 +1984,11 @@
         private System.Windows.Forms.Label label98;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button Net_sale;
         private System.Windows.Forms.Button btn_Take_Order;
         private System.Windows.Forms.Button button25;
         private gradientColor pnl_home;
         private gradientColor panel1;
         private gradientColor gradientColor1;
-        private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Label label97;
@@ -2088,9 +2068,9 @@
         private System.Windows.Forms.Button btn_back_suppler;
         private System.Windows.Forms.Button ClearSupButton;
         private System.Windows.Forms.Button AddSupButton;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox SupplierPhoneTextBox;
+        private System.Windows.Forms.TextBox SupplierAddressTextBox;
+        private System.Windows.Forms.TextBox SupplierNameTextBox;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
@@ -2112,5 +2092,6 @@
         private System.Windows.Forms.TextBox ProductQuantityTextBox;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

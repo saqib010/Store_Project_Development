@@ -133,7 +133,7 @@ namespace Store
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
             TakeOrderPanel.Visible = false;
-
+            DisplaySupplierPanel.Visible = false;
         }
 
       /*  private void btn_Cust_View_Click(object sender, EventArgs e)
@@ -260,23 +260,103 @@ namespace Store
 
         private void button13_Click(object sender, EventArgs e)
         {
-            pnl_home.SetBounds(302, 02, 1055, 624);
-            pnl_home.Visible = true;
-            TakeOrderPanel.Visible = false;
-            DisplaySupplierPanel.Visible = false;
-            //DisplayCustomerPanel.Visible = false;
-            DisplayPanel.Visible = false;
-            AddRecordPanel.Visible = false;
-          //  pnl_home.Visible = false;
-            // AddCustomerPanel.Visible = false;
-            AddSupplierPanel.Visible = false;
-            AddProductPanel.Visible = false;
-
+            btn_display_Main_Click(sender, e);
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             btn_Add_main_Click(sender, e);
+        }
+
+        private void AddSupButton_Click(object sender, EventArgs e)
+        {
+            List<String> ls1 = new List<string>(7);
+            if(String.IsNullOrEmpty(SupplierNameTextBox.Text) || String.IsNullOrEmpty(SupplierAddressTextBox.Text) || String.IsNullOrEmpty(SupplierPhoneTextBox.Text))
+            {
+                /*
+                   */
+                MessageBox.Show("Enter * Fields Please.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (IsAlphas_Only(SupplierNameTextBox.Text)  && IsDigitsOnly(SupplierPhoneTextBox.Text))
+            {
+                ls1.Add(SupplierNameTextBox.Text);
+                ls1.Add(SupplierAddressTextBox.Text);
+                ls1.Add(SupplierPhoneTextBox.Text);
+                if (new Store.supliers().insert(ls1))
+                {
+                    MessageBox.Show("Data Entered Successfully ");
+                    cust_Fields_clear();
+
+
+                }
+                else
+                    MessageBox.Show("Sorry, data can not be entered");
+
+            }
+
+            else
+                    {
+                MessageBox.Show("Provide only Text Data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+
+        }
+
+        private void cust_Fields_clear()
+        {
+            SupplierNameTextBox.Text = "";
+            SupplierAddressTextBox.Text = "";
+            SupplierPhoneTextBox.Text = "";
+            
+        }
+        
+            private static bool IsDigitsOnly(string str)
+        {
+            int i = 1;
+            foreach (char c in str)
+            {
+                if (i == 1)
+                {
+                    if (c <= '0' || c > '9')
+                    {
+                        return false;
+                    }
+                    i++;
+                }
+                else if (c < '0' || c > '9')
+                {
+                    return false;
+                }
+                else
+                {
+
+
+                    if (Convert.ToInt32(c) > 0)
+                        continue;
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        private static bool IsAlphas_Only(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c >= '0' && c <= '9')
+                    return false;
+            }
+
+            return true;
+        }
+
+        private void ClearSupButton_Click(object sender, EventArgs e)
+        {
+            cust_Fields_clear();
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Store
     {
         public LoginForm()
         {
-            //Changed
+            //Add Supplier Activated, Test it
           //  pnl_change_pass.Visible = false;
             InitializeComponent();
             pnl_change_pass.Visible = false;

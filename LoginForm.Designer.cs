@@ -143,9 +143,9 @@
             this.pnl_change_pass.Controls.Add(this.txt_oldpass);
             this.pnl_change_pass.Controls.Add(this.label3);
             this.pnl_change_pass.Controls.Add(this.label4);
-            this.pnl_change_pass.Location = new System.Drawing.Point(92, 23);
+            this.pnl_change_pass.Location = new System.Drawing.Point(85, 120);
             this.pnl_change_pass.Name = "pnl_change_pass";
-            this.pnl_change_pass.Size = new System.Drawing.Size(535, 354);
+            this.pnl_change_pass.Size = new System.Drawing.Size(35, 24);
             this.pnl_change_pass.TabIndex = 17;
             // 
             // btn_chng_pass_update
@@ -194,7 +194,7 @@
             this.label2.Cursor = System.Windows.Forms.Cursors.Default;
             this.label2.Font = new System.Drawing.Font("Rockwell", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.label2.Location = new System.Drawing.Point(76, 28);
+            this.label2.Location = new System.Drawing.Point(-174, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(447, 59);
             this.label2.TabIndex = 29;
