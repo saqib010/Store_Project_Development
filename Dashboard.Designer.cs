@@ -2233,7 +2233,7 @@
             this.Name = "Dashboard";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "v";
+            this.Text = "MY_STORE";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panel3.ResumeLayout(false);
             this.AddSupplierPanel.ResumeLayout(false);

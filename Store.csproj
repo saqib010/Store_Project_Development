@@ -71,6 +71,7 @@
     <Compile Include="Loading_Page.Designer.cs">
       <DependentUpon>Loading_Page.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login_Class.cs" />
     <Compile Include="Models.cs" />
     <Compile Include="order.cs" />
     <Compile Include="product.cs" />

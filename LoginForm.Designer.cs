@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.usernamelabel = new System.Windows.Forms.Label();
             this.password = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.text_password = new System.Windows.Forms.TextBox();
+            this.text_username = new System.Windows.Forms.TextBox();
             this.resetButton = new System.Windows.Forms.Button();
             this.logInButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,19 +62,20 @@
             this.password.Text = "password";
             this.password.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // text_password
             // 
-            this.textBox1.Location = new System.Drawing.Point(346, 156);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(155, 20);
-            this.textBox1.TabIndex = 1;
+            this.text_password.Location = new System.Drawing.Point(346, 200);
+            this.text_password.Name = "text_password";
+            this.text_password.PasswordChar = '•';
+            this.text_password.Size = new System.Drawing.Size(155, 20);
+            this.text_password.TabIndex = 1;
             // 
-            // textBox2
+            // text_username
             // 
-            this.textBox2.Location = new System.Drawing.Point(346, 202);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(155, 20);
-            this.textBox2.TabIndex = 1;
+            this.text_username.Location = new System.Drawing.Point(346, 157);
+            this.text_username.Name = "text_username";
+            this.text_username.Size = new System.Drawing.Size(155, 20);
+            this.text_username.TabIndex = 1;
             // 
             // resetButton
             // 
@@ -82,8 +83,9 @@
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(75, 23);
             this.resetButton.TabIndex = 2;
-            this.resetButton.Text = "Reset";
+            this.resetButton.Text = "Clear";
             this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
             // logInButton
             // 
@@ -116,8 +118,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.logInButton);
             this.Controls.Add(this.resetButton);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.text_username);
+            this.Controls.Add(this.text_password);
             this.Controls.Add(this.password);
             this.Controls.Add(this.usernamelabel);
             this.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -134,8 +136,8 @@
 
         private System.Windows.Forms.Label usernamelabel;
         private System.Windows.Forms.Label password;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox text_password;
+        private System.Windows.Forms.TextBox text_username;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.Button logInButton;
