@@ -45,11 +45,30 @@ namespace Store
                 query += "";
             }
 
-            else if (tableName == "Products")
-            {
-                query = " ";
-
+            else if (tableName == "product")
+            {//1/4/5
+                query += " ";
+                for (int i = 0; i < attributes.Count; i++)
+                {
+                    
+                    if (i == attributes.Count - 1)
+                    {
+                        query +=   attributes[i] ;
+                    }
+                    else if (i == 0 || i == 3)
+                    {
+                        query += attributes[i] + ",";
+                    }
+                    else
+                    {
+                        query += "'" + attributes[i] + "'" + ",";
+                    }
+                }
+                query += "";
             }
+            //model = new DataBase_A.Supliers();
+            //pnl_Cust.SetBounds(287, 26, 1069, 580);
+            //get_Table();
             try
             {
 

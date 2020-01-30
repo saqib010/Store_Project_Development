@@ -12,6 +12,7 @@ namespace Store
 {
     public partial class Dashboard : Form
     {
+        Store.Models model;
         public Dashboard()
         {
             InitializeComponent();
@@ -158,7 +159,10 @@ namespace Store
 
         private void btn_Suplier_view_Click(object sender, EventArgs e)
         {
+            model = new Store.supliers();
             DisplaySupplierPanel.SetBounds(302, 02, 1055, 624);
+            get_Table();
+
             DisplaySupplierPanel.Visible = true;
            // DisplayCustomerPanel.Visible = false;
             DisplayPanel.Visible = false;
@@ -212,8 +216,12 @@ namespace Store
 
         private void btn_prod_view_Click(object sender, EventArgs e)
         {
+            model = new Store.product();
             DisplaySupplierPanel.SetBounds(302, 02, 1055, 624);
+            get_Table();
+
             DisplaySupplierPanel.Visible = true;
+
             //DisplayCustomerPanel.Visible = false;
             DisplayPanel.Visible = false;
             AddRecordPanel.Visible = false;
@@ -253,6 +261,13 @@ namespace Store
 
         }
 
+        private void get_Table()
+        {
+            DataTable dt = model.get();
+            SupplierDataGridView.DataSource = dt;
+        }
+
+
         private void btn_EXIT_App_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -270,7 +285,7 @@ namespace Store
 
         private void AddSupButton_Click(object sender, EventArgs e)
         {
-            List<String> ls1 = new List<string>(7);
+            List<String> ls1 = new List<string>(3);
             if(String.IsNullOrEmpty(SupplierNameTextBox.Text) || String.IsNullOrEmpty(SupplierAddressTextBox.Text) || String.IsNullOrEmpty(SupplierPhoneTextBox.Text))
             {
                 /*
@@ -307,7 +322,11 @@ namespace Store
             SupplierNameTextBox.Text = "";
             SupplierAddressTextBox.Text = "";
             SupplierPhoneTextBox.Text = "";
-            
+            ProductCodeTextBox.Text = "";
+            ProductSizeComboBox.Text = "";
+            ProductNameTextBox.Text = "";
+            ProductQuatityTextBox.Text = "";
+            ProductPriceTextBox.Text = "";
         }
         
             private static bool IsDigitsOnly(string str)
@@ -317,7 +336,7 @@ namespace Store
             {
                 if (i == 1)
                 {
-                    if (c <= '0' || c > '9')
+                    if (c < '0' || c > '9')
                     {
                         return false;
                     }
@@ -355,6 +374,55 @@ namespace Store
         }
 
         private void ClearSupButton_Click(object sender, EventArgs e)
+        {
+            cust_Fields_clear();
+        }
+
+        private void AddPrdButton_Click(object sender, EventArgs e)
+        {
+            List<String> ls1 = new List<string>(6);
+            if(String.IsNullOrEmpty(ProductNameTextBox.Text) || String.IsNullOrEmpty(ProductCodeTextBox.Text) || String.IsNullOrEmpty(ProductSizeComboBox.Text) || String.IsNullOrEmpty(ProductQuatityTextBox.Text) || String.IsNullOrEmpty(ProductPriceTextBox.Text))
+            {
+                MessageBox.Show("Enter * Fields Please.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if(IsAlphas_Only(ProductNameTextBox.Text) && IsDigitsOnly(ProductCodeTextBox.Text) && IsAlphas_Only(ProductSizeComboBox.Text)&& IsDigitsOnly(ProductQuatityTextBox.Text) )
+            {
+                if(IsDigitsOnly(ProductPriceTextBox.Text)|| IsDecimal(ProductPriceTextBox.Text))
+                {
+                    ls1.Add(ProductCodeTextBox.Text);
+                    ls1.Add(ProductNameTextBox.Text);
+                    ls1.Add(ProductSizeComboBox.Text);
+                    ls1.Add(ProductQuatityTextBox.Text);
+                    ls1.Add(ProductPriceTextBox.Text);
+                    if (new Store.product().insert(ls1))
+                    {
+                        MessageBox.Show("Data Entered Successfully ");
+                        cust_Fields_clear();
+                    }
+                    else
+                        MessageBox.Show("Sorry, data can not be entered");
+                }
+                else
+                    MessageBox.Show("Provide Price Correcty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else
+            {
+                MessageBox.Show("Provide only Text Data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+
+
+
+        }
+        private bool IsDecimal(String value)
+        {
+            decimal number;
+            return Decimal.TryParse(value, out number);
+
+        }
+
+        private void ClearPrdButton_Click(object sender, EventArgs e)
         {
             cust_Fields_clear();
         }

@@ -34,11 +34,11 @@
             this.AddSupplierButton = new System.Windows.Forms.Button();
             this.AddProductButton = new System.Windows.Forms.Button();
             this.AddProductPanel = new System.Windows.Forms.Panel();
-            this.ProductQuantityTextBox = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.BackButon = new System.Windows.Forms.Button();
             this.ProductPriceTextBox = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.ProductSizeComboBox = new System.Windows.Forms.ComboBox();
+            this.BackButon = new System.Windows.Forms.Button();
+            this.ProductQuatityTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.ClearPrdButton = new System.Windows.Forms.Button();
             this.AddPrdButton = new System.Windows.Forms.Button();
@@ -55,6 +55,7 @@
             this.btn_Stok_View = new System.Windows.Forms.Button();
             this.btn_Order_View = new System.Windows.Forms.Button();
             this.DisplaySupplierPanel = new System.Windows.Forms.Panel();
+            this.SupplierDataGridView = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.textBox27 = new System.Windows.Forms.TextBox();
             this.label68 = new System.Windows.Forms.Label();
@@ -157,7 +158,6 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.textBox56 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gradientColor1 = new Store.gradientColor();
             this.button23 = new System.Windows.Forms.Button();
             this.btn_Take_Order = new System.Windows.Forms.Button();
@@ -179,6 +179,7 @@
             this.AddProductPanel.SuspendLayout();
             this.DisplayPanel.SuspendLayout();
             this.DisplaySupplierPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SupplierDataGridView)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -187,7 +188,6 @@
             this.panel11.SuspendLayout();
             this.AddSupplierPanel.SuspendLayout();
             this.TakeOrderPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gradientColor1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -248,11 +248,11 @@
             // AddProductPanel
             // 
             this.AddProductPanel.BackColor = System.Drawing.Color.Maroon;
-            this.AddProductPanel.Controls.Add(this.ProductQuantityTextBox);
-            this.AddProductPanel.Controls.Add(this.label17);
-            this.AddProductPanel.Controls.Add(this.comboBox3);
-            this.AddProductPanel.Controls.Add(this.BackButon);
             this.AddProductPanel.Controls.Add(this.ProductPriceTextBox);
+            this.AddProductPanel.Controls.Add(this.label17);
+            this.AddProductPanel.Controls.Add(this.ProductSizeComboBox);
+            this.AddProductPanel.Controls.Add(this.BackButon);
+            this.AddProductPanel.Controls.Add(this.ProductQuatityTextBox);
             this.AddProductPanel.Controls.Add(this.label8);
             this.AddProductPanel.Controls.Add(this.ClearPrdButton);
             this.AddProductPanel.Controls.Add(this.AddPrdButton);
@@ -262,20 +262,20 @@
             this.AddProductPanel.Controls.Add(this.label10);
             this.AddProductPanel.Controls.Add(this.label11);
             this.AddProductPanel.Controls.Add(this.label12);
-            this.AddProductPanel.Location = new System.Drawing.Point(474, 19);
+            this.AddProductPanel.Location = new System.Drawing.Point(1070, 8);
             this.AddProductPanel.Name = "AddProductPanel";
-            this.AddProductPanel.Size = new System.Drawing.Size(10, 11);
+            this.AddProductPanel.Size = new System.Drawing.Size(19, 35);
             this.AddProductPanel.TabIndex = 69;
             this.AddProductPanel.Visible = false;
             this.AddProductPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AddProductPanel_Paint);
             // 
-            // ProductQuantityTextBox
+            // ProductPriceTextBox
             // 
-            this.ProductQuantityTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductQuantityTextBox.Location = new System.Drawing.Point(300, 327);
-            this.ProductQuantityTextBox.Name = "ProductQuantityTextBox";
-            this.ProductQuantityTextBox.Size = new System.Drawing.Size(176, 27);
-            this.ProductQuantityTextBox.TabIndex = 71;
+            this.ProductPriceTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductPriceTextBox.Location = new System.Drawing.Point(300, 327);
+            this.ProductPriceTextBox.Name = "ProductPriceTextBox";
+            this.ProductPriceTextBox.Size = new System.Drawing.Size(176, 27);
+            this.ProductPriceTextBox.TabIndex = 71;
             // 
             // label17
             // 
@@ -285,22 +285,22 @@
             this.label17.ForeColor = System.Drawing.Color.Azure;
             this.label17.Location = new System.Drawing.Point(204, 330);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(86, 21);
+            this.label17.Size = new System.Drawing.Size(88, 21);
             this.label17.TabIndex = 70;
-            this.label17.Text = "Quantity*";
+            this.label17.Text = "Unit Price*";
             // 
-            // comboBox3
+            // ProductSizeComboBox
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.ProductSizeComboBox.FormattingEnabled = true;
+            this.ProductSizeComboBox.Items.AddRange(new object[] {
             "Small",
             "Medium",
             "Large",
             "ExtraLarge"});
-            this.comboBox3.Location = new System.Drawing.Point(301, 252);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(173, 21);
-            this.comboBox3.TabIndex = 69;
+            this.ProductSizeComboBox.Location = new System.Drawing.Point(301, 252);
+            this.ProductSizeComboBox.Name = "ProductSizeComboBox";
+            this.ProductSizeComboBox.Size = new System.Drawing.Size(173, 21);
+            this.ProductSizeComboBox.TabIndex = 69;
             // 
             // BackButon
             // 
@@ -317,13 +317,13 @@
             this.BackButon.UseVisualStyleBackColor = false;
             this.BackButon.Click += new System.EventHandler(this.button5_Click);
             // 
-            // ProductPriceTextBox
+            // ProductQuatityTextBox
             // 
-            this.ProductPriceTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductPriceTextBox.Location = new System.Drawing.Point(670, 245);
-            this.ProductPriceTextBox.Name = "ProductPriceTextBox";
-            this.ProductPriceTextBox.Size = new System.Drawing.Size(176, 27);
-            this.ProductPriceTextBox.TabIndex = 45;
+            this.ProductQuatityTextBox.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductQuatityTextBox.Location = new System.Drawing.Point(670, 245);
+            this.ProductQuatityTextBox.Name = "ProductQuatityTextBox";
+            this.ProductQuatityTextBox.Size = new System.Drawing.Size(176, 27);
+            this.ProductQuatityTextBox.TabIndex = 45;
             // 
             // label8
             // 
@@ -333,9 +333,9 @@
             this.label8.ForeColor = System.Drawing.Color.Azure;
             this.label8.Location = new System.Drawing.Point(589, 249);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 21);
+            this.label8.Size = new System.Drawing.Size(79, 21);
             this.label8.TabIndex = 43;
-            this.label8.Text = "Price*";
+            this.label8.Text = "Quanity*";
             // 
             // ClearPrdButton
             // 
@@ -348,6 +348,7 @@
             this.ClearPrdButton.TabIndex = 42;
             this.ClearPrdButton.Text = "CLEAR";
             this.ClearPrdButton.UseVisualStyleBackColor = false;
+            this.ClearPrdButton.Click += new System.EventHandler(this.ClearPrdButton_Click);
             // 
             // AddPrdButton
             // 
@@ -360,6 +361,7 @@
             this.AddPrdButton.TabIndex = 41;
             this.AddPrdButton.Text = "ADD";
             this.AddPrdButton.UseVisualStyleBackColor = false;
+            this.AddPrdButton.Click += new System.EventHandler(this.AddPrdButton_Click);
             // 
             // ProductCodeTextBox
             // 
@@ -435,7 +437,7 @@
             this.DisplayPanel.Controls.Add(this.btn_Order_View);
             this.DisplayPanel.Location = new System.Drawing.Point(345, 60);
             this.DisplayPanel.Name = "DisplayPanel";
-            this.DisplayPanel.Size = new System.Drawing.Size(35, 18);
+            this.DisplayPanel.Size = new System.Drawing.Size(44, 21);
             this.DisplayPanel.TabIndex = 71;
             this.DisplayPanel.Visible = false;
             this.DisplayPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.DisplayPanel_Paint);
@@ -507,7 +509,7 @@
             // DisplaySupplierPanel
             // 
             this.DisplaySupplierPanel.BackColor = System.Drawing.Color.Maroon;
-            this.DisplaySupplierPanel.Controls.Add(this.dataGridView1);
+            this.DisplaySupplierPanel.Controls.Add(this.SupplierDataGridView);
             this.DisplaySupplierPanel.Controls.Add(this.panel6);
             this.DisplaySupplierPanel.Controls.Add(this.panel7);
             this.DisplaySupplierPanel.Controls.Add(this.panel8);
@@ -524,11 +526,19 @@
             this.DisplaySupplierPanel.Controls.Add(this.button21);
             this.DisplaySupplierPanel.Controls.Add(this.button22);
             this.DisplaySupplierPanel.Controls.Add(this.textBox49);
-            this.DisplaySupplierPanel.Location = new System.Drawing.Point(426, 38);
+            this.DisplaySupplierPanel.Location = new System.Drawing.Point(482, 184);
             this.DisplaySupplierPanel.Name = "DisplaySupplierPanel";
-            this.DisplaySupplierPanel.Size = new System.Drawing.Size(22, 21);
+            this.DisplaySupplierPanel.Size = new System.Drawing.Size(50, 29);
             this.DisplaySupplierPanel.TabIndex = 72;
             this.DisplaySupplierPanel.Visible = false;
+            // 
+            // SupplierDataGridView
+            // 
+            this.SupplierDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.SupplierDataGridView.Location = new System.Drawing.Point(296, 59);
+            this.SupplierDataGridView.Name = "SupplierDataGridView";
+            this.SupplierDataGridView.Size = new System.Drawing.Size(676, 487);
+            this.SupplierDataGridView.TabIndex = 57;
             // 
             // panel6
             // 
@@ -1378,9 +1388,9 @@
             this.AddSupplierPanel.Controls.Add(this.label22);
             this.AddSupplierPanel.Controls.Add(this.label23);
             this.AddSupplierPanel.Controls.Add(this.label24);
-            this.AddSupplierPanel.Location = new System.Drawing.Point(650, 83);
+            this.AddSupplierPanel.Location = new System.Drawing.Point(612, 19);
             this.AddSupplierPanel.Name = "AddSupplierPanel";
-            this.AddSupplierPanel.Size = new System.Drawing.Size(28, 29);
+            this.AddSupplierPanel.Size = new System.Drawing.Size(44, 24);
             this.AddSupplierPanel.TabIndex = 70;
             this.AddSupplierPanel.Visible = false;
             // 
@@ -1651,14 +1661,6 @@
             this.textBox56.Size = new System.Drawing.Size(153, 20);
             this.textBox56.TabIndex = 16;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(296, 59);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(676, 487);
-            this.dataGridView1.TabIndex = 57;
-            // 
             // gradientColor1
             // 
             this.gradientColor1.BackColor = System.Drawing.Color.Transparent;
@@ -1898,13 +1900,13 @@
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(1362, 708);
             this.Controls.Add(this.TakeOrderPanel);
+            this.Controls.Add(this.AddProductPanel);
             this.Controls.Add(this.AddSupplierPanel);
             this.Controls.Add(this.gradientColor1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnl_home);
             this.Controls.Add(this.DisplaySupplierPanel);
             this.Controls.Add(this.DisplayPanel);
-            this.Controls.Add(this.AddProductPanel);
             this.Controls.Add(this.AddRecordPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Dashboard";
@@ -1920,6 +1922,7 @@
             this.DisplayPanel.PerformLayout();
             this.DisplaySupplierPanel.ResumeLayout(false);
             this.DisplaySupplierPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SupplierDataGridView)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -1936,7 +1939,6 @@
             this.AddSupplierPanel.PerformLayout();
             this.TakeOrderPanel.ResumeLayout(false);
             this.TakeOrderPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gradientColor1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -1964,7 +1966,7 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Panel AddProductPanel;
         private System.Windows.Forms.Button BackButon;
-        private System.Windows.Forms.TextBox ProductPriceTextBox;
+        private System.Windows.Forms.TextBox ProductQuatityTextBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button ClearPrdButton;
         private System.Windows.Forms.Button AddPrdButton;
@@ -2089,9 +2091,9 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.TextBox textBox56;
-        private System.Windows.Forms.TextBox ProductQuantityTextBox;
+        private System.Windows.Forms.TextBox ProductPriceTextBox;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox ProductSizeComboBox;
+        private System.Windows.Forms.DataGridView SupplierDataGridView;
     }
 }
