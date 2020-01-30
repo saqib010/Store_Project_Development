@@ -38,7 +38,7 @@ namespace Store
             {
                 plus = 1;
             }
-            if (i == 100)
+            if (i == 30)
             {
                 this.Close();
                 Dashboard dashboard = new Dashboard();

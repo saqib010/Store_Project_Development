@@ -191,14 +191,23 @@ namespace Store
 
         private void button18_Click(object sender, EventArgs e)
         {
+            btn_update.Enabled = false;
+            btn_delete.Enabled = false;
+            pnl_suplier_fields.Visible = false;
+            pnl_prod_fields.Visible = false;
+            pnl_stok_fields.Visible = false;
+            pnl_Order_fields.Visible = false;
             btn_display_Main_Click(sender, e);
+            
 
         }
 
         private void btn_Order_View_Click(object sender, EventArgs e)
         {
+            model = new Store.order();
             DisplaySupplierPanel.SetBounds(302, 02, 1055, 624);
             DisplaySupplierPanel.Visible = true;
+            get_Table();
             //DisplayCustomerPanel.Visible = false;
             DisplayPanel.Visible = false;
             AddRecordPanel.Visible = false;
@@ -234,8 +243,10 @@ namespace Store
 
         private void btn_Stok_View_Click(object sender, EventArgs e)
         {
+            model = new Store.stock();
             DisplaySupplierPanel.SetBounds(302, 02, 1055, 624);
             DisplaySupplierPanel.Visible = true;
+            DataGridView.DataSource = new Store.stock().display_stock();
             //DisplayCustomerPanel.Visible = false;
             DisplayPanel.Visible = false;
             AddRecordPanel.Visible = false;
@@ -264,7 +275,7 @@ namespace Store
         private void get_Table()
         {
             DataTable dt = model.get();
-            SupplierDataGridView.DataSource = dt;
+            DataGridView.DataSource = dt;
         }
 
 
@@ -288,8 +299,7 @@ namespace Store
             List<String> ls1 = new List<string>(3);
             if(String.IsNullOrEmpty(SupplierNameTextBox.Text) || String.IsNullOrEmpty(SupplierAddressTextBox.Text) || String.IsNullOrEmpty(SupplierPhoneTextBox.Text))
             {
-                /*
-                   */
+              
                 MessageBox.Show("Enter * Fields Please.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (IsAlphas_Only(SupplierNameTextBox.Text)  && IsDigitsOnly(SupplierPhoneTextBox.Text))
@@ -426,5 +436,111 @@ namespace Store
         {
             cust_Fields_clear();
         }
+
+        private void DataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (model is Store.product)
+            {
+                if (e.RowIndex >= 0)
+                {
+                    pnl_prod_fields.SetBounds(296, 423, 684, 173);
+                    pnl_prod_fields.Visible = true;
+                    // pnl_stok_fields.Visible = false;
+                    pnl_suplier_fields.Visible = false;
+                    //pnl_Order_fields.Visible = false;
+                    btn_prod_update.Enabled = true;
+
+
+                    int index = e.RowIndex;
+                    Text_prod_code.Text = DataGridView.Rows[index].Cells[1].Value.ToString();
+                    Text_prod_Name.Text = DataGridView.Rows[index].Cells[2].Value.ToString();
+                    Text_prod_size.Text = DataGridView.Rows[index].Cells[3].Value.ToString();
+                    Text_prod_price.Text = DataGridView.Rows[index].Cells[5].Value.ToString();
+                    text_prod_qty.Text = DataGridView.Rows[index].Cells[4].Value.ToString();
+
+                }
+
+            }
+             else if (model is Store.order)
+             {
+                 if (e.RowIndex >= 0)
+                 {
+                     pnl_Order_fields.SetBounds(296, 406, 317, 139);
+                     pnl_Order_fields.Visible = true;
+                     pnl_stok_fields.Visible = false;
+                     pnl_suplier_fields.Visible = false;
+                     pnl_prod_fields.Visible = false;
+
+                     int index = e.RowIndex;
+                    txt_search_this_order.Text=DataGridView.Rows[index].Cells[0].Value.ToString();
+
+                }
+             }
+            if (model is Store.supliers)
+            {
+                if (e.RowIndex >= 0)
+                {
+                     pnl_prod_fields.Visible = false;
+                    pnl_Order_fields.Visible = false;
+                     pnl_stok_fields.Visible = false;
+
+                    pnl_suplier_fields.Visible = true;
+                    pnl_suplier_fields.SetBounds(296, 406, 349, 206);
+
+
+                    int index = e.RowIndex;
+
+                    text_sup_Name.Text = DataGridView.Rows[index].Cells[1].Value.ToString();
+                    text_sup_Address.Text = DataGridView.Rows[index].Cells[2].Value.ToString();
+                    text_sup_phn.Text = DataGridView.Rows[index].Cells[3].Value.ToString();
+                }
+            }
+            else if (model is Store.stock)
+            {
+                if (e.RowIndex >= 0)
+                {
+
+                    pnl_stok_fields.SetBounds(296, 413, 688, 189);
+                    pnl_stok_fields.Visible = true;
+                    pnl_suplier_fields.Visible = false;
+                    pnl_Order_fields.Visible = false;
+                    pnl_prod_fields.Visible = false;
+
+
+                    int index = e.RowIndex;
+                    Text_stock_prod_qty.Text = DataGridView.Rows[index].Cells[3].Value.ToString();
+                    Text_stok_sell.Text = DataGridView.Rows[index].Cells[4].Value.ToString();
+                    txt_stock_prod_name.Text = DataGridView.Rows[index].Cells[1].Value.ToString();
+                    txt_stock_suplier_name.Text = DataGridView.Rows[index].Cells[2].Value.ToString();
+
+                }
+
+            }
+            btn_update.Enabled = true;
+            btn_delete.Enabled = true;
+        }
+
+        private void btn_ord_detial_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (txt_search_this_order.Text != "")
+                {
+                    Store.order ord = new Store.order();
+                    DataTable dt = ord.ord_detail(txt_search_this_order.Text);
+                    DataTable dt1 = ord.total_Amount(txt_search_this_order.Text);
+                    DataRow r1 = dt1.Rows[0];
+                    object[] o = r1.ItemArray;
+
+                    string value = o[0].ToString();
+                    Store.Order_details detail = new Store.Order_details(dt, value);
+                    detail.Show();
+                }
+            }
+            catch (Exception ex) { MessageBox.Show("Data is not present !", "information", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); }
+
+        }
     }
-}
+    }
+

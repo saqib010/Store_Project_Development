@@ -10,5 +10,10 @@ namespace Store
     {
         public stock() : base("stock")
         { }
+        public System.Data.DataTable display_stock()
+        {
+            String query = "exec display_Stock";
+            return runquery(query);
+        }
     }
 }

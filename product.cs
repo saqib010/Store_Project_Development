@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,5 +11,10 @@ namespace Store
     {
         public product() : base("product")
         { }
+       /* public DataTable Prod_ID_List()
+        {
+            String query = "select Product_ID from Product";
+            return runquery(query);
+        }**/
     }
 }

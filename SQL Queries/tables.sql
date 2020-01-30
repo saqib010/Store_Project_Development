@@ -12,14 +12,14 @@ insert into Supplier(Name,Address,PhoneNo) values('Salman Iftikhar','Model Town'
 
 drop table Supplier
 
-create table Product(Product_ID int IDENTITY(1,1) PRIMARY KEY, Product_Code int not null, Name text,  size varchar(50) not null, quantity int not null, Unit_price decimal(5,2))
+create table Product(Product_ID int IDENTITY(1,1) PRIMARY KEY, Product_Code int not null, Name text,  size varchar(50) not null, quantity int not null, Unit_price decimal(8,2))
 
-create table Stock(Stock_ID int IDENTITY(1,1) primary key,Supplier_ID int FOREIGN KEY REFERENCES Supplier(Supplier_ID),Product_ID int FOREIGN KEY REFERENCES Product(Product_ID),Quantity int not null, Unit_price decimal(5,2))
+create table Stock(Stock_ID int IDENTITY(1,1) primary key,Supplier_ID int FOREIGN KEY REFERENCES Supplier(Supplier_ID),Product_ID int FOREIGN KEY REFERENCES Product(Product_ID),Quantity int not null, Unit_price decimal(8,2))
 
 
 create table OrderTable(Order_ID int IDENTITY(1,1) primary key,Order_Date Datetime not null);
 
-create table OrderDelivered(OrderDelivered_ID int IDENTITY(1,1),Order_ID int FOREIGN KEY REFERENCES OrderTable(Order_ID),Product_ID int FOREIGN KEY REFERENCES Product(Product_ID), SoldPrice decimal(5,2),SoldQuantity int not null)
+create table OrderDelivered(OrderDelivered_ID int IDENTITY(1,1),Order_ID int FOREIGN KEY REFERENCES OrderTable(Order_ID),Product_ID int FOREIGN KEY REFERENCES Product(Product_ID), SoldPrice decimal(8,2),SoldQuantity int not null)
 
 
 
@@ -34,6 +34,14 @@ select  * from Stock
 select  * from tb_login
 
 
+insert into OrderTable values
+(getDate()),(getDate()),(getDate())
+
+
+insert into OrderDelivered values (1,1,(select Unit_price*2 from Product where Product_ID=1),2),
+(1,1,(select Unit_price*2 from Product where Product_ID=1),2),
+(2,1,(select Unit_price*1 from Product where Product_ID=1),1),
+(3,1,(select Unit_price*2 from Product where Product_ID=1),2)
 
 
 UPDATE tb_login

@@ -51,7 +51,7 @@ namespace Store
                 return false;
             }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
                 return false;
             }

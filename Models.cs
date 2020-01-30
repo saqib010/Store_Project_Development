@@ -13,6 +13,28 @@ namespace Store
             {
                 this.tableName = tableName;
             }
+        public Models() { }
+        //*******************************gET IDs********************
+        
+       
+        public DataTable runquery(String query)
+        {
+            try
+            {
+                
+                SqlDataReader r = DataBase.Query(query);
+                DataTable result = new DataTable();
+                result.Load(r);
+                r.Close();
+                return result;
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+        //******************************************************
 
         ///*********INSERT QUERY TABLE
         public Boolean insert(List<String> attributes)
