@@ -13,12 +13,29 @@ namespace Store
     {
         public supliers() : base("supplier")
         { }
-
-           /* public DataTable Supplier_ID_List()
+        public DataTable Supplier_ID_List()
+        {
+            try
             {
-                String query = "select Supplier_ID from Supplier";
-                return runquery(query);
-            }*/
-        
+                String query = "select id from Supplier";
+                SqlDataReader r = DataBase.Query(query);
+                DataTable result = new DataTable();
+                result.Load(r);
+                r.Close();
+                return result;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid data", "Error");
+                return null;
+            }
+        }
+        /* public DataTable Supplier_ID_List()
+         {
+             String query = "select Supplier_ID from Supplier";
+             return runquery(query);
+         }*/
+
     }
 }

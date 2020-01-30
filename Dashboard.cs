@@ -81,18 +81,34 @@ namespace Store
             AddSupplierPanel.Visible = false;
             AddRecordPanel.Visible = false;
             pnl_home.Visible = false;
-           // AddCustomerPanel.Visible = false;
+            // AddCustomerPanel.Visible = false;
+            set_SupplierNameCombo();
+        }
+        private void set_SupplierNameCombo()
+        {
+            //DataBase_A.Supliers cust = new DataBase_A.S();
+            Store.supliers sup = new Store.supliers();
+            // DataTable dt = sup.supplier_ID_List();
+            DataTable dt = sup.Supplier_ID_List();
+            
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                SupplierNameComboBox.Items.Add(dt.Rows[i]["Name"]);
+            }
+            
+
         }
 
-       /* private void AddCustomerButton_Click(object sender, EventArgs e)
-        {
-            AddCustomerPanel.SetBounds(302, 02, 1055, 624);
-            AddCustomerPanel.Visible = true;
-            AddProductPanel.Visible = false;
-            AddSupplierPanel.Visible = false;
-            AddRecordPanel.Visible = false;
-            pnl_home.Visible = false;
-        }*/
+        /* private void AddCustomerButton_Click(object sender, EventArgs e)
+         {
+             AddCustomerPanel.SetBounds(302, 02, 1055, 624);
+             AddCustomerPanel.Visible = true;
+             AddProductPanel.Visible = false;
+             AddSupplierPanel.Visible = false;
+             AddRecordPanel.Visible = false;
+             pnl_home.Visible = false;
+         }*/
 
         private void AddProductPanel_Paint(object sender, PaintEventArgs e)
         {

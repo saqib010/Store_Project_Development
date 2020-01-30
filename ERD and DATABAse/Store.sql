@@ -17,6 +17,56 @@ create table OrderTable(Order_ID int IDENTITY(1,1) primary key,Order_Date Dateti
 
 create table OrderDelivered(OrderDelivered_ID int IDENTITY(1,1),Order_ID int FOREIGN KEY REFERENCES OrderTable(Order_ID),Product_ID int FOREIGN KEY REFERENCES Product(Product_ID), SoldPrice decimal(5,2),SoldQuantity int not null)
 
+CREATE PROCEDURE ADD_STOCK @Product_ID int, @Supplier_ID int, @Qty int, @Unit_Price
+AS
+
+insert into Stock(Supplier_ID,Product_ID,Quantity,Unit_price) values(@Supplier_ID,@Product_ID,@Qty,@Unit_Price)
+
+GO;
+
+
+CREATE PROCEDURE ADD_STOCK @Product_ID int, @Supplier_ID int, @Qty int, @Unit_Price
+AS
+
+insert into Stock(Supplier_ID,Product_ID,Quantity,Unit_price) values(@Supplier_ID,@Product_ID,@Qty,@Unit_Price)
+
+GO;
+
+CREATE PROCEDURE Add_Stock
+AS
+
+SELECT * FROM Customers
+GO;
+
+
+
+
+create procedure Add_Supplier
+@Name varchar(50),@adress varchar(50), @phoneNumber varchar(50)
+as
+begin
+insert into Supplier(Name,Address,PhoneNo) values(@Name,@Adress,@phoneNumber)
+end
+
+
+EXEC add_supplier 'dada','chota','456333'
+
+
+Exec Add_product 99,'dd','medium',9,34
+Exec Add_product '22','aaa','Medium','3','5'
+
+
+create procedure Add_Product
+@Product_Code int,@Name text,@size varchar(50), @Quantity int, @Unit_Price decimal(5,2)
+as
+begin
+insert into Product(Product_Code,Name,size,quantity,Unit_price) values(@Product_Code,@Name,@size,@Quantity,@Unit_Price)
+end
+
+
+
+
+
 
 
 
