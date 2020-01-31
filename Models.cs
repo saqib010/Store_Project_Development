@@ -113,10 +113,8 @@ namespace Store
 
         public DataTable get()
         {
-            SqlDataReader r = DataBase.Query("Select * from " + tableName);
-            DataTable result = new DataTable();
-            result.Load(r);
-            return result;
+            //SqlDataReader r = DataBase.Query();
+            return runquery("Select * from " + tableName);
         }
 
         public DataTable getBY_ID(String id)
@@ -127,9 +125,31 @@ namespace Store
             r.Close();
             return result;
         }
+        public DataTable getOpen(String name, List<string> columns)
+        {
+            string query = "select * from " + tableName;
+
+            query += " Where concat(";
+
+            for (int i = 0; i < columns.Count; i++)
+            {
+                if (i != columns.Count - 1)
+                {
+                    query += columns[i] + " , ";
+
+                }
+                else
+                {
+                    query += columns[i] + ") ";
+                }
+            }
+            query += "like('%" + name + "%')";
+
+            return runquery(query);
+        }
 
 
-// *****############## Updating Query area bu attribute list/// *********************##############
+        // *****############## Updating Query area bu attribute list/// *********************##############
 
         public Boolean set(List<Attribute> SetAttributes, List<Attribute> WhereAttributes)
         {

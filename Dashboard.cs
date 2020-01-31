@@ -100,16 +100,6 @@ namespace Store
 
         }
 
-        /* private void AddCustomerButton_Click(object sender, EventArgs e)
-         {
-             AddCustomerPanel.SetBounds(302, 02, 1055, 624);
-             AddCustomerPanel.Visible = true;
-             AddProductPanel.Visible = false;
-             AddSupplierPanel.Visible = false;
-             AddRecordPanel.Visible = false;
-             pnl_home.Visible = false;
-         }*/
-
         private void AddProductPanel_Paint(object sender, PaintEventArgs e)
         {
 
@@ -470,7 +460,7 @@ namespace Store
                     int index = e.RowIndex;
                     Text_prod_code.Text = DataGridView.Rows[index].Cells[1].Value.ToString();
                     Text_prod_Name.Text = DataGridView.Rows[index].Cells[2].Value.ToString();
-                    Text_prod_size.Text = DataGridView.Rows[index].Cells[3].Value.ToString();
+                    combo_prod_size.Text = DataGridView.Rows[index].Cells[3].Value.ToString();
                     Text_prod_price.Text = DataGridView.Rows[index].Cells[5].Value.ToString();
                     text_prod_qty.Text = DataGridView.Rows[index].Cells[4].Value.ToString();
 
@@ -557,6 +547,68 @@ namespace Store
             catch (Exception ex) { MessageBox.Show("Data is not present !", "information", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); }
 
         }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_search_KeyUp(object sender, KeyEventArgs e)
+        {
+            getSearched_table();
+        }
+        private void getSearched_table()
+        {
+            int i = 0;
+            if (!OpenSearch(i))
+            {
+                txt_search.Text = "";
+                get_Table();
+            }
+        }
+        /*Open
+         * search logic*/
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="i"></param>
+        /// <returns></returns>
+        private Boolean OpenSearch(int i)
+        {
+            List<string> columns = new List<string>();
+            for (int j = 0; j < DataGridView.Columns.Count; j++)
+            {
+                columns.Add(DataGridView.Columns[j].DataPropertyName);
+            }
+
+            DataTable dt = model.getOpen(txt_search.Text, columns);
+            i = Convert.ToInt32(dt.Rows.Count.ToString());
+            if (i == 0)
+
+            {
+                MessageBox.Show("There is Nothing Like  " + txt_search.Text, "Search Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                return false;
+            }
+            else
+            {
+                DataGridView.DataSource = dt;
+                return true;
+            }
+        }
+
+        private void btn_search_reset_Click(object sender, EventArgs e)
+        {
+            txt_search.Text = "";
+            btn_delete.Enabled = false;
+            btn_update.Enabled = false;
+            pnl_Order_fields.Visible = false;
+            pnl_prod_fields.Visible = false;
+            pnl_suplier_fields.Visible = false;
+            pnl_stok_fields.Visible = false;
+            cust_Fields_clear();
+            get_Table();
+
+        }
     }
-    }
+}
 

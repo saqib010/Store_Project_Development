@@ -34,6 +34,8 @@
             this.AddSupplierButton = new System.Windows.Forms.Button();
             this.AddProductButton = new System.Windows.Forms.Button();
             this.AddProductPanel = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.SupplierNameComboBox = new System.Windows.Forms.ComboBox();
             this.ProductPriceTextBox = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.ProductSizeComboBox = new System.Windows.Forms.ComboBox();
@@ -71,7 +73,6 @@
             this.pnl_prod_fields = new System.Windows.Forms.Panel();
             this.Text_prod_code = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.Text_prod_size = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_prod_update = new System.Windows.Forms.Button();
@@ -89,14 +90,13 @@
             this.text_sup_phn = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.DataGridView = new System.Windows.Forms.DataGridView();
-            this.button17 = new System.Windows.Forms.Button();
+            this.btn_search_reset = new System.Windows.Forms.Button();
             this.label97 = new System.Windows.Forms.Label();
-            this.comboBox10 = new System.Windows.Forms.ComboBox();
             this.label98 = new System.Windows.Forms.Label();
             this.btn_back_display = new System.Windows.Forms.Button();
             this.btn_update = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
-            this.textBox49 = new System.Windows.Forms.TextBox();
+            this.txt_search = new System.Windows.Forms.TextBox();
             this.AddSupplierPanel = new System.Windows.Forms.Panel();
             this.btn_back_suppler = new System.Windows.Forms.Button();
             this.ClearSupButton = new System.Windows.Forms.Button();
@@ -122,6 +122,7 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.textBox56 = new System.Windows.Forms.TextBox();
+            this.combo_prod_size = new System.Windows.Forms.ComboBox();
             this.gradientColor1 = new Store.gradientColor();
             this.button23 = new System.Windows.Forms.Button();
             this.btn_Take_Order = new System.Windows.Forms.Button();
@@ -139,8 +140,6 @@
             this.btn_EXIT_App = new System.Windows.Forms.Button();
             this.pnl_home = new Store.gradientColor();
             this.label26 = new System.Windows.Forms.Label();
-            this.SupplierNameComboBox = new System.Windows.Forms.ComboBox();
-            this.label30 = new System.Windows.Forms.Label();
             this.AddRecordPanel.SuspendLayout();
             this.AddProductPanel.SuspendLayout();
             this.DisplayPanel.SuspendLayout();
@@ -165,9 +164,9 @@
             this.AddRecordPanel.Controls.Add(this.AddSupplierButton);
             this.AddRecordPanel.Controls.Add(this.AddProductButton);
             this.AddRecordPanel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddRecordPanel.Location = new System.Drawing.Point(573, 66);
+            this.AddRecordPanel.Location = new System.Drawing.Point(407, 105);
             this.AddRecordPanel.Name = "AddRecordPanel";
-            this.AddRecordPanel.Size = new System.Drawing.Size(700, 381);
+            this.AddRecordPanel.Size = new System.Drawing.Size(24, 10);
             this.AddRecordPanel.TabIndex = 69;
             this.AddRecordPanel.Visible = false;
             this.AddRecordPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AddRecordPanel_Paint);
@@ -228,12 +227,32 @@
             this.AddProductPanel.Controls.Add(this.label10);
             this.AddProductPanel.Controls.Add(this.label11);
             this.AddProductPanel.Controls.Add(this.label12);
-            this.AddProductPanel.Location = new System.Drawing.Point(384, 269);
+            this.AddProductPanel.Location = new System.Drawing.Point(753, 42);
             this.AddProductPanel.Name = "AddProductPanel";
-            this.AddProductPanel.Size = new System.Drawing.Size(445, 202);
+            this.AddProductPanel.Size = new System.Drawing.Size(80, 10);
             this.AddProductPanel.TabIndex = 69;
             this.AddProductPanel.Visible = false;
             this.AddProductPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AddProductPanel_Paint);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.Transparent;
+            this.label30.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.Azure;
+            this.label30.Location = new System.Drawing.Point(149, 159);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(129, 21);
+            this.label30.TabIndex = 73;
+            this.label30.Text = "Supplier Name*";
+            // 
+            // SupplierNameComboBox
+            // 
+            this.SupplierNameComboBox.FormattingEnabled = true;
+            this.SupplierNameComboBox.Location = new System.Drawing.Point(300, 162);
+            this.SupplierNameComboBox.Name = "SupplierNameComboBox";
+            this.SupplierNameComboBox.Size = new System.Drawing.Size(176, 21);
+            this.SupplierNameComboBox.TabIndex = 72;
             // 
             // ProductPriceTextBox
             // 
@@ -480,17 +499,16 @@
             this.DisplaySupplierPanel.Controls.Add(this.pnl_prod_fields);
             this.DisplaySupplierPanel.Controls.Add(this.pnl_suplier_fields);
             this.DisplaySupplierPanel.Controls.Add(this.DataGridView);
-            this.DisplaySupplierPanel.Controls.Add(this.button17);
+            this.DisplaySupplierPanel.Controls.Add(this.btn_search_reset);
             this.DisplaySupplierPanel.Controls.Add(this.label97);
-            this.DisplaySupplierPanel.Controls.Add(this.comboBox10);
             this.DisplaySupplierPanel.Controls.Add(this.label98);
             this.DisplaySupplierPanel.Controls.Add(this.btn_back_display);
             this.DisplaySupplierPanel.Controls.Add(this.btn_update);
             this.DisplaySupplierPanel.Controls.Add(this.btn_delete);
-            this.DisplaySupplierPanel.Controls.Add(this.textBox49);
-            this.DisplaySupplierPanel.Location = new System.Drawing.Point(875, 12);
+            this.DisplaySupplierPanel.Controls.Add(this.txt_search);
+            this.DisplaySupplierPanel.Location = new System.Drawing.Point(308, 35);
             this.DisplaySupplierPanel.Name = "DisplaySupplierPanel";
-            this.DisplaySupplierPanel.Size = new System.Drawing.Size(21, 31);
+            this.DisplaySupplierPanel.Size = new System.Drawing.Size(541, 484);
             this.DisplaySupplierPanel.TabIndex = 72;
             this.DisplaySupplierPanel.Visible = false;
             // 
@@ -500,10 +518,10 @@
             this.pnl_Order_fields.Controls.Add(this.txt_search_this_order);
             this.pnl_Order_fields.Controls.Add(this.btn_ord_detial);
             this.pnl_Order_fields.Controls.Add(this.label29);
-            this.pnl_Order_fields.Location = new System.Drawing.Point(296, 406);
+            this.pnl_Order_fields.Location = new System.Drawing.Point(131, 279);
             this.pnl_Order_fields.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Order_fields.Name = "pnl_Order_fields";
-            this.pnl_Order_fields.Size = new System.Drawing.Size(289, 126);
+            this.pnl_Order_fields.Size = new System.Drawing.Size(23, 10);
             this.pnl_Order_fields.TabIndex = 61;
             this.pnl_Order_fields.Visible = false;
             // 
@@ -646,9 +664,9 @@
             // pnl_prod_fields
             // 
             this.pnl_prod_fields.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_prod_fields.Controls.Add(this.combo_prod_size);
             this.pnl_prod_fields.Controls.Add(this.Text_prod_code);
             this.pnl_prod_fields.Controls.Add(this.label18);
-            this.pnl_prod_fields.Controls.Add(this.Text_prod_size);
             this.pnl_prod_fields.Controls.Add(this.label6);
             this.pnl_prod_fields.Controls.Add(this.label1);
             this.pnl_prod_fields.Controls.Add(this.btn_prod_update);
@@ -661,7 +679,7 @@
             this.pnl_prod_fields.Location = new System.Drawing.Point(76, 294);
             this.pnl_prod_fields.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_prod_fields.Name = "pnl_prod_fields";
-            this.pnl_prod_fields.Size = new System.Drawing.Size(16, 10);
+            this.pnl_prod_fields.Size = new System.Drawing.Size(10, 14);
             this.pnl_prod_fields.TabIndex = 59;
             this.pnl_prod_fields.Visible = false;
             // 
@@ -685,15 +703,6 @@
             this.label18.TabIndex = 58;
             this.label18.Text = "Code";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Text_prod_size
-            // 
-            this.Text_prod_size.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Text_prod_size.Location = new System.Drawing.Point(95, 119);
-            this.Text_prod_size.Margin = new System.Windows.Forms.Padding(4);
-            this.Text_prod_size.Name = "Text_prod_size";
-            this.Text_prod_size.Size = new System.Drawing.Size(190, 23);
-            this.Text_prod_size.TabIndex = 55;
             // 
             // label6
             // 
@@ -809,7 +818,7 @@
             this.pnl_suplier_fields.Location = new System.Drawing.Point(76, 324);
             this.pnl_suplier_fields.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_suplier_fields.Name = "pnl_suplier_fields";
-            this.pnl_suplier_fields.Size = new System.Drawing.Size(22, 10);
+            this.pnl_suplier_fields.Size = new System.Drawing.Size(10, 10);
             this.pnl_suplier_fields.TabIndex = 58;
             this.pnl_suplier_fields.Visible = false;
             // 
@@ -894,43 +903,31 @@
             this.DataGridView.TabIndex = 19;
             this.DataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellDoubleClick);
             // 
-            // button17
+            // btn_search_reset
             // 
-            this.button17.BackColor = System.Drawing.Color.Gray;
-            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.ForeColor = System.Drawing.Color.Black;
-            this.button17.Location = new System.Drawing.Point(26, 200);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(103, 32);
-            this.button17.TabIndex = 36;
-            this.button17.Text = "SEAR&CH";
-            this.button17.UseVisualStyleBackColor = false;
+            this.btn_search_reset.BackColor = System.Drawing.Color.Gray;
+            this.btn_search_reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_search_reset.ForeColor = System.Drawing.Color.Black;
+            this.btn_search_reset.Location = new System.Drawing.Point(26, 175);
+            this.btn_search_reset.Name = "btn_search_reset";
+            this.btn_search_reset.Size = new System.Drawing.Size(103, 32);
+            this.btn_search_reset.TabIndex = 36;
+            this.btn_search_reset.Text = "RE&SET";
+            this.btn_search_reset.UseVisualStyleBackColor = false;
+            this.btn_search_reset.Click += new System.EventHandler(this.btn_search_reset_Click);
             // 
             // label97
             // 
             this.label97.AutoSize = true;
             this.label97.BackColor = System.Drawing.Color.Transparent;
             this.label97.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label97.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label97.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label97.ForeColor = System.Drawing.Color.White;
             this.label97.Location = new System.Drawing.Point(26, 108);
             this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(128, 16);
+            this.label97.Size = new System.Drawing.Size(147, 20);
             this.label97.TabIndex = 35;
             this.label97.Text = "Select To Sea&rch";
-            // 
-            // comboBox10
-            // 
-            this.comboBox10.DisplayMember = "1";
-            this.comboBox10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox10.FormattingEnabled = true;
-            this.comboBox10.ItemHeight = 13;
-            this.comboBox10.Items.AddRange(new object[] {
-            "Open Search"});
-            this.comboBox10.Location = new System.Drawing.Point(26, 131);
-            this.comboBox10.Name = "comboBox10";
-            this.comboBox10.Size = new System.Drawing.Size(153, 21);
-            this.comboBox10.TabIndex = 34;
             // 
             // label98
             // 
@@ -983,13 +980,16 @@
             this.btn_delete.TabIndex = 20;
             this.btn_delete.Text = "&DELETE";
             this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
-            // textBox49
+            // txt_search
             // 
-            this.textBox49.Location = new System.Drawing.Point(26, 169);
-            this.textBox49.Name = "textBox49";
-            this.textBox49.Size = new System.Drawing.Size(153, 20);
-            this.textBox49.TabIndex = 16;
+            this.txt_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_search.Location = new System.Drawing.Point(26, 137);
+            this.txt_search.Name = "txt_search";
+            this.txt_search.Size = new System.Drawing.Size(181, 26);
+            this.txt_search.TabIndex = 16;
+            this.txt_search.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_search_KeyUp);
             // 
             // AddSupplierPanel
             // 
@@ -1277,6 +1277,19 @@
             this.textBox56.Size = new System.Drawing.Size(153, 20);
             this.textBox56.TabIndex = 16;
             // 
+            // combo_prod_size
+            // 
+            this.combo_prod_size.FormattingEnabled = true;
+            this.combo_prod_size.Items.AddRange(new object[] {
+            "Small",
+            "Medium",
+            "Large",
+            "ExtraLarge"});
+            this.combo_prod_size.Location = new System.Drawing.Point(95, 121);
+            this.combo_prod_size.Name = "combo_prod_size";
+            this.combo_prod_size.Size = new System.Drawing.Size(190, 21);
+            this.combo_prod_size.TabIndex = 70;
+            // 
             // gradientColor1
             // 
             this.gradientColor1.BackColor = System.Drawing.Color.Transparent;
@@ -1508,33 +1521,13 @@
             this.label26.TabIndex = 0;
             this.label26.Text = "HOM&E";
             // 
-            // SupplierNameComboBox
-            // 
-            this.SupplierNameComboBox.FormattingEnabled = true;
-            this.SupplierNameComboBox.Location = new System.Drawing.Point(300, 162);
-            this.SupplierNameComboBox.Name = "SupplierNameComboBox";
-            this.SupplierNameComboBox.Size = new System.Drawing.Size(176, 21);
-            this.SupplierNameComboBox.TabIndex = 72;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.Color.Transparent;
-            this.label30.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.Azure;
-            this.label30.Location = new System.Drawing.Point(149, 159);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(129, 21);
-            this.label30.TabIndex = 73;
-            this.label30.Text = "Supplier Name*";
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Maroon;
-            this.ClientSize = new System.Drawing.Size(1362, 708);
+            this.ClientSize = new System.Drawing.Size(1370, 722);
             this.Controls.Add(this.TakeOrderPanel);
             this.Controls.Add(this.AddProductPanel);
             this.Controls.Add(this.AddSupplierPanel);
@@ -1623,12 +1616,11 @@
         private gradientColor panel1;
         private gradientColor gradientColor1;
         private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button btn_search_reset;
         private System.Windows.Forms.Label label97;
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.Button btn_delete;
-        private System.Windows.Forms.TextBox textBox49;
-        private System.Windows.Forms.ComboBox comboBox10;
+        private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Panel AddSupplierPanel;
         private System.Windows.Forms.Button btn_back_suppler;
         private System.Windows.Forms.Button ClearSupButton;
@@ -1666,7 +1658,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.RichTextBox text_sup_Address;
         private System.Windows.Forms.Panel pnl_prod_fields;
-        private System.Windows.Forms.TextBox Text_prod_size;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_prod_update;
@@ -1693,5 +1684,6 @@
         private System.Windows.Forms.TextBox txt_search_this_order;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.ComboBox SupplierNameComboBox;
+        private System.Windows.Forms.ComboBox combo_prod_size;
     }
 }

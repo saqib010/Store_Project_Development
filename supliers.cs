@@ -15,27 +15,8 @@ namespace Store
         { }
         public DataTable Supplier_ID_List()
         {
-            try
-            {
-                String query = "select id from Supplier";
-                SqlDataReader r = DataBase.Query(query);
-                DataTable result = new DataTable();
-                result.Load(r);
-                r.Close();
-                return result;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Invalid data", "Error");
-                return null;
-            }
+            return runquery("select Name from Supplier");
         }
-        /* public DataTable Supplier_ID_List()
-         {
-             String query = "select Supplier_ID from Supplier";
-             return runquery(query);
-         }*/
 
     }
 }
