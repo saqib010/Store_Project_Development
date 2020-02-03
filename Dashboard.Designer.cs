@@ -71,6 +71,7 @@
             this.Text_stock_prod_qty = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.pnl_prod_fields = new System.Windows.Forms.Panel();
+            this.combo_prod_size = new System.Windows.Forms.ComboBox();
             this.Text_prod_code = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -122,7 +123,6 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.textBox56 = new System.Windows.Forms.TextBox();
-            this.combo_prod_size = new System.Windows.Forms.ComboBox();
             this.gradientColor1 = new Store.gradientColor();
             this.button23 = new System.Windows.Forms.Button();
             this.btn_Take_Order = new System.Windows.Forms.Button();
@@ -227,9 +227,9 @@
             this.AddProductPanel.Controls.Add(this.label10);
             this.AddProductPanel.Controls.Add(this.label11);
             this.AddProductPanel.Controls.Add(this.label12);
-            this.AddProductPanel.Location = new System.Drawing.Point(753, 42);
+            this.AddProductPanel.Location = new System.Drawing.Point(511, 105);
             this.AddProductPanel.Name = "AddProductPanel";
-            this.AddProductPanel.Size = new System.Drawing.Size(80, 10);
+            this.AddProductPanel.Size = new System.Drawing.Size(25, 23);
             this.AddProductPanel.TabIndex = 69;
             this.AddProductPanel.Visible = false;
             this.AddProductPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AddProductPanel_Paint);
@@ -420,9 +420,9 @@
             this.DisplayPanel.Controls.Add(this.btn_prod_view);
             this.DisplayPanel.Controls.Add(this.btn_Stok_View);
             this.DisplayPanel.Controls.Add(this.btn_Order_View);
-            this.DisplayPanel.Location = new System.Drawing.Point(592, 8);
+            this.DisplayPanel.Location = new System.Drawing.Point(625, 61);
             this.DisplayPanel.Name = "DisplayPanel";
-            this.DisplayPanel.Size = new System.Drawing.Size(98, 45);
+            this.DisplayPanel.Size = new System.Drawing.Size(722, 563);
             this.DisplayPanel.TabIndex = 71;
             this.DisplayPanel.Visible = false;
             this.DisplayPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.DisplayPanel_Paint);
@@ -506,9 +506,9 @@
             this.DisplaySupplierPanel.Controls.Add(this.btn_update);
             this.DisplaySupplierPanel.Controls.Add(this.btn_delete);
             this.DisplaySupplierPanel.Controls.Add(this.txt_search);
-            this.DisplaySupplierPanel.Location = new System.Drawing.Point(308, 35);
+            this.DisplaySupplierPanel.Location = new System.Drawing.Point(468, 13);
             this.DisplaySupplierPanel.Name = "DisplaySupplierPanel";
-            this.DisplaySupplierPanel.Size = new System.Drawing.Size(541, 484);
+            this.DisplaySupplierPanel.Size = new System.Drawing.Size(55, 50);
             this.DisplaySupplierPanel.TabIndex = 72;
             this.DisplaySupplierPanel.Visible = false;
             // 
@@ -570,10 +570,10 @@
             this.pnl_stok_fields.Controls.Add(this.label27);
             this.pnl_stok_fields.Controls.Add(this.Text_stock_prod_qty);
             this.pnl_stok_fields.Controls.Add(this.label28);
-            this.pnl_stok_fields.Location = new System.Drawing.Point(116, 304);
+            this.pnl_stok_fields.Location = new System.Drawing.Point(157, 255);
             this.pnl_stok_fields.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_stok_fields.Name = "pnl_stok_fields";
-            this.pnl_stok_fields.Size = new System.Drawing.Size(13, 11);
+            this.pnl_stok_fields.Size = new System.Drawing.Size(24, 15);
             this.pnl_stok_fields.TabIndex = 60;
             this.pnl_stok_fields.Visible = false;
             // 
@@ -682,6 +682,19 @@
             this.pnl_prod_fields.Size = new System.Drawing.Size(10, 14);
             this.pnl_prod_fields.TabIndex = 59;
             this.pnl_prod_fields.Visible = false;
+            // 
+            // combo_prod_size
+            // 
+            this.combo_prod_size.FormattingEnabled = true;
+            this.combo_prod_size.Items.AddRange(new object[] {
+            "Small",
+            "Medium",
+            "Large",
+            "ExtraLarge"});
+            this.combo_prod_size.Location = new System.Drawing.Point(95, 121);
+            this.combo_prod_size.Name = "combo_prod_size";
+            this.combo_prod_size.Size = new System.Drawing.Size(190, 21);
+            this.combo_prod_size.TabIndex = 70;
             // 
             // Text_prod_code
             // 
@@ -1276,19 +1289,6 @@
             this.textBox56.Name = "textBox56";
             this.textBox56.Size = new System.Drawing.Size(153, 20);
             this.textBox56.TabIndex = 16;
-            // 
-            // combo_prod_size
-            // 
-            this.combo_prod_size.FormattingEnabled = true;
-            this.combo_prod_size.Items.AddRange(new object[] {
-            "Small",
-            "Medium",
-            "Large",
-            "ExtraLarge"});
-            this.combo_prod_size.Location = new System.Drawing.Point(95, 121);
-            this.combo_prod_size.Name = "combo_prod_size";
-            this.combo_prod_size.Size = new System.Drawing.Size(190, 21);
-            this.combo_prod_size.TabIndex = 70;
             // 
             // gradientColor1
             // 

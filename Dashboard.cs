@@ -397,14 +397,15 @@ namespace Store
         private void AddPrdButton_Click(object sender, EventArgs e)
         {
             List<String> ls1 = new List<string>(6);
-            if(String.IsNullOrEmpty(ProductNameTextBox.Text) || String.IsNullOrEmpty(ProductCodeTextBox.Text) || String.IsNullOrEmpty(ProductSizeComboBox.Text) || String.IsNullOrEmpty(ProductQuatityTextBox.Text) || String.IsNullOrEmpty(ProductPriceTextBox.Text))
+            if(String.IsNullOrEmpty(SupplierNameComboBox.Text)||String.IsNullOrEmpty(ProductNameTextBox.Text) || String.IsNullOrEmpty(ProductCodeTextBox.Text) || String.IsNullOrEmpty(ProductSizeComboBox.Text) || String.IsNullOrEmpty(ProductQuatityTextBox.Text) || String.IsNullOrEmpty(ProductPriceTextBox.Text))
             {
                 MessageBox.Show("Enter * Fields Please.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if(IsAlphas_Only(ProductNameTextBox.Text) && IsDigitsOnly(ProductCodeTextBox.Text) && IsAlphas_Only(ProductSizeComboBox.Text)&& IsDigitsOnly(ProductQuatityTextBox.Text) )
+            else if(IsAlphas_Only(SupplierNameComboBox.Text) && IsAlphas_Only(ProductNameTextBox.Text) && IsDigitsOnly(ProductCodeTextBox.Text) && IsAlphas_Only(ProductSizeComboBox.Text)&& IsDigitsOnly(ProductQuatityTextBox.Text) )
             {
                 if(IsDigitsOnly(ProductPriceTextBox.Text)|| IsDecimal(ProductPriceTextBox.Text))
                 {
+                    ls1.Add(SupplierNameComboBox.Text);
                     ls1.Add(ProductCodeTextBox.Text);
                     ls1.Add(ProductNameTextBox.Text);
                     ls1.Add(ProductSizeComboBox.Text);

@@ -35,11 +35,42 @@ GO;
 CREATE PROCEDURE Add_Stock
 AS
 
-SELECT * FROM Customers
+SELECT * FROM Supplier
 GO;
 
+create procedure Add_Product
+@SupplierName varchar(50),@Product_Code int,@Name text,@size varchar(50), @Quantity int, @Unit_Price decimal(5,2)
+as
+begin
+insert into Product(Product_Code,Name,size,quantity,Unit_price) values(@Product_Code,@Name,@size,@Quantity,@Unit_Price)
+insert into Stock(Supplier_ID,Product_ID,Quantity,Unit_price) values((Select Supplier_ID from Supplier where name=@SupplierName) ,(Select max(Product_ID) from Product),@Quantity,@Unit_Price)
+
+end
+
+DROP PROCEDURE Display_Product;  
+GO
 
 
+select * from Product
+create procedure Display_Stock
+as
+begin
+
+Select  Name, Product_Code,Product_Code,size,Product.quantity,Product.Unit_price
+from 
+Stock JOIN Product
+on Stock.Product_ID in(
+SELECT Product_ID FROM 
+Stock JOIN Supplier 
+ON Stock.Supplier_ID=Supplier.Supplier_ID
+)
+end
+
+
+EXEC Add_Product 'aaaa',009,'Jeans','Small',4,66
+
+
+select * from Stock
 
 create procedure Add_Supplier
 @Name varchar(50),@adress varchar(50), @phoneNumber varchar(50)

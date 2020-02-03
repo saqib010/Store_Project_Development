@@ -76,8 +76,8 @@ namespace Store
                     if (i == attributes.Count - 1)
                     {
                         query +=   attributes[i] ;
-                    }
-                    else if (i == 0 || i == 3)
+                    }//EXEC Add_Product 'aaaa',009,'Jeans','Small',4,66
+                    else if (i==1||i == 4)
                     {
                         query += attributes[i] + ",";
                     }
