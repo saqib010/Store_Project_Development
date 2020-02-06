@@ -15,5 +15,10 @@ namespace Store
             String query = "exec display_Stock";
             return runquery(query);
         }
+        public Boolean update_stock(int id, string quantity)
+        {
+            String query = "exec update_stock "+id+","+quantity;
+            return exec_query(query);
+        }
     }
 }

@@ -75,8 +75,6 @@
             this.Text_prod_code = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btn_prod_update = new System.Windows.Forms.Button();
             this.text_prod_qty = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -123,6 +121,8 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.textBox56 = new System.Windows.Forms.TextBox();
+            this.txt_import = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.gradientColor1 = new Store.gradientColor();
             this.button23 = new System.Windows.Forms.Button();
             this.btn_Take_Order = new System.Windows.Forms.Button();
@@ -159,7 +159,7 @@
             // 
             // AddRecordPanel
             // 
-            this.AddRecordPanel.BackColor = System.Drawing.Color.Maroon;
+            this.AddRecordPanel.BackColor = System.Drawing.SystemColors.Highlight;
             this.AddRecordPanel.Controls.Add(this.label57);
             this.AddRecordPanel.Controls.Add(this.AddSupplierButton);
             this.AddRecordPanel.Controls.Add(this.AddProductButton);
@@ -210,7 +210,7 @@
             // 
             // AddProductPanel
             // 
-            this.AddProductPanel.BackColor = System.Drawing.Color.Maroon;
+            this.AddProductPanel.BackColor = System.Drawing.SystemColors.HotTrack;
             this.AddProductPanel.Controls.Add(this.label30);
             this.AddProductPanel.Controls.Add(this.SupplierNameComboBox);
             this.AddProductPanel.Controls.Add(this.ProductPriceTextBox);
@@ -414,7 +414,7 @@
             // 
             // DisplayPanel
             // 
-            this.DisplayPanel.BackColor = System.Drawing.Color.Maroon;
+            this.DisplayPanel.BackColor = System.Drawing.SystemColors.HotTrack;
             this.DisplayPanel.Controls.Add(this.label44);
             this.DisplayPanel.Controls.Add(this.btn_Suplier_view);
             this.DisplayPanel.Controls.Add(this.btn_prod_view);
@@ -422,7 +422,7 @@
             this.DisplayPanel.Controls.Add(this.btn_Order_View);
             this.DisplayPanel.Location = new System.Drawing.Point(625, 61);
             this.DisplayPanel.Name = "DisplayPanel";
-            this.DisplayPanel.Size = new System.Drawing.Size(722, 563);
+            this.DisplayPanel.Size = new System.Drawing.Size(48, 154);
             this.DisplayPanel.TabIndex = 71;
             this.DisplayPanel.Visible = false;
             this.DisplayPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.DisplayPanel_Paint);
@@ -493,7 +493,7 @@
             // 
             // DisplaySupplierPanel
             // 
-            this.DisplaySupplierPanel.BackColor = System.Drawing.Color.Maroon;
+            this.DisplaySupplierPanel.BackColor = System.Drawing.SystemColors.HotTrack;
             this.DisplaySupplierPanel.Controls.Add(this.pnl_Order_fields);
             this.DisplaySupplierPanel.Controls.Add(this.pnl_stok_fields);
             this.DisplaySupplierPanel.Controls.Add(this.pnl_prod_fields);
@@ -506,9 +506,9 @@
             this.DisplaySupplierPanel.Controls.Add(this.btn_update);
             this.DisplaySupplierPanel.Controls.Add(this.btn_delete);
             this.DisplaySupplierPanel.Controls.Add(this.txt_search);
-            this.DisplaySupplierPanel.Location = new System.Drawing.Point(468, 13);
+            this.DisplaySupplierPanel.Location = new System.Drawing.Point(478, 184);
             this.DisplaySupplierPanel.Name = "DisplaySupplierPanel";
-            this.DisplaySupplierPanel.Size = new System.Drawing.Size(55, 50);
+            this.DisplaySupplierPanel.Size = new System.Drawing.Size(18, 17);
             this.DisplaySupplierPanel.TabIndex = 72;
             this.DisplaySupplierPanel.Visible = false;
             // 
@@ -518,10 +518,10 @@
             this.pnl_Order_fields.Controls.Add(this.txt_search_this_order);
             this.pnl_Order_fields.Controls.Add(this.btn_ord_detial);
             this.pnl_Order_fields.Controls.Add(this.label29);
-            this.pnl_Order_fields.Location = new System.Drawing.Point(131, 279);
+            this.pnl_Order_fields.Location = new System.Drawing.Point(116, 303);
             this.pnl_Order_fields.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Order_fields.Name = "pnl_Order_fields";
-            this.pnl_Order_fields.Size = new System.Drawing.Size(23, 10);
+            this.pnl_Order_fields.Size = new System.Drawing.Size(16, 10);
             this.pnl_Order_fields.TabIndex = 61;
             this.pnl_Order_fields.Visible = false;
             // 
@@ -562,6 +562,8 @@
             // pnl_stok_fields
             // 
             this.pnl_stok_fields.BackColor = System.Drawing.Color.Transparent;
+            this.pnl_stok_fields.Controls.Add(this.label1);
+            this.pnl_stok_fields.Controls.Add(this.txt_import);
             this.pnl_stok_fields.Controls.Add(this.txt_stock_prod_name);
             this.pnl_stok_fields.Controls.Add(this.txt_stock_suplier_name);
             this.pnl_stok_fields.Controls.Add(this.Text_stok_sell);
@@ -570,10 +572,10 @@
             this.pnl_stok_fields.Controls.Add(this.label27);
             this.pnl_stok_fields.Controls.Add(this.Text_stock_prod_qty);
             this.pnl_stok_fields.Controls.Add(this.label28);
-            this.pnl_stok_fields.Location = new System.Drawing.Point(157, 255);
+            this.pnl_stok_fields.Location = new System.Drawing.Point(216, 328);
             this.pnl_stok_fields.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_stok_fields.Name = "pnl_stok_fields";
-            this.pnl_stok_fields.Size = new System.Drawing.Size(24, 15);
+            this.pnl_stok_fields.Size = new System.Drawing.Size(688, 261);
             this.pnl_stok_fields.TabIndex = 60;
             this.pnl_stok_fields.Visible = false;
             // 
@@ -583,6 +585,7 @@
             this.txt_stock_prod_name.Location = new System.Drawing.Point(164, 19);
             this.txt_stock_prod_name.Margin = new System.Windows.Forms.Padding(4);
             this.txt_stock_prod_name.Name = "txt_stock_prod_name";
+            this.txt_stock_prod_name.ReadOnly = true;
             this.txt_stock_prod_name.Size = new System.Drawing.Size(176, 23);
             this.txt_stock_prod_name.TabIndex = 56;
             // 
@@ -592,6 +595,7 @@
             this.txt_stock_suplier_name.Location = new System.Drawing.Point(492, 19);
             this.txt_stock_suplier_name.Margin = new System.Windows.Forms.Padding(4);
             this.txt_stock_suplier_name.Name = "txt_stock_suplier_name";
+            this.txt_stock_suplier_name.ReadOnly = true;
             this.txt_stock_suplier_name.Size = new System.Drawing.Size(184, 23);
             this.txt_stock_suplier_name.TabIndex = 55;
             // 
@@ -646,6 +650,7 @@
             this.Text_stock_prod_qty.Location = new System.Drawing.Point(164, 148);
             this.Text_stock_prod_qty.Margin = new System.Windows.Forms.Padding(4);
             this.Text_stock_prod_qty.Name = "Text_stock_prod_qty";
+            this.Text_stock_prod_qty.ReadOnly = true;
             this.Text_stock_prod_qty.Size = new System.Drawing.Size(126, 23);
             this.Text_stock_prod_qty.TabIndex = 38;
             // 
@@ -668,18 +673,16 @@
             this.pnl_prod_fields.Controls.Add(this.Text_prod_code);
             this.pnl_prod_fields.Controls.Add(this.label18);
             this.pnl_prod_fields.Controls.Add(this.label6);
-            this.pnl_prod_fields.Controls.Add(this.label1);
-            this.pnl_prod_fields.Controls.Add(this.btn_prod_update);
             this.pnl_prod_fields.Controls.Add(this.text_prod_qty);
             this.pnl_prod_fields.Controls.Add(this.label3);
             this.pnl_prod_fields.Controls.Add(this.label4);
             this.pnl_prod_fields.Controls.Add(this.Text_prod_Name);
             this.pnl_prod_fields.Controls.Add(this.Text_prod_price);
             this.pnl_prod_fields.Controls.Add(this.label5);
-            this.pnl_prod_fields.Location = new System.Drawing.Point(76, 294);
+            this.pnl_prod_fields.Location = new System.Drawing.Point(145, 274);
             this.pnl_prod_fields.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_prod_fields.Name = "pnl_prod_fields";
-            this.pnl_prod_fields.Size = new System.Drawing.Size(10, 14);
+            this.pnl_prod_fields.Size = new System.Drawing.Size(38, 10);
             this.pnl_prod_fields.TabIndex = 59;
             this.pnl_prod_fields.Visible = false;
             // 
@@ -728,32 +731,6 @@
             this.label6.TabIndex = 56;
             this.label6.Text = "Size";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(335, 119);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 22);
-            this.label1.TabIndex = 54;
-            this.label1.Text = "supplied request";
-            // 
-            // btn_prod_update
-            // 
-            this.btn_prod_update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_prod_update.Enabled = false;
-            this.btn_prod_update.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_prod_update.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_prod_update.Location = new System.Drawing.Point(487, 112);
-            this.btn_prod_update.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_prod_update.Name = "btn_prod_update";
-            this.btn_prod_update.Size = new System.Drawing.Size(169, 39);
-            this.btn_prod_update.TabIndex = 53;
-            this.btn_prod_update.Text = "UPD&ATE";
-            this.btn_prod_update.UseVisualStyleBackColor = false;
             // 
             // text_prod_qty
             // 
@@ -828,10 +805,10 @@
             this.pnl_suplier_fields.Controls.Add(this.label2);
             this.pnl_suplier_fields.Controls.Add(this.text_sup_phn);
             this.pnl_suplier_fields.Controls.Add(this.label19);
-            this.pnl_suplier_fields.Location = new System.Drawing.Point(76, 324);
+            this.pnl_suplier_fields.Location = new System.Drawing.Point(100, 253);
             this.pnl_suplier_fields.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_suplier_fields.Name = "pnl_suplier_fields";
-            this.pnl_suplier_fields.Size = new System.Drawing.Size(10, 10);
+            this.pnl_suplier_fields.Size = new System.Drawing.Size(19, 10);
             this.pnl_suplier_fields.TabIndex = 58;
             this.pnl_suplier_fields.Visible = false;
             // 
@@ -921,7 +898,7 @@
             this.btn_search_reset.BackColor = System.Drawing.Color.Gray;
             this.btn_search_reset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_search_reset.ForeColor = System.Drawing.Color.Black;
-            this.btn_search_reset.Location = new System.Drawing.Point(26, 175);
+            this.btn_search_reset.Location = new System.Drawing.Point(51, 519);
             this.btn_search_reset.Name = "btn_search_reset";
             this.btn_search_reset.Size = new System.Drawing.Size(103, 32);
             this.btn_search_reset.TabIndex = 36;
@@ -975,12 +952,13 @@
             this.btn_update.BackColor = System.Drawing.Color.Gray;
             this.btn_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_update.ForeColor = System.Drawing.Color.Black;
-            this.btn_update.Location = new System.Drawing.Point(53, 477);
+            this.btn_update.Location = new System.Drawing.Point(53, 457);
             this.btn_update.Name = "btn_update";
             this.btn_update.Size = new System.Drawing.Size(101, 34);
             this.btn_update.TabIndex = 21;
             this.btn_update.Text = "U&PDATE";
             this.btn_update.UseVisualStyleBackColor = false;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // btn_delete
             // 
@@ -1006,7 +984,7 @@
             // 
             // AddSupplierPanel
             // 
-            this.AddSupplierPanel.BackColor = System.Drawing.Color.Maroon;
+            this.AddSupplierPanel.BackColor = System.Drawing.SystemColors.HotTrack;
             this.AddSupplierPanel.Controls.Add(this.btn_back_suppler);
             this.AddSupplierPanel.Controls.Add(this.ClearSupButton);
             this.AddSupplierPanel.Controls.Add(this.AddSupButton);
@@ -1138,7 +1116,7 @@
             // 
             // TakeOrderPanel
             // 
-            this.TakeOrderPanel.BackColor = System.Drawing.Color.Maroon;
+            this.TakeOrderPanel.BackColor = System.Drawing.SystemColors.HotTrack;
             this.TakeOrderPanel.Controls.Add(this.button28);
             this.TakeOrderPanel.Controls.Add(this.textBox3);
             this.TakeOrderPanel.Controls.Add(this.label16);
@@ -1290,11 +1268,34 @@
             this.textBox56.Size = new System.Drawing.Size(153, 20);
             this.textBox56.TabIndex = 16;
             // 
+            // txt_import
+            // 
+            this.txt_import.BackColor = System.Drawing.Color.Red;
+            this.txt_import.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_import.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_import.Location = new System.Drawing.Point(492, 150);
+            this.txt_import.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_import.Name = "txt_import";
+            this.txt_import.Size = new System.Drawing.Size(152, 23);
+            this.txt_import.TabIndex = 58;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(391, 148);
+            this.label1.Margin = new System.Windows.Forms.Padding(4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 25);
+            this.label1.TabIndex = 59;
+            this.label1.Text = "Import";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // gradientColor1
             // 
             this.gradientColor1.BackColor = System.Drawing.Color.Transparent;
             this.gradientColor1.ColorBottom = System.Drawing.Color.Red;
-            this.gradientColor1.ColorTop = System.Drawing.Color.Black;
+            this.gradientColor1.ColorTop = System.Drawing.SystemColors.Highlight;
             this.gradientColor1.Controls.Add(this.button23);
             this.gradientColor1.Controls.Add(this.btn_Take_Order);
             this.gradientColor1.Controls.Add(this.button25);
@@ -1340,7 +1341,7 @@
             this.button25.ForeColor = System.Drawing.Color.Black;
             this.button25.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button25.ImageIndex = 0;
-            this.button25.Location = new System.Drawing.Point(1027, 8);
+            this.button25.Location = new System.Drawing.Point(1023, 12);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(262, 57);
             this.button25.TabIndex = 7;
@@ -1350,7 +1351,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.ColorBottom = System.Drawing.Color.Black;
+            this.panel1.ColorBottom = System.Drawing.SystemColors.Highlight;
             this.panel1.ColorTop = System.Drawing.Color.Red;
             this.panel1.Controls.Add(this.btn_Home);
             this.panel1.Controls.Add(this.panel3);
@@ -1501,8 +1502,8 @@
             // 
             // pnl_home
             // 
-            this.pnl_home.ColorBottom = System.Drawing.Color.Red;
-            this.pnl_home.ColorTop = System.Drawing.Color.Black;
+            this.pnl_home.ColorBottom = System.Drawing.SystemColors.Highlight;
+            this.pnl_home.ColorTop = System.Drawing.Color.Red;
             this.pnl_home.Controls.Add(this.label26);
             this.pnl_home.Location = new System.Drawing.Point(1173, 19);
             this.pnl_home.Name = "pnl_home";
@@ -1526,7 +1527,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.Maroon;
+            this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(1370, 722);
             this.Controls.Add(this.TakeOrderPanel);
             this.Controls.Add(this.AddProductPanel);
@@ -1659,8 +1660,6 @@
         private System.Windows.Forms.RichTextBox text_sup_Address;
         private System.Windows.Forms.Panel pnl_prod_fields;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_prod_update;
         private System.Windows.Forms.TextBox text_prod_qty;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -1685,5 +1684,7 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.ComboBox SupplierNameComboBox;
         private System.Windows.Forms.ComboBox combo_prod_size;
+        private System.Windows.Forms.TextBox txt_import;
+        private System.Windows.Forms.Label label1;
     }
 }

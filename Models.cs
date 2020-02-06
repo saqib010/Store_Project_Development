@@ -91,20 +91,8 @@ namespace Store
             //model = new DataBase_A.Supliers();
             //pnl_Cust.SetBounds(287, 26, 1069, 580);
             //get_Table();
-            try
-            {
 
-                SqlDataReader r = DataBase.Query(query);
-                r.Close();
-                return true;
-            }
-                
-            
-            catch (Exception ex)
-            {
-                //ex is the error 
-                return false;
-            }
+            return exec_query(query);
         }
 
        
@@ -117,14 +105,14 @@ namespace Store
             return runquery("Select * from " + tableName);
         }
 
-        public DataTable getBY_ID(String id)
+       /* public DataTable getBY_ID(String id)
         {
             SqlDataReader r = DataBase.Query("Select * from " + tableName + " where iD  = " + id + "");
             DataTable result = new DataTable();
             result.Load(r);
             r.Close();
             return result;
-        }
+        }*/
         public DataTable getOpen(String name, List<string> columns)
         {
             string query = "select * from " + tableName;
@@ -154,8 +142,39 @@ namespace Store
         public Boolean set(List<Attribute> SetAttributes, List<Attribute> WhereAttributes)
         {
             string query = "Update " + tableName + " SET ";
-           
-            
+            for (int i = 0; i < SetAttributes.Count; i++)
+            {
+                if (i != SetAttributes.Count - 1)
+                {
+                    query += SetAttributes[i].Name + "=" + SetAttributes[i].Value + " , ";
+
+                }
+                else
+                {
+                    query += SetAttributes[i].Name + "=" + SetAttributes[i].Value;
+
+                }
+            }
+            query += " Where ";
+
+            for (int i = 0; i < WhereAttributes.Count; i++)
+            {
+                if (i != WhereAttributes.Count - 1)
+                {
+                    query += WhereAttributes[i].Name + "=" + WhereAttributes[i].Value + " and ";
+
+                }
+                else
+                {
+                    query += WhereAttributes[i].Name + "=" + WhereAttributes[i].Value;
+
+                }
+            }
+            return exec_query(query);
+        }
+
+        public Boolean exec_query(String query)
+        {
             try
             {
                 SqlDataReader r = DataBase.Query(query);
@@ -169,10 +188,14 @@ namespace Store
             }
         }
 
+        public Boolean set(List<Attribute> SetAttributes, int whereId)
+        {
+            return set(SetAttributes, Attribute.fromArray(new string[] { tableName+"_ID", "" + whereId }));
+        }
 
-// *****############## Delete function/// *********************##############
+        // *****############## Delete function/// *********************##############
 
-        public Boolean delete(string id)
+      /*  public Boolean delete(string id)
         {
             try
             {
@@ -191,7 +214,7 @@ namespace Store
                 //ex is the error object
                 return false;
             }
-        }
+        }*/
 
     
     }

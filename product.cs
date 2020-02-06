@@ -9,7 +9,7 @@ namespace Store
 {
     class product: Store.Models
     {
-        public product() : base("product")
+        public product() : base("Product")
         { }
        /* public DataTable Prod_ID_List()
         {

@@ -11,7 +11,7 @@ namespace Store
 {
     class supliers : Store.Models
     {
-        public supliers() : base("supplier")
+        public supliers() : base("Supplier")
         { }
         public DataTable Supplier_ID_List()
         {
