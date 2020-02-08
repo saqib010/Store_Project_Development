@@ -62,6 +62,8 @@
             this.btn_ord_detial = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
             this.pnl_stok_fields = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_import = new System.Windows.Forms.TextBox();
             this.txt_stock_prod_name = new System.Windows.Forms.TextBox();
             this.txt_stock_suplier_name = new System.Windows.Forms.TextBox();
             this.Text_stok_sell = new System.Windows.Forms.TextBox();
@@ -108,21 +110,20 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.TakeOrderPanel = new System.Windows.Forms.Panel();
-            this.button28 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.ChecckOutButton = new System.Windows.Forms.Button();
+            this.SoldUnitPriceOrder = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.ProductCodeOrder = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
+            this.AddToCartButton = new System.Windows.Forms.Button();
             this.label49 = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.textBox56 = new System.Windows.Forms.TextBox();
-            this.txt_import = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.CancelOrder = new System.Windows.Forms.Button();
+            this.SoldQuantityOrder = new System.Windows.Forms.TextBox();
+            this.TotalBillGridView = new System.Windows.Forms.DataGridView();
             this.gradientColor1 = new Store.gradientColor();
             this.button23 = new System.Windows.Forms.Button();
             this.btn_Take_Order = new System.Windows.Forms.Button();
@@ -151,6 +152,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.AddSupplierPanel.SuspendLayout();
             this.TakeOrderPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TotalBillGridView)).BeginInit();
             this.gradientColor1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -579,6 +581,29 @@
             this.pnl_stok_fields.TabIndex = 60;
             this.pnl_stok_fields.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(391, 148);
+            this.label1.Margin = new System.Windows.Forms.Padding(4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 25);
+            this.label1.TabIndex = 59;
+            this.label1.Text = "Import";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txt_import
+            // 
+            this.txt_import.BackColor = System.Drawing.Color.Red;
+            this.txt_import.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_import.ForeColor = System.Drawing.SystemColors.Info;
+            this.txt_import.Location = new System.Drawing.Point(492, 150);
+            this.txt_import.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_import.Name = "txt_import";
+            this.txt_import.Size = new System.Drawing.Size(152, 23);
+            this.txt_import.TabIndex = 58;
+            // 
             // txt_stock_prod_name
             // 
             this.txt_stock_prod_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -995,9 +1020,9 @@
             this.AddSupplierPanel.Controls.Add(this.label22);
             this.AddSupplierPanel.Controls.Add(this.label23);
             this.AddSupplierPanel.Controls.Add(this.label24);
-            this.AddSupplierPanel.Location = new System.Drawing.Point(1095, 24);
+            this.AddSupplierPanel.Location = new System.Drawing.Point(718, 71);
             this.AddSupplierPanel.Name = "AddSupplierPanel";
-            this.AddSupplierPanel.Size = new System.Drawing.Size(44, 24);
+            this.AddSupplierPanel.Size = new System.Drawing.Size(53, 144);
             this.AddSupplierPanel.TabIndex = 70;
             this.AddSupplierPanel.Visible = false;
             // 
@@ -1117,51 +1142,53 @@
             // TakeOrderPanel
             // 
             this.TakeOrderPanel.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.TakeOrderPanel.Controls.Add(this.button28);
-            this.TakeOrderPanel.Controls.Add(this.textBox3);
+            this.TakeOrderPanel.Controls.Add(this.TotalBillGridView);
+            this.TakeOrderPanel.Controls.Add(this.ChecckOutButton);
+            this.TakeOrderPanel.Controls.Add(this.SoldUnitPriceOrder);
             this.TakeOrderPanel.Controls.Add(this.label16);
             this.TakeOrderPanel.Controls.Add(this.label15);
             this.TakeOrderPanel.Controls.Add(this.label14);
             this.TakeOrderPanel.Controls.Add(this.dateTimePicker2);
-            this.TakeOrderPanel.Controls.Add(this.comboBox2);
+            this.TakeOrderPanel.Controls.Add(this.ProductCodeOrder);
             this.TakeOrderPanel.Controls.Add(this.label13);
-            this.TakeOrderPanel.Controls.Add(this.button12);
+            this.TakeOrderPanel.Controls.Add(this.AddToCartButton);
             this.TakeOrderPanel.Controls.Add(this.label49);
             this.TakeOrderPanel.Controls.Add(this.button13);
-            this.TakeOrderPanel.Controls.Add(this.button26);
-            this.TakeOrderPanel.Controls.Add(this.textBox56);
-            this.TakeOrderPanel.Location = new System.Drawing.Point(955, 30);
+            this.TakeOrderPanel.Controls.Add(this.CancelOrder);
+            this.TakeOrderPanel.Controls.Add(this.SoldQuantityOrder);
+            this.TakeOrderPanel.Location = new System.Drawing.Point(371, 39);
             this.TakeOrderPanel.Name = "TakeOrderPanel";
-            this.TakeOrderPanel.Size = new System.Drawing.Size(14, 20);
+            this.TakeOrderPanel.Size = new System.Drawing.Size(967, 585);
             this.TakeOrderPanel.TabIndex = 73;
             this.TakeOrderPanel.Visible = false;
             // 
-            // button28
+            // ChecckOutButton
             // 
-            this.button28.BackColor = System.Drawing.Color.Red;
-            this.button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button28.ForeColor = System.Drawing.Color.Black;
-            this.button28.Location = new System.Drawing.Point(656, 406);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(127, 35);
-            this.button28.TabIndex = 20;
-            this.button28.Text = "CHECK OUT";
-            this.button28.UseVisualStyleBackColor = false;
+            this.ChecckOutButton.BackColor = System.Drawing.Color.Red;
+            this.ChecckOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChecckOutButton.ForeColor = System.Drawing.Color.Black;
+            this.ChecckOutButton.Location = new System.Drawing.Point(656, 406);
+            this.ChecckOutButton.Name = "ChecckOutButton";
+            this.ChecckOutButton.Size = new System.Drawing.Size(127, 35);
+            this.ChecckOutButton.TabIndex = 20;
+            this.ChecckOutButton.Text = "CHECK OUT";
+            this.ChecckOutButton.UseVisualStyleBackColor = false;
+            this.ChecckOutButton.Click += new System.EventHandler(this.button28_Click);
             // 
-            // textBox3
+            // SoldUnitPriceOrder
             // 
-            this.textBox3.Location = new System.Drawing.Point(456, 327);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(153, 20);
-            this.textBox3.TabIndex = 43;
+            this.SoldUnitPriceOrder.Location = new System.Drawing.Point(456, 327);
+            this.SoldUnitPriceOrder.Name = "SoldUnitPriceOrder";
+            this.SoldUnitPriceOrder.Size = new System.Drawing.Size(153, 20);
+            this.SoldUnitPriceOrder.TabIndex = 43;
             // 
             // label16
             // 
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label16.Location = new System.Drawing.Point(310, 327);
+            this.label16.Location = new System.Drawing.Point(290, 327);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(82, 20);
+            this.label16.Size = new System.Drawing.Size(123, 20);
             this.label16.TabIndex = 42;
             this.label16.Text = "Sold Unit Price";
             // 
@@ -1169,11 +1196,11 @@
             // 
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label15.Location = new System.Drawing.Point(310, 267);
+            this.label15.Location = new System.Drawing.Point(301, 270);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(112, 23);
+            this.label15.Size = new System.Drawing.Size(108, 23);
             this.label15.TabIndex = 41;
-            this.label15.Text = "Product Quantity";
+            this.label15.Text = "Sold Quantity";
             // 
             // label14
             // 
@@ -1192,13 +1219,13 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 39;
             // 
-            // comboBox2
+            // ProductCodeOrder
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(456, 210);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(155, 21);
-            this.comboBox2.TabIndex = 38;
+            this.ProductCodeOrder.FormattingEnabled = true;
+            this.ProductCodeOrder.Location = new System.Drawing.Point(456, 210);
+            this.ProductCodeOrder.Name = "ProductCodeOrder";
+            this.ProductCodeOrder.Size = new System.Drawing.Size(155, 21);
+            this.ProductCodeOrder.TabIndex = 38;
             // 
             // label13
             // 
@@ -1210,17 +1237,18 @@
             this.label13.TabIndex = 37;
             this.label13.Text = "Order Date";
             // 
-            // button12
+            // AddToCartButton
             // 
-            this.button12.BackColor = System.Drawing.Color.Gray;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ForeColor = System.Drawing.Color.Black;
-            this.button12.Location = new System.Drawing.Point(461, 401);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(142, 43);
-            this.button12.TabIndex = 36;
-            this.button12.Text = "ADD TO CART";
-            this.button12.UseVisualStyleBackColor = false;
+            this.AddToCartButton.BackColor = System.Drawing.Color.Gray;
+            this.AddToCartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddToCartButton.ForeColor = System.Drawing.Color.Black;
+            this.AddToCartButton.Location = new System.Drawing.Point(461, 401);
+            this.AddToCartButton.Name = "AddToCartButton";
+            this.AddToCartButton.Size = new System.Drawing.Size(142, 43);
+            this.AddToCartButton.TabIndex = 36;
+            this.AddToCartButton.Text = "ADD TO CART";
+            this.AddToCartButton.UseVisualStyleBackColor = false;
+            this.AddToCartButton.Click += new System.EventHandler(this.button12_Click);
             // 
             // label49
             // 
@@ -1249,47 +1277,33 @@
             this.button13.UseVisualStyleBackColor = false;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
-            // button26
+            // CancelOrder
             // 
-            this.button26.BackColor = System.Drawing.Color.Gray;
-            this.button26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button26.ForeColor = System.Drawing.Color.Black;
-            this.button26.Location = new System.Drawing.Point(308, 406);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(101, 35);
-            this.button26.TabIndex = 22;
-            this.button26.Text = "CAN&CEL";
-            this.button26.UseVisualStyleBackColor = false;
+            this.CancelOrder.BackColor = System.Drawing.Color.Gray;
+            this.CancelOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelOrder.ForeColor = System.Drawing.Color.Black;
+            this.CancelOrder.Location = new System.Drawing.Point(308, 406);
+            this.CancelOrder.Name = "CancelOrder";
+            this.CancelOrder.Size = new System.Drawing.Size(101, 35);
+            this.CancelOrder.TabIndex = 22;
+            this.CancelOrder.Text = "CANCEL";
+            this.CancelOrder.UseVisualStyleBackColor = false;
+            this.CancelOrder.Click += new System.EventHandler(this.button26_Click);
             // 
-            // textBox56
+            // SoldQuantityOrder
             // 
-            this.textBox56.Location = new System.Drawing.Point(456, 267);
-            this.textBox56.Name = "textBox56";
-            this.textBox56.Size = new System.Drawing.Size(153, 20);
-            this.textBox56.TabIndex = 16;
+            this.SoldQuantityOrder.Location = new System.Drawing.Point(456, 267);
+            this.SoldQuantityOrder.Name = "SoldQuantityOrder";
+            this.SoldQuantityOrder.Size = new System.Drawing.Size(153, 20);
+            this.SoldQuantityOrder.TabIndex = 16;
             // 
-            // txt_import
+            // TotalBillGridView
             // 
-            this.txt_import.BackColor = System.Drawing.Color.Red;
-            this.txt_import.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_import.ForeColor = System.Drawing.SystemColors.Info;
-            this.txt_import.Location = new System.Drawing.Point(492, 150);
-            this.txt_import.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_import.Name = "txt_import";
-            this.txt_import.Size = new System.Drawing.Size(152, 23);
-            this.txt_import.TabIndex = 58;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(391, 148);
-            this.label1.Margin = new System.Windows.Forms.Padding(4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 25);
-            this.label1.TabIndex = 59;
-            this.label1.Text = "Import";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TotalBillGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TotalBillGridView.Location = new System.Drawing.Point(18, 311);
+            this.TotalBillGridView.Name = "TotalBillGridView";
+            this.TotalBillGridView.Size = new System.Drawing.Size(227, 109);
+            this.TotalBillGridView.TabIndex = 44;
             // 
             // gradientColor1
             // 
@@ -1565,6 +1579,7 @@
             this.AddSupplierPanel.PerformLayout();
             this.TakeOrderPanel.ResumeLayout(false);
             this.TakeOrderPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TotalBillGridView)).EndInit();
             this.gradientColor1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -1634,19 +1649,19 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Panel TakeOrderPanel;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button ChecckOutButton;
+        private System.Windows.Forms.TextBox SoldUnitPriceOrder;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox ProductCodeOrder;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button AddToCartButton;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.TextBox textBox56;
+        private System.Windows.Forms.Button CancelOrder;
+        private System.Windows.Forms.TextBox SoldQuantityOrder;
         private System.Windows.Forms.TextBox ProductPriceTextBox;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox ProductSizeComboBox;
@@ -1686,5 +1701,6 @@
         private System.Windows.Forms.ComboBox combo_prod_size;
         private System.Windows.Forms.TextBox txt_import;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView TotalBillGridView;
     }
 }

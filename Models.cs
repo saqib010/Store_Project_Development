@@ -50,7 +50,7 @@ namespace Store
 
             } //EXEC add_Supplier 'dada','chota@gmail.com',456,'asd564','sdf',456,'2018-12-23'
 
-            else if (tableName == "supplier")
+            else if (tableName == "Supplier")
             {
                 query += " ";
                 for (int i = 0; i < attributes.Count; i++)
@@ -67,7 +67,7 @@ namespace Store
                 query += "";
             }
 
-            else if (tableName == "product")
+            else if (tableName == "Product")
             {//1/4/5
                 query += " ";
                 for (int i = 0; i < attributes.Count; i++)

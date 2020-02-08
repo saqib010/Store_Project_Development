@@ -213,7 +213,8 @@ namespace Store
             model = new Store.order();
             DisplaySupplierPanel.SetBounds(302, 02, 1055, 624);
             DisplaySupplierPanel.Visible = true;
-            get_Table();
+            DataGridView.DataSource = new Store.stock().display_order();
+            //get_Table();
             //DisplayCustomerPanel.Visible = false;
             DisplayPanel.Visible = false;
             AddRecordPanel.Visible = false;
@@ -271,6 +272,7 @@ namespace Store
             //AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
+            TakeOrderPanel.Visible = false;
             label98.Text = "STOCK";
         }
 
@@ -547,7 +549,7 @@ namespace Store
                 {
                     Store.order ord = new Store.order();
                     DataTable dt = ord.ord_detail(txt_search_this_order.Text);
-                    DataTable dt1 = ord.total_Amount(txt_search_this_order.Text);
+                    DataTable dt1 = ord.total_Amount();
                     DataRow r1 = dt1.Rows[0];
                     object[] o = r1.ItemArray;
 
@@ -712,6 +714,47 @@ namespace Store
 
 
             }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            List<String> ls1 = new List<string>(6);
+            if(String.IsNullOrEmpty(ProductCodeOrder.Text)|| String.IsNullOrEmpty(SoldQuantityOrder.Text)|| String.IsNullOrEmpty(SoldUnitPriceOrder.Text))
+            {
+                MessageBox.Show("Enter * Fields Please.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else
+            {
+                if (IsDigitsOnly(ProductCodeOrder.Text)&& IsDigitsOnly(SoldQuantityOrder.Text))
+                {
+                     if(IsDigitsOnly(SoldUnitPriceOrder.Text)|| IsDecimal(SoldUnitPriceOrder.Text))
+                    {
+                        Store.order ord = new Store.order();
+                        ord.add_to_cart(ProductCodeOrder.Text,SoldQuantityOrder.Text,SoldUnitPriceOrder.Text);
+                        ProductCodeOrder.Text = "";
+                        SoldQuantityOrder.Text = "";
+                        SoldUnitPriceOrder.Text = "";
+
+                    }
+                     else
+                        MessageBox.Show("Provide Price Correcty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+            }
+            
+            
+        }
+        
+        private void button26_Click(object sender, EventArgs e)
+        {
+            btn_bk_Customer_Click(sender,e);
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            Store.order ord = new Store.order();
+           TotalBillGridView.DataSource=ord.total_Amount();
         }
 
         /// <summary>

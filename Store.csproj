@@ -55,6 +55,12 @@
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
+    <Compile Include="FinalBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinalBill.Designer.cs">
+      <DependentUpon>FinalBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="gradientColor.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     <Compile Include="supliers.cs" />
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinalBill.resx">
+      <DependentUpon>FinalBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
