@@ -11,6 +11,8 @@ namespace Store
 {
     class order : Store.Models
     {
+        DataTable result;
+        String query;
         public order() : base("OrderTable")
         { }
 
@@ -24,7 +26,7 @@ namespace Store
                 //Decimal sold_price = System.Convert.ToDecimal(supp_price);
                 decimal prod_Price = System.Convert.ToDecimal(getProdPrice(pCode));//Int32.Parse("-105");
                 decimal sprofit = (System.Convert.ToDecimal(sold_price) - prod_Price);
-                String query = "exec take_order " + pCode + "," + qty+","+sold_price+","+sprofit;
+                query = "exec take_order " + pCode + "," + qty+","+sold_price+","+sprofit;
 
                // if(DataBase.NonQuery())
                if(exec_query(query))
@@ -36,17 +38,6 @@ namespace Store
                     MessageBox.Show("Data can not be  Entered");
 
                 }
-             //   SqlDataReader r = DataBase.Query(query);
-               // DataTable result = new DataTable();
-                //result.Load(r);
-
-               // DataRow r1 = result.Rows[0];
-                //object[] o = r1.ItemArray;
-                //String val = (String)o[0];
-                //var res1 = val.Trim();
-                //r.Close();
-                //MessageBox.Show("Data Entered Successfully ");
-                //cust_Fields_clear();
             }
             catch (Exception ex)
             {
@@ -56,17 +47,13 @@ namespace Store
         }
 
 
-        public DataTable total_Amount()
+        public DataTable total_bill(String id)
         {
             try
             {
 
-                String query = "exec total_amount" ;
-                IAsyncResult r2 = DataBase.NonQuery(query);
-                SqlDataReader r = DataBase.Query(query);
-                DataTable result = new DataTable();
-                result.Load(r);
-                r.Close();
+                query = "exec total_bill "+id;
+                result = runquery(query);
                 return result;
 
             }
@@ -84,11 +71,8 @@ namespace Store
         {
             try
             { 
-                String query = "select Product_ID from product where product_Code = '" + pCode + "'";
-                SqlDataReader r = DataBase.Query(query);
-                DataTable result = new DataTable();
-                result.Load(r);
-                r.Close();
+                query = "select Product_ID from product where product_Code = '" + pCode + "'";
+                result = runquery(query);
                 DataRow r1 = result.Rows[0];
                 object[] o = r1.ItemArray;
                 String ret = (int)o[0] + "";
@@ -105,11 +89,8 @@ namespace Store
         {
             try
             {
-                String query = "select Unit_Price from product where product_Code="+pCode;
-                SqlDataReader r = DataBase.Query(query);
-                DataTable result = new DataTable();
-                result.Load(r);
-                r.Close();
+                query = "select Unit_Price from product where product_Code="+pCode;
+                result = runquery(query);
                 DataRow r1 = result.Rows[0];
                 object[] o = r1.ItemArray;
                 String ret = (Decimal)o[0] + "";
@@ -126,11 +107,8 @@ namespace Store
             try
             {
                 
-                String query = "select distinct Stock.Quantity from Stock join Product on Stock.Product_ID = (select Product_ID from Product where Product_Code="+pCode;
-                SqlDataReader r = DataBase.Query(query);
-                DataTable result = new DataTable();
-                result.Load(r);
-                r.Close();
+                query = "select distinct Stock.Quantity from Stock join Product on Stock.Product_ID = (select Product_ID from Product where Product_Code="+pCode;
+                result = runquery(query);
                 DataRow r1 = result.Rows[0];
                 object[] o = r1.ItemArray;
                 String ret = (int)o[0] + "";
@@ -143,12 +121,19 @@ namespace Store
             }
         }
 
-
-
         public DataTable ord_detail(String id)
         {
-            String query = "exec ord_detail "+id;
+            query = "exec ord_detail " + id;
             return runquery(query);
+        }
+
+        public String getCurrent_detail()
+        {
+            result = runquery("select max(Order_ID) from OrderTable");
+            DataRow r1 = result.Rows[0];
+            object[] o = r1.ItemArray;
+            String ret = (int)o[0] + "";
+            return ret;
         }
         
     }

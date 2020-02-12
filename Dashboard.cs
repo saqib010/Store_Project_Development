@@ -12,6 +12,7 @@ namespace Store
 {
     public partial class Dashboard : Form
     {
+        DataTable dt;
         Store.Models model;
         public Dashboard()
         {
@@ -53,6 +54,7 @@ namespace Store
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
             DisplayPanel.Visible = false;
+            DisplaySupplierPanel.Visible = false;
             TakeOrderPanel.Visible = false;
 
         }
@@ -62,6 +64,7 @@ namespace Store
             AddSupplierPanel.SetBounds(302, 02, 1055, 624);
             AddSupplierPanel.Visible = true;
             AddProductPanel.Visible = false;
+            cust_Fields_clear();
             // AddCustomerPanel.Visible = false;
             AddRecordPanel.Visible = false;
             pnl_home.Visible = false;
@@ -80,6 +83,8 @@ namespace Store
             AddProductPanel.Visible = true;
             AddSupplierPanel.Visible = false;
             AddRecordPanel.Visible = false;
+            SupplierNameComboBox.Items.Clear();
+            cust_Fields_clear();
             pnl_home.Visible = false;
             // AddCustomerPanel.Visible = false;
             set_SupplierNameCombo();
@@ -89,12 +94,27 @@ namespace Store
             //DataBase_A.Supliers cust = new DataBase_A.S();
             Store.supliers sup = new Store.supliers();
             // DataTable dt = sup.supplier_ID_List();
-            DataTable dt = sup.Supplier_ID_List();
+             dt = sup.Supplier_ID_List();
 
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 SupplierNameComboBox.Items.Add(dt.Rows[i]["Name"]);
+            }
+
+
+        }
+        private void set_prodcodeCombo()
+        {
+            //DataBase_A.Supliers cust = new DataBase_A.S();
+            Store.product prod = new Store.product();
+            // DataTable dt = sup.supplier_ID_List();
+             dt = prod.product_code_List();
+
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                ProductCodeOrder.Items.Add(dt.Rows[i]["Product_Code"]);
             }
 
 
@@ -168,7 +188,6 @@ namespace Store
             model = new Store.supliers();
             DisplaySupplierPanel.SetBounds(302, 02, 1055, 624);
             get_Table();
-
             DisplaySupplierPanel.Visible = true;
             clear_grid_pnl_fields();
             DisplayPanel.Visible = false;
@@ -187,6 +206,7 @@ namespace Store
             DisplaySupplierPanel.Visible = false;
             //DisplayCustomerPanel.Visible = false;
             AddRecordPanel.Visible = false;
+            TakeOrderPanel.Visible = false;
             pnl_home.Visible = false;
             // AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
@@ -198,7 +218,7 @@ namespace Store
         private void button18_Click(object sender, EventArgs e)
         {
             btn_update.Enabled = false;
-            btn_delete.Enabled = false;
+            //btn_delete.Enabled = false;
             pnl_suplier_fields.Visible = false;
             pnl_prod_fields.Visible = false;
             pnl_stok_fields.Visible = false;
@@ -213,8 +233,8 @@ namespace Store
             model = new Store.order();
             DisplaySupplierPanel.SetBounds(302, 02, 1055, 624);
             DisplaySupplierPanel.Visible = true;
-            DataGridView.DataSource = new Store.stock().display_order();
-            //get_Table();
+           // DataGridView.DataSource = new Store.order().display_order();
+            get_Table();
             //DisplayCustomerPanel.Visible = false;
             DisplayPanel.Visible = false;
             AddRecordPanel.Visible = false;
@@ -235,7 +255,6 @@ namespace Store
             model = new Store.product();
             DisplaySupplierPanel.SetBounds(302, 02, 1055, 624);
             get_Table();
-
             DisplaySupplierPanel.Visible = true;
 
             clear_grid_pnl_fields();
@@ -253,7 +272,7 @@ namespace Store
             pnl_prod_fields.Visible = false;
             pnl_stok_fields.Visible = false;
             pnl_suplier_fields.Visible = false;
-            btn_delete.Enabled = false;
+            //btn_delete.Enabled = false;
             btn_update.Enabled = false;
 
         }
@@ -280,6 +299,7 @@ namespace Store
         {
             TakeOrderPanel.SetBounds(302, 02, 1055, 624);
             TakeOrderPanel.Visible = true;
+            button26_Click(sender,e);
             DisplaySupplierPanel.Visible = false;
             //DisplayCustomerPanel.Visible = false;
             DisplayPanel.Visible = false;
@@ -293,7 +313,7 @@ namespace Store
 
         private void get_Table()
         {
-            DataTable dt = model.get();
+             dt = model.get();
             DataGridView.DataSource = dt;
         }
 
@@ -319,7 +339,7 @@ namespace Store
             if (String.IsNullOrEmpty(SupplierNameTextBox.Text) || String.IsNullOrEmpty(SupplierAddressTextBox.Text) || String.IsNullOrEmpty(SupplierPhoneTextBox.Text))
             {
 
-                MessageBox.Show("Enter * Fields Please.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Enter All * Fields Please.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (IsAlphas_Only(SupplierNameTextBox.Text) && IsDigitsOnly(SupplierPhoneTextBox.Text))
             {
@@ -328,19 +348,19 @@ namespace Store
                 ls1.Add(SupplierPhoneTextBox.Text);
                 if (new Store.supliers().insert(ls1))
                 {
-                    MessageBox.Show("Data Entered Successfully ");
+                    MessageBox.Show("Record Entered Successfully ", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     cust_Fields_clear();
 
 
                 }
                 else
-                    MessageBox.Show("Sorry, data can not be entered");
+                    MessageBox.Show("Sorry! Record can not be entered","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
             else
             {
-                MessageBox.Show("Provide only Text Data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please provide the valid fields data.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
 
@@ -356,6 +376,7 @@ namespace Store
             ProductNameTextBox.Text = "";
             ProductQuatityTextBox.Text = "";
             ProductPriceTextBox.Text = "";
+            SupplierNameComboBox.Text = "";
         }
 
         private static bool IsDigitsOnly(string str)
@@ -412,11 +433,11 @@ namespace Store
             List<String> ls1 = new List<string>(6);
             if (String.IsNullOrEmpty(SupplierNameComboBox.Text) || String.IsNullOrEmpty(ProductNameTextBox.Text) || String.IsNullOrEmpty(ProductCodeTextBox.Text) || String.IsNullOrEmpty(ProductSizeComboBox.Text) || String.IsNullOrEmpty(ProductQuatityTextBox.Text) || String.IsNullOrEmpty(ProductPriceTextBox.Text))
             {
-                MessageBox.Show("Enter * Fields Please.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Enter All * Fields Please.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (IsAlphas_Only(SupplierNameComboBox.Text) && IsAlphas_Only(ProductNameTextBox.Text) && IsDigitsOnly(ProductCodeTextBox.Text) && IsAlphas_Only(ProductSizeComboBox.Text) && IsDigitsOnly(ProductQuatityTextBox.Text))
+            else if (IsAlphas_Only(SupplierNameComboBox.Text) && IsAlphas_Only(ProductNameTextBox.Text) && IsAlphas_Only(ProductSizeComboBox.Text))
             {
-                if (IsDigitsOnly(ProductPriceTextBox.Text) || IsDecimal(ProductPriceTextBox.Text))
+                if ((IsDigitsOnly(ProductPriceTextBox.Text) || IsDecimal(ProductPriceTextBox.Text)) && IsDigitsOnly(ProductCodeTextBox.Text) && IsDigitsOnly(ProductQuatityTextBox.Text))
                 {
                     ls1.Add(SupplierNameComboBox.Text);
                     ls1.Add(ProductCodeTextBox.Text);
@@ -426,24 +447,20 @@ namespace Store
                     ls1.Add(ProductPriceTextBox.Text);
                     if (new Store.product().insert(ls1))
                     {
-                        MessageBox.Show("Data Entered Successfully ");
+                        MessageBox.Show("Record Entered Successfully ", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         cust_Fields_clear();
                     }
                     else
-                        MessageBox.Show("Sorry, data can not be entered");
+                        MessageBox.Show("Sorry! Record can not be entered", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
-                    MessageBox.Show("Provide Price Correcty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Provide Numeric fields Correctly.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             else
             {
-                MessageBox.Show("Provide only Text Data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please provide the valid fields data.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-
-
-
         }
         private bool IsDecimal(String value)
         {
@@ -475,8 +492,8 @@ namespace Store
                     Text_prod_code.Text = DataGridView.Rows[index].Cells[1].Value.ToString();
                     Text_prod_Name.Text = DataGridView.Rows[index].Cells[2].Value.ToString();
                     combo_prod_size.Text = DataGridView.Rows[index].Cells[3].Value.ToString();
-                    Text_prod_price.Text = DataGridView.Rows[index].Cells[5].Value.ToString();
-                    text_prod_qty.Text = DataGridView.Rows[index].Cells[4].Value.ToString();
+                    Text_prod_price.Text = DataGridView.Rows[index].Cells[4].Value.ToString();
+                   // text_prod_qty.Text = DataGridView.Rows[index].Cells[4].Value.ToString();
 
                 }
 
@@ -528,16 +545,16 @@ namespace Store
 
 
                     int index = e.RowIndex;
-                    Text_stock_prod_qty.Text = DataGridView.Rows[index].Cells[3].Value.ToString();
-                    Text_stok_sell.Text = DataGridView.Rows[index].Cells[4].Value.ToString();
-                    txt_stock_prod_name.Text = DataGridView.Rows[index].Cells[1].Value.ToString();
-                    txt_stock_suplier_name.Text = DataGridView.Rows[index].Cells[2].Value.ToString();
+                    //Text_stock_prod_qty.Text = DataGridView.Rows[index].Cells[3].Value.ToString();
+                   // Text_stok_sell.Text = DataGridView.Rows[index].Cells[4].Value.ToString();
+                    txt_stock_prod_name.Text = DataGridView.Rows[index].Cells[2].Value.ToString();
+                    txt_stock_suplier_name.Text = DataGridView.Rows[index].Cells[1].Value.ToString();
 
                 }
 
             }
             btn_update.Enabled = true;
-            btn_delete.Enabled = true;
+            //btn_delete.Enabled = true;
         }
 
         private void btn_ord_detial_Click(object sender, EventArgs e)
@@ -547,29 +564,64 @@ namespace Store
             {
                 if (txt_search_this_order.Text != "")
                 {
-                    Store.order ord = new Store.order();
-                    DataTable dt = ord.ord_detail(txt_search_this_order.Text);
-                    DataTable dt1 = ord.total_Amount();
-                    DataRow r1 = dt1.Rows[0];
-                    object[] o = r1.ItemArray;
-
-                    string value = o[0].ToString();
-                    Store.Order_details detail = new Store.Order_details(dt, value);
-                    detail.Show();
+                    showOrderDetail(txt_search_this_order.Text);
                 }
             }
             catch (Exception ex) { MessageBox.Show("Data is not present !", "information", MessageBoxButtons.OK, MessageBoxIcon.Asterisk); }
 
         }
 
-        private void btn_delete_Click(object sender, EventArgs e)
+        private void showOrderDetail(String id_to_search_details)
         {
-
+            Store.order ord = new Store.order();
+             dt = ord.ord_detail(id_to_search_details);
+            DataTable dt1 = ord.total_bill(id_to_search_details);
+            DataRow r1 = dt1.Rows[0];
+            object[] o = r1.ItemArray;
+            Store.Order_details detail = new Store.Order_details(dt, o[0].ToString(), o[1].ToString());
+            detail.Show();
         }
 
         private void txt_search_KeyUp(object sender, KeyEventArgs e)
         {
+            if(model is stock && txt_search.Text!="")
+            {
+                if (!search_by_ID())
+                {
+                    txt_search.Text = "";
+                     dt = new Store.stock().display_stock();
+                    DataGridView.DataSource = dt;
+                }
+            }else if(txt_search.Text!="")
             getSearched_table();
+
+        }
+
+        private Boolean search_by_ID()
+        {
+            if (IsDigitsOnly(txt_search.Text))
+            {
+                 dt = new Store.stock().get_search_by_Id(txt_search.Text);
+                DataRow r1 = dt.Rows[0];
+                String val = r1.ItemArray[0].ToString();
+
+                if (val.Equals("0"))
+                {
+                    MessageBox.Show("There is no ID Like  " + txt_search.Text, "Search Result", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    return false;
+                }
+
+                else
+                {
+                    DataGridView.DataSource = dt;
+                    return true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("You can only search by ID !" + txt_search.Text, "information", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return false;
+            }
         }
         private void getSearched_table()
         {
@@ -595,7 +647,7 @@ namespace Store
                 columns.Add(DataGridView.Columns[j].DataPropertyName);
             }
 
-            DataTable dt = model.getOpen(txt_search.Text, columns);
+             dt = model.getOpen(txt_search.Text, columns);
             i = Convert.ToInt32(dt.Rows.Count.ToString());
             if (i == 0)
 
@@ -748,13 +800,15 @@ namespace Store
         
         private void button26_Click(object sender, EventArgs e)
         {
-            btn_bk_Customer_Click(sender,e);
+            SoldQuantityOrder.Text = "";
+            SoldUnitPriceOrder.Text = "";
+            ProductCodeOrder.Items.Clear();
+            set_prodcodeCombo();
         }
 
         private void button28_Click(object sender, EventArgs e)
         {
-            Store.order ord = new Store.order();
-           TotalBillGridView.DataSource=ord.total_Amount();
+            showOrderDetail(new Store.order().getCurrent_detail());
         }
 
         /// <summary>

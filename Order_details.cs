@@ -12,13 +12,15 @@ namespace Store
 {
     public partial class Order_details : Form
     {
-        public Order_details(DataTable dt, String val)
+        public Order_details(DataTable dt, String bill,String profit)
         {
             InitializeComponent();
             grid_ord_Detail.DataSource = dt;
 
 
-            Text_total_amount.Text = val;
+            Text_total_amount.Text = bill;
+            Text_total_profit.Text = profit;
+
         }
 
         private void btn_ord_show_back_Click(object sender, EventArgs e)

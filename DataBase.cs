@@ -12,7 +12,7 @@ namespace Store
         {
             try
             {
-                con = new SqlConnection("Data Source=HAIER-PC\\HUSNAINSQL;Initial Catalog=Store;Integrated Security=True");
+                con = new SqlConnection("Data Source=SPEED_DEVIL;Initial Catalog=Store;Integrated Security=True");
                 con.Open();
             }
             catch (Exception ex)

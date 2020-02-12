@@ -11,10 +11,9 @@ namespace Store
     {
         public product() : base("Product")
         { }
-       /* public DataTable Prod_ID_List()
+        public DataTable product_code_List()
         {
-            String query = "select Product_ID from Product";
-            return runquery(query);
-        }**/
+            return runquery("select Product_Code from Product");
+        }
     }
 }

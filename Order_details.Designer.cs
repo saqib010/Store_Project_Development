@@ -32,6 +32,8 @@
             this.Text_total_amount = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_ord_show_back = new System.Windows.Forms.Button();
+            this.Text_total_profit = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grid_ord_Detail)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,12 +84,34 @@
             this.btn_ord_show_back.UseVisualStyleBackColor = false;
             this.btn_ord_show_back.Click += new System.EventHandler(this.btn_ord_show_back_Click);
             // 
+            // Text_total_profit
+            // 
+            this.Text_total_profit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Text_total_profit.Location = new System.Drawing.Point(318, 349);
+            this.Text_total_profit.Name = "Text_total_profit";
+            this.Text_total_profit.ReadOnly = true;
+            this.Text_total_profit.Size = new System.Drawing.Size(145, 26);
+            this.Text_total_profit.TabIndex = 10;
+            this.Text_total_profit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(208, 351);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 22);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Total Profit";
+            // 
             // Order_details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(801, 395);
+            this.Controls.Add(this.Text_total_profit);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_ord_show_back);
             this.Controls.Add(this.Text_total_amount);
             this.Controls.Add(this.label1);
@@ -106,5 +130,7 @@
         private System.Windows.Forms.TextBox Text_total_amount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_ord_show_back;
+        private System.Windows.Forms.TextBox Text_total_profit;
+        private System.Windows.Forms.Label label2;
     }
 }
