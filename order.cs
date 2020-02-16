@@ -16,6 +16,7 @@ namespace Store
         public order() : base("OrderTable")
         { }
 
+       
 
         public void add_to_cart(String pCode, String qty,String sold_price)
         {
@@ -23,36 +24,61 @@ namespace Store
             {
                 int prod_ID = Int32.Parse(getProdId(pCode));//Int32.Parse("-105");
                 //int prod_Qty = Int32.Parse(getProdQty(pCode));//Int32.Parse("-105");
-                //Decimal sold_price = System.Convert.ToDecimal(supp_price);
-                decimal prod_Price = System.Convert.ToDecimal(getProdPrice(pCode));//Int32.Parse("-105");
-                decimal sprofit = (System.Convert.ToDecimal(sold_price) - prod_Price);
-                query = "exec take_order " + pCode + "," + qty+","+sold_price+","+sprofit;
-
-               // if(DataBase.NonQuery())
-               if(exec_query(query))
+                //Decimal sold_priced = System.Convert.ToDecimal(supp_price);
+                decimal prod_Price = System.Convert.ToDecimal(getProdPrice(pCode));//Get Unit Price
+                if(System.Convert.ToDecimal(sold_price) >= prod_Price)
                 {
-                    MessageBox.Show("Data Entered Successfully ");
-                }
-               else
-                {
-                    MessageBox.Show("Data can not be  Entered");
+                    decimal sprofit = (System.Convert.ToDecimal(sold_price) - prod_Price);
+                    query = "exec take_order " + pCode + "," + qty + "," + sold_price + "," + sprofit;
+                    DataTable result = new DataTable();
+                    result = runquery(query);
+
+
+                    DataRow r1 = result.Rows[0];
+                    String val = r1.ItemArray[0].ToString();
+
+                    if (val.Equals("1"))
+                    {
+                        MessageBox.Show("Add to card updated Successfully ");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sorry, We can not enter add to card!");
+
+                    }
 
                 }
+                else
+                {
+                    MessageBox.Show("Enter Correct Price");
+
+                }
+
+                // if(DataBase.NonQuery())
+
+
+                
+/*
+                if (exec_query(query))
+                {
+                    
+                }*/
+               
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Invalid data", "Error");
+                MessageBox.Show("Invalid data, TRY AGAIN", "Error");
                 return;
             }
         }
 
 
-        public DataTable total_bill(String id)
+        public DataTable total_bill()
         {
             try
             {
 
-                query = "exec total_bill "+id;
+                query = "exec total_amount ";
                 result = runquery(query);
                 return result;
 

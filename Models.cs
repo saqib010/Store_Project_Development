@@ -2,26 +2,27 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Store
 {
     class Models
     {
-            public string tableName = "";
+        public string tableName = "";
 
-            public Models(string tableName)
-            {
-                this.tableName = tableName;
-            }
+        public Models(string tableName)
+        {
+            this.tableName = tableName;
+        }
         public Models() { }
         //*******************************gET IDs********************
-        
-       
+
+
         public DataTable runquery(String query)
         {
             try
             {
-                
+
                 SqlDataReader r = DataBase.Query(query);
                 DataTable result = new DataTable();
                 result.Load(r);
@@ -37,6 +38,30 @@ namespace Store
         //******************************************************
 
         ///*********INSERT QUERY TABLE
+        ///
+
+
+        public void sales(String SupplierName)
+        {
+            String q;
+            q = "exec Supplier_Product '" + SupplierName + "'";
+            DataTable result = new DataTable();
+            result = runquery(query);
+            DataRow r1 = result.Rows[0];
+            String val = r1.ItemArray[0].ToString();
+
+            if (val.Equals("0"))
+            {
+                MessageBox.Show("Record Not available");
+            }
+            else
+            {
+                MessageBox.Show("Record is available");
+            }
+
+        }
+
+
         public Boolean insert(List<String> attributes)
         {
             string query="Exec Add_"+tableName ;
@@ -92,7 +117,26 @@ namespace Store
             //pnl_Cust.SetBounds(287, 26, 1069, 580);
             //get_Table();
 
-            return exec_query(query);
+            DataTable result = new DataTable();
+            result = runquery(query);
+
+
+            DataRow r1 = result.Rows[0];
+            String val = r1.ItemArray[0].ToString();
+
+            if (val.Equals("0"))
+            {
+                //MessageBox.Show("Data Can not be entered try again ");
+                return false;
+            }
+            else
+            {
+                //MessageBox.Show("yes, Data is entered");
+                return true;
+            }
+
+
+            //return exec_query(query);
         }
 
        

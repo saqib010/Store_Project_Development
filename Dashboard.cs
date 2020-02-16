@@ -89,6 +89,7 @@ namespace Store
             // AddCustomerPanel.Visible = false;
             set_SupplierNameCombo();
         }
+
         private void set_SupplierNameCombo()
         {
             //DataBase_A.Supliers cust = new DataBase_A.S();
@@ -100,6 +101,10 @@ namespace Store
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 SupplierNameComboBox.Items.Add(dt.Rows[i]["Name"]);
+            }
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                SupplierNameCombo.Items.Add(dt.Rows[i]["Name"]);
             }
 
 
@@ -203,6 +208,7 @@ namespace Store
         {
             DisplayPanel.SetBounds(302, 02, 1055, 624);
             DisplayPanel.Visible = true;
+            SalePanel.Visible = false; 
             DisplaySupplierPanel.Visible = false;
             //DisplayCustomerPanel.Visible = false;
             AddRecordPanel.Visible = false;
@@ -217,13 +223,9 @@ namespace Store
 
         private void button18_Click(object sender, EventArgs e)
         {
-            btn_update.Enabled = false;
+            
             //btn_delete.Enabled = false;
-            pnl_suplier_fields.Visible = false;
-            pnl_prod_fields.Visible = false;
-            pnl_stok_fields.Visible = false;
-            pnl_Order_fields.Visible = false;
-            btn_display_Main_Click(sender, e);
+             btn_bk_Customer_Click(sender,e);
 
 
         }
@@ -575,7 +577,7 @@ namespace Store
         {
             Store.order ord = new Store.order();
              dt = ord.ord_detail(id_to_search_details);
-            DataTable dt1 = ord.total_bill(id_to_search_details);
+            DataTable dt1 = ord.total_bill();
             DataRow r1 = dt1.Rows[0];
             object[] o = r1.ItemArray;
             Store.Order_details detail = new Store.Order_details(dt, o[0].ToString(), o[1].ToString());
@@ -808,7 +810,51 @@ namespace Store
 
         private void button28_Click(object sender, EventArgs e)
         {
-            showOrderDetail(new Store.order().getCurrent_detail());
+            //showOrderDetail(new Store.order().getCurrent_detail());
+            decimal finalBill;
+            Store.order order = new order();
+            DataTable result = new DataTable();
+            result=order.total_bill();
+            DataRow r1 = result.Rows[0];
+            String val = r1.ItemArray[0].ToString();
+
+            if (!val.Equals("0"))
+            {
+                MessageBox.Show("Total value is= "+val);
+            }
+            else
+            {
+                MessageBox.Show("Sorry Total Value can not be calculated");
+            }
+
+
+
+        }
+
+        private void SaleButton_Click(object sender, EventArgs e)
+        {
+            //DataGridView.DataS.ource = 
+           // model = new Models().sales("");
+           // DataTable dt = new Models.insert(); sales(SupplierNameCombo.Text);
+            SalePanel.SetBounds(302, 02, 1055, 624);
+            SalePanel.Visible = true;
+            //button26_Click(sender, e);
+            DisplaySupplierPanel.Visible = false;
+            TakeOrderPanel.Visible = false;
+            //DisplayCustomerPanel.Visible = false;
+            DisplayPanel.Visible = false;
+            AddRecordPanel.Visible = false;
+            pnl_home.Visible = false;
+            // AddCustomerPanel.Visible = false;
+            AddSupplierPanel.Visible = false;
+            AddProductPanel.Visible = false;
+            TakeOrderPanel.Visible = false;
+            set_SupplierNameCombo();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         /// <summary>

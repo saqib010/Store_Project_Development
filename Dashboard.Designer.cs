@@ -31,6 +31,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.AddRecordPanel = new System.Windows.Forms.Panel();
             this.label57 = new System.Windows.Forms.Label();
@@ -119,8 +122,15 @@
             this.button13 = new System.Windows.Forms.Button();
             this.CancelOrder = new System.Windows.Forms.Button();
             this.SoldQuantityOrder = new System.Windows.Forms.TextBox();
+            this.SalePanel = new System.Windows.Forms.Panel();
+            this.SupplierNameCombo = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.gradientColor1 = new Store.gradientColor();
-            this.button23 = new System.Windows.Forms.Button();
+            this.SaleButton = new System.Windows.Forms.Button();
             this.btn_Take_Order = new System.Windows.Forms.Button();
             this.button25 = new System.Windows.Forms.Button();
             this.panel1 = new Store.gradientColor();
@@ -136,6 +146,7 @@
             this.btn_EXIT_App = new System.Windows.Forms.Button();
             this.pnl_home = new Store.gradientColor();
             this.label26 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.AddRecordPanel.SuspendLayout();
             this.AddProductPanel.SuspendLayout();
             this.DisplayPanel.SuspendLayout();
@@ -147,6 +158,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.AddSupplierPanel.SuspendLayout();
             this.TakeOrderPanel.SuspendLayout();
+            this.SalePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gradientColor1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -160,9 +173,9 @@
             this.AddRecordPanel.Controls.Add(this.AddSupplierButton);
             this.AddRecordPanel.Controls.Add(this.AddProductButton);
             this.AddRecordPanel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddRecordPanel.Location = new System.Drawing.Point(430, 95);
+            this.AddRecordPanel.Location = new System.Drawing.Point(761, 19);
             this.AddRecordPanel.Name = "AddRecordPanel";
-            this.AddRecordPanel.Size = new System.Drawing.Size(21, 10);
+            this.AddRecordPanel.Size = new System.Drawing.Size(31, 32);
             this.AddRecordPanel.TabIndex = 69;
             this.AddRecordPanel.Visible = false;
             this.AddRecordPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AddRecordPanel_Paint);
@@ -223,9 +236,9 @@
             this.AddProductPanel.Controls.Add(this.label10);
             this.AddProductPanel.Controls.Add(this.label11);
             this.AddProductPanel.Controls.Add(this.label12);
-            this.AddProductPanel.Location = new System.Drawing.Point(511, 105);
+            this.AddProductPanel.Location = new System.Drawing.Point(511, 19);
             this.AddProductPanel.Name = "AddProductPanel";
-            this.AddProductPanel.Size = new System.Drawing.Size(19, 10);
+            this.AddProductPanel.Size = new System.Drawing.Size(54, 32);
             this.AddProductPanel.TabIndex = 69;
             this.AddProductPanel.Visible = false;
             this.AddProductPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AddProductPanel_Paint);
@@ -418,7 +431,7 @@
             this.DisplayPanel.Controls.Add(this.btn_prod_view);
             this.DisplayPanel.Controls.Add(this.btn_Stok_View);
             this.DisplayPanel.Controls.Add(this.btn_Order_View);
-            this.DisplayPanel.Location = new System.Drawing.Point(778, 44);
+            this.DisplayPanel.Location = new System.Drawing.Point(696, 17);
             this.DisplayPanel.Name = "DisplayPanel";
             this.DisplayPanel.Size = new System.Drawing.Size(23, 34);
             this.DisplayPanel.TabIndex = 71;
@@ -503,9 +516,9 @@
             this.DisplaySupplierPanel.Controls.Add(this.btn_back_display);
             this.DisplaySupplierPanel.Controls.Add(this.btn_update);
             this.DisplaySupplierPanel.Controls.Add(this.txt_search);
-            this.DisplaySupplierPanel.Location = new System.Drawing.Point(489, 139);
+            this.DisplaySupplierPanel.Location = new System.Drawing.Point(337, 17);
             this.DisplaySupplierPanel.Name = "DisplaySupplierPanel";
-            this.DisplaySupplierPanel.Size = new System.Drawing.Size(11, 11);
+            this.DisplaySupplierPanel.Size = new System.Drawing.Size(67, 25);
             this.DisplaySupplierPanel.TabIndex = 72;
             this.DisplaySupplierPanel.Visible = false;
             // 
@@ -968,9 +981,9 @@
             this.AddSupplierPanel.Controls.Add(this.label22);
             this.AddSupplierPanel.Controls.Add(this.label23);
             this.AddSupplierPanel.Controls.Add(this.label24);
-            this.AddSupplierPanel.Location = new System.Drawing.Point(307, 8);
+            this.AddSupplierPanel.Location = new System.Drawing.Point(437, 18);
             this.AddSupplierPanel.Name = "AddSupplierPanel";
-            this.AddSupplierPanel.Size = new System.Drawing.Size(15, 19);
+            this.AddSupplierPanel.Size = new System.Drawing.Size(33, 46);
             this.AddSupplierPanel.TabIndex = 70;
             this.AddSupplierPanel.Visible = false;
             // 
@@ -1104,9 +1117,9 @@
             this.TakeOrderPanel.Controls.Add(this.button13);
             this.TakeOrderPanel.Controls.Add(this.CancelOrder);
             this.TakeOrderPanel.Controls.Add(this.SoldQuantityOrder);
-            this.TakeOrderPanel.Location = new System.Drawing.Point(519, 19);
+            this.TakeOrderPanel.Location = new System.Drawing.Point(628, 19);
             this.TakeOrderPanel.Name = "TakeOrderPanel";
-            this.TakeOrderPanel.Size = new System.Drawing.Size(19, 19);
+            this.TakeOrderPanel.Size = new System.Drawing.Size(33, 43);
             this.TakeOrderPanel.TabIndex = 73;
             this.TakeOrderPanel.Visible = false;
             // 
@@ -1252,12 +1265,142 @@
             this.SoldQuantityOrder.Size = new System.Drawing.Size(153, 25);
             this.SoldQuantityOrder.TabIndex = 16;
             // 
+            // SalePanel
+            // 
+            this.SalePanel.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.SalePanel.Controls.Add(this.button1);
+            this.SalePanel.Controls.Add(this.SupplierNameCombo);
+            this.SalePanel.Controls.Add(this.dataGridView1);
+            this.SalePanel.Controls.Add(this.button2);
+            this.SalePanel.Controls.Add(this.label39);
+            this.SalePanel.Controls.Add(this.label40);
+            this.SalePanel.Controls.Add(this.button3);
+            this.SalePanel.Location = new System.Drawing.Point(307, 104);
+            this.SalePanel.Name = "SalePanel";
+            this.SalePanel.Size = new System.Drawing.Size(966, 520);
+            this.SalePanel.TabIndex = 72;
+            this.SalePanel.Visible = false;
+            // 
+            // SupplierNameCombo
+            // 
+            this.SupplierNameCombo.FormattingEnabled = true;
+            this.SupplierNameCombo.Location = new System.Drawing.Point(30, 86);
+            this.SupplierNameCombo.Name = "SupplierNameCombo";
+            this.SupplierNameCombo.Size = new System.Drawing.Size(196, 21);
+            this.SupplierNameCombo.TabIndex = 62;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Highlight;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Location = new System.Drawing.Point(296, 59);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowTemplate.Height = 27;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(744, 335);
+            this.dataGridView1.TabIndex = 19;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellDoubleClick);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Gray;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(51, 519);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(103, 32);
+            this.button2.TabIndex = 36;
+            this.button2.Text = "RE&SET";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.btn_search_reset_Click);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.BackColor = System.Drawing.Color.Transparent;
+            this.label39.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.ForeColor = System.Drawing.Color.White;
+            this.label39.Location = new System.Drawing.Point(26, 108);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(126, 20);
+            this.label39.TabIndex = 35;
+            this.label39.Text = "Supplier Name";
+            // 
+            // label40
+            // 
+            this.label40.BackColor = System.Drawing.Color.Transparent;
+            this.label40.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.ForeColor = System.Drawing.Color.White;
+            this.label40.Location = new System.Drawing.Point(305, 5);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(811, 40);
+            this.label40.TabIndex = 33;
+            this.label40.Text = "SALE DETAILS";
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label40.Click += new System.EventHandler(this.label98_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Gray;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.ImageIndex = 2;
+            this.button3.Location = new System.Drawing.Point(18, 18);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(149, 52);
+            this.button3.TabIndex = 23;
+            this.button3.Text = "BA&CK";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button18_Click);
+            // 
             // gradientColor1
             // 
             this.gradientColor1.BackColor = System.Drawing.Color.Transparent;
             this.gradientColor1.ColorBottom = System.Drawing.Color.Red;
             this.gradientColor1.ColorTop = System.Drawing.SystemColors.Highlight;
-            this.gradientColor1.Controls.Add(this.button23);
+            this.gradientColor1.Controls.Add(this.SaleButton);
             this.gradientColor1.Controls.Add(this.btn_Take_Order);
             this.gradientColor1.Controls.Add(this.button25);
             this.gradientColor1.Location = new System.Drawing.Point(2, 630);
@@ -1265,18 +1408,19 @@
             this.gradientColor1.Size = new System.Drawing.Size(1360, 76);
             this.gradientColor1.TabIndex = 76;
             // 
-            // button23
+            // SaleButton
             // 
-            this.button23.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button23.BackColor = System.Drawing.Color.Gray;
-            this.button23.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button23.ForeColor = System.Drawing.Color.Black;
-            this.button23.Location = new System.Drawing.Point(688, 13);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(262, 57);
-            this.button23.TabIndex = 6;
-            this.button23.Text = "WEEKLY REPORT";
-            this.button23.UseVisualStyleBackColor = false;
+            this.SaleButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SaleButton.BackColor = System.Drawing.Color.Gray;
+            this.SaleButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaleButton.ForeColor = System.Drawing.Color.Black;
+            this.SaleButton.Location = new System.Drawing.Point(688, 13);
+            this.SaleButton.Name = "SaleButton";
+            this.SaleButton.Size = new System.Drawing.Size(262, 57);
+            this.SaleButton.TabIndex = 6;
+            this.SaleButton.Text = "SALES";
+            this.SaleButton.UseVisualStyleBackColor = false;
+            this.SaleButton.Click += new System.EventHandler(this.SaleButton_Click);
             // 
             // btn_Take_Order
             // 
@@ -1483,6 +1627,15 @@
             this.label26.TabIndex = 0;
             this.label26.Text = "HOM&E";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(60, 312);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 63;
+            this.button1.Text = "TOTAL";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1496,6 +1649,7 @@
             this.Controls.Add(this.gradientColor1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnl_home);
+            this.Controls.Add(this.SalePanel);
             this.Controls.Add(this.DisplaySupplierPanel);
             this.Controls.Add(this.DisplayPanel);
             this.Controls.Add(this.AddRecordPanel);
@@ -1526,6 +1680,9 @@
             this.AddSupplierPanel.PerformLayout();
             this.TakeOrderPanel.ResumeLayout(false);
             this.TakeOrderPanel.PerformLayout();
+            this.SalePanel.ResumeLayout(false);
+            this.SalePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gradientColor1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -1577,7 +1734,7 @@
         private gradientColor pnl_home;
         private gradientColor panel1;
         private gradientColor gradientColor1;
-        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Button SaleButton;
         private System.Windows.Forms.Button btn_search_reset;
         private System.Windows.Forms.Label label97;
         private System.Windows.Forms.Button btn_update;
@@ -1640,5 +1797,13 @@
         private System.Windows.Forms.TextBox txt_import;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox SupplierAddressTextBox;
+        private System.Windows.Forms.Panel SalePanel;
+        private System.Windows.Forms.ComboBox SupplierNameCombo;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
     }
 }
