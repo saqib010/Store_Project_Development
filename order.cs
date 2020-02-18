@@ -39,41 +39,49 @@ namespace Store
 
                     if (val.Equals("1"))
                     {
-                        MessageBox.Show("Add to card updated Successfully ");
+                        MessageBox.Show("Added to Cart", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
                     }
                     else
                     {
-                        MessageBox.Show("Sorry, We can not enter add to card!");
+                        MessageBox.Show("Product of code "+pCode+" is out of Stock", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show("Enter Correct Price");
+                    MessageBox.Show("Sold price must be greater or equal to purchase price");
 
                 }
-
-                // if(DataBase.NonQuery())
-
-
-                
-/*
-                if (exec_query(query))
-                {
-                    
-                }*/
                
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Invalid data, TRY AGAIN", "Error");
+                MessageBox.Show("Provided data is not correct, TRY AGAIN", "Error");
                 return;
             }
         }
 
 
-        public DataTable total_bill()
+        public DataTable total_bill(String id)
+        {
+            try
+            {
+
+                query = "exec total_bill "+id;
+                result = runquery(query);
+                return result;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bill exicution is not possible");
+                return null;
+            }
+        }
+
+        public DataTable total_checkoutamount()
         {
             try
             {
@@ -85,7 +93,7 @@ namespace Store
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data is not present");
+                MessageBox.Show("Total amount can not be calculated");
                 return null;
             }
         }

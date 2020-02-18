@@ -25,25 +25,21 @@ namespace Store
         {
 
         }
-
-        private void pnl_home_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btn_Home_Click(object sender, EventArgs e)
         {
             pnl_home.Visible = true;
             pnl_home.SetBounds(302, 02, 1055, 624);
 
             AddRecordPanel.Visible = false;
-            // AddCustomerPanel.Visible = false;
+           
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
             DisplayPanel.Visible = false;
             DisplaySupplierPanel.Visible = false;
             TakeOrderPanel.Visible = false;
         }
+            
+        
 
         private void btn_Add_main_Click(object sender, EventArgs e)
         {
@@ -95,20 +91,14 @@ namespace Store
             //DataBase_A.Supliers cust = new DataBase_A.S();
             Store.supliers sup = new Store.supliers();
             // DataTable dt = sup.supplier_ID_List();
-             dt = sup.Supplier_ID_List();
-
-
+            dt = sup.Supplier_ID_List();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 SupplierNameComboBox.Items.Add(dt.Rows[i]["Name"]);
             }
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                SupplierNameCombo.Items.Add(dt.Rows[i]["Name"]);
-            }
-
 
         }
+
         private void set_prodcodeCombo()
         {
             //DataBase_A.Supliers cust = new DataBase_A.S();
@@ -208,7 +198,7 @@ namespace Store
         {
             DisplayPanel.SetBounds(302, 02, 1055, 624);
             DisplayPanel.Visible = true;
-            SalePanel.Visible = false; 
+            //SalePanel.Visible = false; 
             DisplaySupplierPanel.Visible = false;
             //DisplayCustomerPanel.Visible = false;
             AddRecordPanel.Visible = false;
@@ -378,7 +368,7 @@ namespace Store
             ProductNameTextBox.Text = "";
             ProductQuatityTextBox.Text = "";
             ProductPriceTextBox.Text = "";
-            SupplierNameComboBox.Text = "";
+           // SupplierNameComboBox.Items. = "";
         }
 
         private static bool IsDigitsOnly(string str)
@@ -549,8 +539,8 @@ namespace Store
                     int index = e.RowIndex;
                     //Text_stock_prod_qty.Text = DataGridView.Rows[index].Cells[3].Value.ToString();
                    // Text_stok_sell.Text = DataGridView.Rows[index].Cells[4].Value.ToString();
-                    txt_stock_prod_name.Text = DataGridView.Rows[index].Cells[2].Value.ToString();
-                    txt_stock_suplier_name.Text = DataGridView.Rows[index].Cells[1].Value.ToString();
+                    txt_stock_prod_name.Text = DataGridView.Rows[index].Cells[1].Value.ToString();
+                    txt_stock_suplier_name.Text = DataGridView.Rows[index].Cells[0].Value.ToString();
 
                 }
 
@@ -577,10 +567,11 @@ namespace Store
         {
             Store.order ord = new Store.order();
              dt = ord.ord_detail(id_to_search_details);
-            DataTable dt1 = ord.total_bill();
+            DataTable dt1 = ord.total_bill(id_to_search_details);
             DataRow r1 = dt1.Rows[0];
             object[] o = r1.ItemArray;
-            Store.Order_details detail = new Store.Order_details(dt, o[0].ToString(), o[1].ToString());
+            Store.Order_details detail = new Store.Order_details();
+            detail.setBills(dt, o[0].ToString(), o[1].ToString());
             detail.Show();
         }
 
@@ -700,11 +691,19 @@ namespace Store
             {
                 if (IsAlphas_Only(text_sup_Name.Text) && IsDigitsOnly(text_sup_phn.Text))
                 {
-                    String[] ar = { "Name", "'" + text_sup_Name.Text + "'", "Address", "'" + text_sup_Address.Text + "'", "PhoneNo", text_sup_phn.Text };
-                    List<Store.Attribute> record = Store.Attribute.fromArray(ar);
+                    if (new Store.supliers().check_name_existance(text_sup_Name.Text, text_sup_phn.Text))
+                    {
+                        String[] ar = { "Name", "'" + text_sup_Name.Text + "'", "Address", "'" + text_sup_Address.Text + "'", "PhoneNo", text_sup_phn.Text };
+                        List<Store.Attribute> record = Store.Attribute.fromArray(ar);
 
-                    Update_record(record);
-                    btn_Suplier_view_Click(sender, e);
+                        Update_record(record);
+                        btn_Suplier_view_Click(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Supplier name or phone number is Already existed ! ", "Invalid Data", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+
+                    }
                 }
                 else
                 {
@@ -786,13 +785,11 @@ namespace Store
                     {
                         Store.order ord = new Store.order();
                         ord.add_to_cart(ProductCodeOrder.Text,SoldQuantityOrder.Text,SoldUnitPriceOrder.Text);
-                        ProductCodeOrder.Text = "";
-                        SoldQuantityOrder.Text = "";
-                        SoldUnitPriceOrder.Text = "";
-
+                        Clear_take_order_fields();
+                        set_prodcodeCombo();
                     }
                      else
-                        MessageBox.Show("Provide Price Correcty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Enter Price Correcty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
             }
@@ -800,6 +797,13 @@ namespace Store
             
         }
         
+        private void Clear_take_order_fields()
+        {
+            ProductCodeOrder.Items.Clear();
+            SoldQuantityOrder.Text = "";
+            SoldUnitPriceOrder.Text = "";
+            ChecckOutButton.Enabled = true;
+        }
         private void button26_Click(object sender, EventArgs e)
         {
             SoldQuantityOrder.Text = "";
@@ -810,51 +814,37 @@ namespace Store
 
         private void button28_Click(object sender, EventArgs e)
         {
-            //showOrderDetail(new Store.order().getCurrent_detail());
+            showOrderDetail(new Store.order().getCurrent_detail());
             decimal finalBill;
             Store.order order = new order();
             DataTable result = new DataTable();
-            result=order.total_bill();
+            result=order.total_checkoutamount();
             DataRow r1 = result.Rows[0];
             String val = r1.ItemArray[0].ToString();
 
-            if (!val.Equals("0"))
-            {
-                MessageBox.Show("Total value is= "+val);
-            }
-            else
-            {
-                MessageBox.Show("Sorry Total Value can not be calculated");
-            }
-
-
+            Clear_take_order_fields();
+            set_prodcodeCombo();
+            ChecckOutButton.Enabled = false;
 
         }
 
         private void SaleButton_Click(object sender, EventArgs e)
         {
-            //DataGridView.DataS.ource = 
-           // model = new Models().sales("");
-           // DataTable dt = new Models.insert(); sales(SupplierNameCombo.Text);
-            SalePanel.SetBounds(302, 02, 1055, 624);
-            SalePanel.Visible = true;
-            //button26_Click(sender, e);
-            DisplaySupplierPanel.Visible = false;
-            TakeOrderPanel.Visible = false;
-            //DisplayCustomerPanel.Visible = false;
-            DisplayPanel.Visible = false;
-            AddRecordPanel.Visible = false;
-            pnl_home.Visible = false;
-            // AddCustomerPanel.Visible = false;
-            AddSupplierPanel.Visible = false;
-            AddProductPanel.Visible = false;
-            TakeOrderPanel.Visible = false;
-            set_SupplierNameCombo();
+            Order_details sales = new Order_details();
+            sales.setsales();
+            sales.Show();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            Order_details ord = new Order_details();
+            ord.set_accounts();
+            ord.Show();
         }
 
         /// <summary>

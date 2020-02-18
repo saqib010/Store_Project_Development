@@ -40,28 +40,6 @@ namespace Store
         ///*********INSERT QUERY TABLE
         ///
 
-
-        public void sales(String SupplierName)
-        {
-            String q;
-            q = "exec Supplier_Product '" + SupplierName + "'";
-            DataTable result = new DataTable();
-            result = runquery(query);
-            DataRow r1 = result.Rows[0];
-            String val = r1.ItemArray[0].ToString();
-
-            if (val.Equals("0"))
-            {
-                MessageBox.Show("Record Not available");
-            }
-            else
-            {
-                MessageBox.Show("Record is available");
-            }
-
-        }
-
-
         public Boolean insert(List<String> attributes)
         {
             string query="Exec Add_"+tableName ;
@@ -73,7 +51,7 @@ namespace Store
                 query = " ";
 
 
-            } //EXEC add_Supplier 'dada','chota@gmail.com',456,'asd564','sdf',456,'2018-12-23'
+            } 
 
             else if (tableName == "Supplier")
             {
@@ -93,7 +71,7 @@ namespace Store
             }
 
             else if (tableName == "Product")
-            {//1/4/5
+            {
                 query += " ";
                 for (int i = 0; i < attributes.Count; i++)
                 {
@@ -101,7 +79,7 @@ namespace Store
                     if (i == attributes.Count - 1)
                     {
                         query +=   attributes[i] ;
-                    }//EXEC Add_Product 'aaaa',009,'Jeans','Small',4,66
+                    }
                     else if (i==1||i == 4)
                     {
                         query += attributes[i] + ",";
@@ -113,9 +91,6 @@ namespace Store
                 }
                 query += "";
             }
-            //model = new DataBase_A.Supliers();
-            //pnl_Cust.SetBounds(287, 26, 1069, 580);
-            //get_Table();
 
             DataTable result = new DataTable();
             result = runquery(query);
@@ -126,17 +101,13 @@ namespace Store
 
             if (val.Equals("0"))
             {
-                //MessageBox.Show("Data Can not be entered try again ");
                 return false;
             }
             else
             {
-                //MessageBox.Show("yes, Data is entered");
                 return true;
             }
 
-
-            //return exec_query(query);
         }
 
        
@@ -145,18 +116,13 @@ namespace Store
 
         public DataTable get()
         {
-            //SqlDataReader r = DataBase.Query();
-            return runquery("Select * from " + tableName);
+            if (!tableName.Equals("OrderTable"))
+            {
+                return runquery("Select * from " + tableName);
+            }
+            else
+                return runquery("select * from OrderTable where Order_ID!= (Select Max(Order_ID) from OrderTable)");
         }
-
-       /* public DataTable getBY_ID(String id)
-        {
-            SqlDataReader r = DataBase.Query("Select * from " + tableName + " where iD  = " + id + "");
-            DataTable result = new DataTable();
-            result.Load(r);
-            r.Close();
-            return result;
-        }*/
         public DataTable getOpen(String name, List<string> columns)
         {
             string query = "select * from " + tableName;
@@ -185,6 +151,7 @@ namespace Store
 
         public Boolean set(List<Attribute> SetAttributes, List<Attribute> WhereAttributes)
         {
+
             string query = "Update " + tableName + " SET ";
             for (int i = 0; i < SetAttributes.Count; i++)
             {
@@ -236,29 +203,6 @@ namespace Store
         {
             return set(SetAttributes, Attribute.fromArray(new string[] { tableName+"_ID", "" + whereId }));
         }
-
-        // *****############## Delete function/// *********************##############
-
-      /*  public Boolean delete(string id)
-        {
-            try
-            {
-                String query = "exec tb" + tableName + " " + id;
-                // System.Windows.Forms.MessageBox.Show(query);
-                if (System.Windows.Forms.MessageBox.Show("\nAll References May Also Be Deleted !", "Warning", System.Windows.Forms.MessageBoxButtons.OKCancel, System.Windows.Forms.MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
-                {
-                    SqlDataReader r = DataBase.Query(query);
-                    r.Close();
-                    return true;
-                }
-                return false;
-            }
-            catch (Exception ex)
-            {
-                //ex is the error object
-                return false;
-            }
-        }*/
 
     
     }

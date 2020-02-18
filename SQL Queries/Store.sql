@@ -30,7 +30,7 @@ ALTER TABLE OrderTable MODIFY (order_profit NULL);
 
 @order_profit=(select sum(single_profit) from OrderDelivered where Order_ID=(select max(Order_ID) from OrderTable))
 
-insert into OrderTable(Order_Date,order_profit) values (GETDATE(),null)
+insert into OrderTable(Order_Date,order_profit) values (convert(date,getDate()),null)
 select * from OrderTable
 
 select max(Unit_price) 
@@ -67,7 +67,7 @@ exec take_order 3344,10,46000,322.00
 exec display_stock
 select * from OrderTable
 select * from OrderDelivered
-insert into OrderTable(Order_Date,order_profit) values(GETDATE(),0)
+insert into OrderTable(Order_Date,order_profit) values(convert(date,getDate()),0)
 select * from OrderTable 
 
 exec take_order 551,10,1000,91.00
@@ -157,7 +157,7 @@ IF exists( select sum(d.total_Bill) as Total from OrderDelivered d where d.Order
 Begin  
 update OrderTable set order_profit=@Order_profit where Order_ID=(Select max(Order_ID) from OrderTable)
 select sum(d.total_Bill) as Total from OrderDelivered d where d.Order_ID=(select max(Order_ID) from OrderTable)
-insert into OrderTable(Order_Date,order_profit) values(GETDATE(),0)
+insert into OrderTable(Order_Date,order_profit) values(convert(date,getDate()),0)
        
 End  
    
