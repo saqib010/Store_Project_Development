@@ -61,6 +61,13 @@ namespace Store
             }
 
         }
+        public DataTable get_sup_prod(String query)
+        {
+            result = runquery("EXEC Display_sup_prod '"+query+"'");
+            r1 = result.Rows[0];
+            String val = r1.ItemArray[0].ToString();
+            return result;
+        }
     
     }
 }

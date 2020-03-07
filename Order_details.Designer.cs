@@ -233,7 +233,10 @@
             this.Controls.Add(this.Text_total_amount);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.grid_ord_Detail);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Order_details";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Order_details";
             ((System.ComponentModel.ISupportInitialize)(this.grid_ord_Detail)).EndInit();
             this.ResumeLayout(false);

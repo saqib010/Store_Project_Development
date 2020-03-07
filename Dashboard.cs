@@ -14,6 +14,7 @@ namespace Store
     {
         DataTable dt;
         Store.Models model;
+
         public Dashboard()
         {
             InitializeComponent();
@@ -47,6 +48,7 @@ namespace Store
             AddRecordPanel.Visible = true;
             pnl_home.Visible = false;
             //AddCustomerPanel.Visible = false;
+
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
             DisplayPanel.Visible = false;
@@ -72,6 +74,7 @@ namespace Store
 
         }
 
+
         private void AddProductButton_Click(object sender, EventArgs e)
         {
 
@@ -95,6 +98,7 @@ namespace Store
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 SupplierNameComboBox.Items.Add(dt.Rows[i]["Name"]);
+                como_sup_in_show_sup.Items.Add(dt.Rows[i]["Name"]);
             }
 
         }
@@ -149,6 +153,7 @@ namespace Store
         {
             DisplayPanel.SetBounds(302, 02, 1055, 624);
             DisplayPanel.Visible = true;
+            sup_btnshow();
             AddRecordPanel.Visible = false;
             pnl_home.Visible = false;
             // AddCustomerPanel.Visible = false;
@@ -182,18 +187,33 @@ namespace Store
         {
             model = new Store.supliers();
             DisplaySupplierPanel.SetBounds(302, 02, 1055, 624);
-            get_Table();
+            DataGridView.DataSource = null;
+            lbl_suplist_in_show_sup.Visible = true;
+            btn_show_suplier_prod.Visible = true;
+            como_sup_in_show_sup.Visible = true;
+
+                txt_search.Enabled = false;
+
             DisplaySupplierPanel.Visible = true;
             clear_grid_pnl_fields();
+            como_sup_in_show_sup.Items.Clear();
             DisplayPanel.Visible = false;
             AddRecordPanel.Visible = false;
             pnl_home.Visible = false;
+            SupplierNameComboBox.Items.Clear();
+            set_SupplierNameCombo();
             // AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
             label98.Text = "SUPPLIER RECORDS";
         }
 
+        private void sup_btnshow()
+        {
+            lbl_suplist_in_show_sup.Visible = false;
+            btn_show_suplier_prod.Visible = false;
+            como_sup_in_show_sup.Visible = false;
+        }
         private void btn_bk_Customer_Click(object sender, EventArgs e)
         {
             DisplayPanel.SetBounds(302, 02, 1055, 624);
@@ -231,7 +251,10 @@ namespace Store
             DisplayPanel.Visible = false;
             AddRecordPanel.Visible = false;
             pnl_home.Visible = false;
+            sup_btnshow();
             //AddCustomerPanel.Visible = false;
+            txt_search.Enabled = true;
+
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
             label98.Text = "ORDER RECORDS";
@@ -252,10 +275,12 @@ namespace Store
             clear_grid_pnl_fields();
             DisplayPanel.Visible = false;
             AddRecordPanel.Visible = false;
+            sup_btnshow();
             pnl_home.Visible = false;
             //AddCustomerPanel.Visible = false;
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
+            txt_search.Enabled = true;
             label98.Text = "PRODUCT RECORDS";
         }
         private void clear_grid_pnl_fields()
@@ -263,7 +288,7 @@ namespace Store
             pnl_Order_fields.Visible = false;
             pnl_prod_fields.Visible = false;
             pnl_stok_fields.Visible = false;
-            pnl_suplier_fields.Visible = false;
+            //pnl_suplier_fields.Visible = false;
             //btn_delete.Enabled = false;
             btn_update.Enabled = false;
 
@@ -278,9 +303,12 @@ namespace Store
             //DisplayCustomerPanel.Visible = false;
             DisplayPanel.Visible = false;
             AddRecordPanel.Visible = false;
+            sup_btnshow();
             clear_grid_pnl_fields();
             pnl_home.Visible = false;
             //AddCustomerPanel.Visible = false;
+            txt_search.Enabled = true;
+
             AddSupplierPanel.Visible = false;
             AddProductPanel.Visible = false;
             TakeOrderPanel.Visible = false;
@@ -475,7 +503,7 @@ namespace Store
                     pnl_prod_fields.SetBounds(296, 423, 684, 173);
                     pnl_prod_fields.Visible = true;
                     // pnl_stok_fields.Visible = false;
-                    pnl_suplier_fields.Visible = false;
+                    //pnl_suplier_fields.Visible = false;
                     //pnl_Order_fields.Visible = false;
                     //btn_prod_update.Enabled = true;
 
@@ -497,31 +525,12 @@ namespace Store
                     pnl_Order_fields.SetBounds(296, 406, 317, 139);
                     pnl_Order_fields.Visible = true;
                     pnl_stok_fields.Visible = false;
-                    pnl_suplier_fields.Visible = false;
+                    //pnl_suplier_fields.Visible = false;
                     pnl_prod_fields.Visible = false;
 
                     int index = e.RowIndex;
                     txt_search_this_order.Text = DataGridView.Rows[index].Cells[0].Value.ToString();
 
-                }
-            }
-            if (model is Store.supliers)
-            {
-                if (e.RowIndex >= 0)
-                {
-                    pnl_prod_fields.Visible = false;
-                    pnl_Order_fields.Visible = false;
-                    pnl_stok_fields.Visible = false;
-
-                    pnl_suplier_fields.Visible = true;
-                    pnl_suplier_fields.SetBounds(296, 406, 349, 206);
-
-
-                    int index = e.RowIndex;
-
-                    text_sup_Name.Text = DataGridView.Rows[index].Cells[1].Value.ToString();
-                    text_sup_Address.Text = DataGridView.Rows[index].Cells[2].Value.ToString();
-                    text_sup_phn.Text = DataGridView.Rows[index].Cells[3].Value.ToString();
                 }
             }
             else if (model is Store.stock)
@@ -531,7 +540,6 @@ namespace Store
 
                     pnl_stok_fields.SetBounds(296, 413, 688, 189);
                     pnl_stok_fields.Visible = true;
-                    pnl_suplier_fields.Visible = false;
                     pnl_Order_fields.Visible = false;
                     pnl_prod_fields.Visible = false;
 
@@ -577,8 +585,11 @@ namespace Store
 
         private void txt_search_KeyUp(object sender, KeyEventArgs e)
         {
+            txt_search.Enabled = true;
+            
             if(model is stock && txt_search.Text!="")
             {
+                
                 if (!search_by_ID())
                 {
                     txt_search.Text = "";
@@ -687,30 +698,7 @@ namespace Store
                 }
 
             }
-            else if (model is Store.supliers)
-            {
-                if (IsAlphas_Only(text_sup_Name.Text) && IsDigitsOnly(text_sup_phn.Text))
-                {
-                    if (new Store.supliers().check_name_existance(text_sup_Name.Text, text_sup_phn.Text))
-                    {
-                        String[] ar = { "Name", "'" + text_sup_Name.Text + "'", "Address", "'" + text_sup_Address.Text + "'", "PhoneNo", text_sup_phn.Text };
-                        List<Store.Attribute> record = Store.Attribute.fromArray(ar);
-
-                        Update_record(record);
-                        btn_Suplier_view_Click(sender, e);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Supplier name or phone number is Already existed ! ", "Invalid Data", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-
-                    }
-                }
-                else
-                {
-                    MessageBox.Show(" Invalid data is entered ! ", "Updated Data", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                    
-                }
-            }
+          
             else if (model is Store.stock)
             {
                 if (txt_import.Text.Length>0 && IsDigitsOnly(txt_import.Text))
@@ -845,6 +833,14 @@ namespace Store
             Order_details ord = new Order_details();
             ord.set_accounts();
             ord.Show();
+        }
+
+        private void btn_show_suplier_prod_Click(object sender, EventArgs e)
+        {
+            if (como_sup_in_show_sup.SelectedItem.ToString() != null)
+            {
+                DataGridView.DataSource = new Store.supliers().get_sup_prod(como_sup_in_show_sup.SelectedItem.ToString());
+            }
         }
 
         /// <summary>

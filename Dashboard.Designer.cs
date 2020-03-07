@@ -80,13 +80,6 @@
             this.Text_prod_Name = new System.Windows.Forms.TextBox();
             this.Text_prod_price = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.pnl_suplier_fields = new System.Windows.Forms.Panel();
-            this.text_sup_Address = new System.Windows.Forms.RichTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.text_sup_Name = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.text_sup_phn = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.DataGridView = new System.Windows.Forms.DataGridView();
             this.btn_search_reset = new System.Windows.Forms.Button();
             this.label97 = new System.Windows.Forms.Label();
@@ -119,6 +112,9 @@
             this.button13 = new System.Windows.Forms.Button();
             this.CancelOrder = new System.Windows.Forms.Button();
             this.SoldQuantityOrder = new System.Windows.Forms.TextBox();
+            this.lbl_suplist_in_show_sup = new System.Windows.Forms.Label();
+            this.como_sup_in_show_sup = new System.Windows.Forms.ComboBox();
+            this.btn_show_suplier_prod = new System.Windows.Forms.Button();
             this.gradientColor1 = new Store.gradientColor();
             this.SaleButton = new System.Windows.Forms.Button();
             this.btn_Take_Order = new System.Windows.Forms.Button();
@@ -143,7 +139,6 @@
             this.pnl_Order_fields.SuspendLayout();
             this.pnl_stok_fields.SuspendLayout();
             this.pnl_prod_fields.SuspendLayout();
-            this.pnl_suplier_fields.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.AddSupplierPanel.SuspendLayout();
             this.TakeOrderPanel.SuspendLayout();
@@ -155,14 +150,14 @@
             // 
             // AddRecordPanel
             // 
-            this.AddRecordPanel.BackColor = System.Drawing.SystemColors.Highlight;
+            this.AddRecordPanel.BackColor = System.Drawing.SystemColors.HotTrack;
             this.AddRecordPanel.Controls.Add(this.label57);
             this.AddRecordPanel.Controls.Add(this.AddSupplierButton);
             this.AddRecordPanel.Controls.Add(this.AddProductButton);
             this.AddRecordPanel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddRecordPanel.Location = new System.Drawing.Point(761, 19);
+            this.AddRecordPanel.Location = new System.Drawing.Point(362, 101);
             this.AddRecordPanel.Name = "AddRecordPanel";
-            this.AddRecordPanel.Size = new System.Drawing.Size(31, 32);
+            this.AddRecordPanel.Size = new System.Drawing.Size(10, 10);
             this.AddRecordPanel.TabIndex = 69;
             this.AddRecordPanel.Visible = false;
             this.AddRecordPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AddRecordPanel_Paint);
@@ -180,10 +175,10 @@
             // 
             // AddSupplierButton
             // 
-            this.AddSupplierButton.BackColor = System.Drawing.Color.Gray;
+            this.AddSupplierButton.BackColor = System.Drawing.Color.Crimson;
             this.AddSupplierButton.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddSupplierButton.ForeColor = System.Drawing.Color.Black;
-            this.AddSupplierButton.Location = new System.Drawing.Point(391, 215);
+            this.AddSupplierButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.AddSupplierButton.Location = new System.Drawing.Point(388, 155);
             this.AddSupplierButton.Name = "AddSupplierButton";
             this.AddSupplierButton.Size = new System.Drawing.Size(294, 61);
             this.AddSupplierButton.TabIndex = 9;
@@ -193,10 +188,10 @@
             // 
             // AddProductButton
             // 
-            this.AddProductButton.BackColor = System.Drawing.Color.Gray;
+            this.AddProductButton.BackColor = System.Drawing.Color.Crimson;
             this.AddProductButton.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddProductButton.ForeColor = System.Drawing.Color.Black;
-            this.AddProductButton.Location = new System.Drawing.Point(391, 353);
+            this.AddProductButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.AddProductButton.Location = new System.Drawing.Point(385, 267);
             this.AddProductButton.Name = "AddProductButton";
             this.AddProductButton.Size = new System.Drawing.Size(294, 61);
             this.AddProductButton.TabIndex = 6;
@@ -223,9 +218,9 @@
             this.AddProductPanel.Controls.Add(this.label10);
             this.AddProductPanel.Controls.Add(this.label11);
             this.AddProductPanel.Controls.Add(this.label12);
-            this.AddProductPanel.Location = new System.Drawing.Point(511, 19);
+            this.AddProductPanel.Location = new System.Drawing.Point(364, 119);
             this.AddProductPanel.Name = "AddProductPanel";
-            this.AddProductPanel.Size = new System.Drawing.Size(10, 12);
+            this.AddProductPanel.Size = new System.Drawing.Size(10, 10);
             this.AddProductPanel.TabIndex = 69;
             this.AddProductPanel.Visible = false;
             this.AddProductPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.AddProductPanel_Paint);
@@ -420,9 +415,9 @@
             this.DisplayPanel.Controls.Add(this.btn_prod_view);
             this.DisplayPanel.Controls.Add(this.btn_Stok_View);
             this.DisplayPanel.Controls.Add(this.btn_Order_View);
-            this.DisplayPanel.Location = new System.Drawing.Point(475, 40);
+            this.DisplayPanel.Location = new System.Drawing.Point(346, 101);
             this.DisplayPanel.Name = "DisplayPanel";
-            this.DisplayPanel.Size = new System.Drawing.Size(26, 15);
+            this.DisplayPanel.Size = new System.Drawing.Size(10, 10);
             this.DisplayPanel.TabIndex = 71;
             this.DisplayPanel.Visible = false;
             this.DisplayPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.DisplayPanel_Paint);
@@ -441,12 +436,12 @@
             // 
             // btn_Suplier_view
             // 
-            this.btn_Suplier_view.BackColor = System.Drawing.Color.Gray;
+            this.btn_Suplier_view.BackColor = System.Drawing.Color.Crimson;
             this.btn_Suplier_view.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Suplier_view.ForeColor = System.Drawing.Color.Black;
-            this.btn_Suplier_view.Location = new System.Drawing.Point(31, 60);
+            this.btn_Suplier_view.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Suplier_view.Location = new System.Drawing.Point(420, 121);
             this.btn_Suplier_view.Name = "btn_Suplier_view";
-            this.btn_Suplier_view.Size = new System.Drawing.Size(244, 44);
+            this.btn_Suplier_view.Size = new System.Drawing.Size(244, 69);
             this.btn_Suplier_view.TabIndex = 5;
             this.btn_Suplier_view.Text = "VIEW  SUPPLIER";
             this.btn_Suplier_view.UseVisualStyleBackColor = false;
@@ -454,12 +449,12 @@
             // 
             // btn_prod_view
             // 
-            this.btn_prod_view.BackColor = System.Drawing.Color.Gray;
+            this.btn_prod_view.BackColor = System.Drawing.Color.Crimson;
             this.btn_prod_view.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_prod_view.ForeColor = System.Drawing.Color.Black;
-            this.btn_prod_view.Location = new System.Drawing.Point(31, 117);
+            this.btn_prod_view.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_prod_view.Location = new System.Drawing.Point(421, 221);
             this.btn_prod_view.Name = "btn_prod_view";
-            this.btn_prod_view.Size = new System.Drawing.Size(244, 44);
+            this.btn_prod_view.Size = new System.Drawing.Size(244, 69);
             this.btn_prod_view.TabIndex = 4;
             this.btn_prod_view.Text = "VIEW  PRODUCTS";
             this.btn_prod_view.UseVisualStyleBackColor = false;
@@ -467,25 +462,25 @@
             // 
             // btn_Stok_View
             // 
-            this.btn_Stok_View.BackColor = System.Drawing.Color.Gray;
+            this.btn_Stok_View.BackColor = System.Drawing.Color.Crimson;
             this.btn_Stok_View.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Stok_View.ForeColor = System.Drawing.Color.Black;
-            this.btn_Stok_View.Location = new System.Drawing.Point(35, 232);
+            this.btn_Stok_View.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Stok_View.Location = new System.Drawing.Point(420, 418);
             this.btn_Stok_View.Name = "btn_Stok_View";
-            this.btn_Stok_View.Size = new System.Drawing.Size(244, 44);
+            this.btn_Stok_View.Size = new System.Drawing.Size(244, 69);
             this.btn_Stok_View.TabIndex = 3;
-            this.btn_Stok_View.Text = "VIEW  ST&OCK";
+            this.btn_Stok_View.Text = "VIEW  STOCK";
             this.btn_Stok_View.UseVisualStyleBackColor = false;
             this.btn_Stok_View.Click += new System.EventHandler(this.btn_Stok_View_Click);
             // 
             // btn_Order_View
             // 
-            this.btn_Order_View.BackColor = System.Drawing.Color.Gray;
+            this.btn_Order_View.BackColor = System.Drawing.Color.Crimson;
             this.btn_Order_View.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Order_View.ForeColor = System.Drawing.Color.Black;
-            this.btn_Order_View.Location = new System.Drawing.Point(31, 174);
+            this.btn_Order_View.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Order_View.Location = new System.Drawing.Point(420, 319);
             this.btn_Order_View.Name = "btn_Order_View";
-            this.btn_Order_View.Size = new System.Drawing.Size(244, 44);
+            this.btn_Order_View.Size = new System.Drawing.Size(244, 69);
             this.btn_Order_View.TabIndex = 2;
             this.btn_Order_View.Text = "VIEW  ORDERS";
             this.btn_Order_View.UseVisualStyleBackColor = false;
@@ -494,10 +489,12 @@
             // DisplaySupplierPanel
             // 
             this.DisplaySupplierPanel.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.DisplaySupplierPanel.Controls.Add(this.btn_show_suplier_prod);
+            this.DisplaySupplierPanel.Controls.Add(this.lbl_suplist_in_show_sup);
+            this.DisplaySupplierPanel.Controls.Add(this.como_sup_in_show_sup);
             this.DisplaySupplierPanel.Controls.Add(this.pnl_Order_fields);
             this.DisplaySupplierPanel.Controls.Add(this.pnl_stok_fields);
             this.DisplaySupplierPanel.Controls.Add(this.pnl_prod_fields);
-            this.DisplaySupplierPanel.Controls.Add(this.pnl_suplier_fields);
             this.DisplaySupplierPanel.Controls.Add(this.DataGridView);
             this.DisplaySupplierPanel.Controls.Add(this.btn_search_reset);
             this.DisplaySupplierPanel.Controls.Add(this.label97);
@@ -505,9 +502,9 @@
             this.DisplaySupplierPanel.Controls.Add(this.btn_back_display);
             this.DisplaySupplierPanel.Controls.Add(this.btn_update);
             this.DisplaySupplierPanel.Controls.Add(this.txt_search);
-            this.DisplaySupplierPanel.Location = new System.Drawing.Point(393, 46);
+            this.DisplaySupplierPanel.Location = new System.Drawing.Point(364, 139);
             this.DisplaySupplierPanel.Name = "DisplaySupplierPanel";
-            this.DisplaySupplierPanel.Size = new System.Drawing.Size(10, 23);
+            this.DisplaySupplierPanel.Size = new System.Drawing.Size(10, 10);
             this.DisplaySupplierPanel.TabIndex = 72;
             this.DisplaySupplierPanel.Visible = false;
             // 
@@ -517,7 +514,7 @@
             this.pnl_Order_fields.Controls.Add(this.txt_search_this_order);
             this.pnl_Order_fields.Controls.Add(this.btn_ord_detial);
             this.pnl_Order_fields.Controls.Add(this.label29);
-            this.pnl_Order_fields.Location = new System.Drawing.Point(30, 170);
+            this.pnl_Order_fields.Location = new System.Drawing.Point(90, 334);
             this.pnl_Order_fields.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Order_fields.Name = "pnl_Order_fields";
             this.pnl_Order_fields.Size = new System.Drawing.Size(23, 19);
@@ -567,7 +564,7 @@
             this.pnl_stok_fields.Controls.Add(this.txt_stock_suplier_name);
             this.pnl_stok_fields.Controls.Add(this.label25);
             this.pnl_stok_fields.Controls.Add(this.label27);
-            this.pnl_stok_fields.Location = new System.Drawing.Point(162, 293);
+            this.pnl_stok_fields.Location = new System.Drawing.Point(158, 363);
             this.pnl_stok_fields.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_stok_fields.Name = "pnl_stok_fields";
             this.pnl_stok_fields.Size = new System.Drawing.Size(111, 10);
@@ -654,7 +651,7 @@
             this.pnl_prod_fields.Controls.Add(this.Text_prod_Name);
             this.pnl_prod_fields.Controls.Add(this.Text_prod_price);
             this.pnl_prod_fields.Controls.Add(this.label5);
-            this.pnl_prod_fields.Location = new System.Drawing.Point(81, 285);
+            this.pnl_prod_fields.Location = new System.Drawing.Point(77, 355);
             this.pnl_prod_fields.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_prod_fields.Name = "pnl_prod_fields";
             this.pnl_prod_fields.Size = new System.Drawing.Size(47, 10);
@@ -750,85 +747,6 @@
             this.label5.TabIndex = 48;
             this.label5.Text = "Unit Price";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pnl_suplier_fields
-            // 
-            this.pnl_suplier_fields.BackColor = System.Drawing.Color.Transparent;
-            this.pnl_suplier_fields.Controls.Add(this.text_sup_Address);
-            this.pnl_suplier_fields.Controls.Add(this.label7);
-            this.pnl_suplier_fields.Controls.Add(this.text_sup_Name);
-            this.pnl_suplier_fields.Controls.Add(this.label2);
-            this.pnl_suplier_fields.Controls.Add(this.text_sup_phn);
-            this.pnl_suplier_fields.Controls.Add(this.label19);
-            this.pnl_suplier_fields.Location = new System.Drawing.Point(30, 203);
-            this.pnl_suplier_fields.Margin = new System.Windows.Forms.Padding(4);
-            this.pnl_suplier_fields.Name = "pnl_suplier_fields";
-            this.pnl_suplier_fields.Size = new System.Drawing.Size(23, 20);
-            this.pnl_suplier_fields.TabIndex = 58;
-            this.pnl_suplier_fields.Visible = false;
-            // 
-            // text_sup_Address
-            // 
-            this.text_sup_Address.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_sup_Address.Location = new System.Drawing.Point(151, 101);
-            this.text_sup_Address.Name = "text_sup_Address";
-            this.text_sup_Address.Size = new System.Drawing.Size(180, 95);
-            this.text_sup_Address.TabIndex = 49;
-            this.text_sup_Address.Text = "";
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(65, 6);
-            this.label7.Margin = new System.Windows.Forms.Padding(4);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 25);
-            this.label7.TabIndex = 44;
-            this.label7.Text = "N&ame";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // text_sup_Name
-            // 
-            this.text_sup_Name.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_sup_Name.Location = new System.Drawing.Point(151, 6);
-            this.text_sup_Name.Margin = new System.Windows.Forms.Padding(4);
-            this.text_sup_Name.Name = "text_sup_Name";
-            this.text_sup_Name.Size = new System.Drawing.Size(180, 27);
-            this.text_sup_Name.TabIndex = 37;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(66, 52);
-            this.label2.Margin = new System.Windows.Forms.Padding(4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 25);
-            this.label2.TabIndex = 47;
-            this.label2.Text = "Phone #";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // text_sup_phn
-            // 
-            this.text_sup_phn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_sup_phn.Location = new System.Drawing.Point(151, 52);
-            this.text_sup_phn.Margin = new System.Windows.Forms.Padding(4);
-            this.text_sup_phn.Name = "text_sup_phn";
-            this.text_sup_phn.Size = new System.Drawing.Size(180, 27);
-            this.text_sup_phn.TabIndex = 40;
-            // 
-            // label19
-            // 
-            this.label19.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label19.Location = new System.Drawing.Point(60, 126);
-            this.label19.Margin = new System.Windows.Forms.Padding(4);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(90, 25);
-            this.label19.TabIndex = 45;
-            this.label19.Text = "Address";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DataGridView
             // 
@@ -970,9 +888,9 @@
             this.AddSupplierPanel.Controls.Add(this.label22);
             this.AddSupplierPanel.Controls.Add(this.label23);
             this.AddSupplierPanel.Controls.Add(this.label24);
-            this.AddSupplierPanel.Location = new System.Drawing.Point(855, 19);
+            this.AddSupplierPanel.Location = new System.Drawing.Point(346, 138);
             this.AddSupplierPanel.Name = "AddSupplierPanel";
-            this.AddSupplierPanel.Size = new System.Drawing.Size(40, 24);
+            this.AddSupplierPanel.Size = new System.Drawing.Size(10, 11);
             this.AddSupplierPanel.TabIndex = 70;
             this.AddSupplierPanel.Visible = false;
             // 
@@ -1106,9 +1024,9 @@
             this.TakeOrderPanel.Controls.Add(this.button13);
             this.TakeOrderPanel.Controls.Add(this.CancelOrder);
             this.TakeOrderPanel.Controls.Add(this.SoldQuantityOrder);
-            this.TakeOrderPanel.Location = new System.Drawing.Point(579, 19);
+            this.TakeOrderPanel.Location = new System.Drawing.Point(346, 117);
             this.TakeOrderPanel.Name = "TakeOrderPanel";
-            this.TakeOrderPanel.Size = new System.Drawing.Size(20, 30);
+            this.TakeOrderPanel.Size = new System.Drawing.Size(10, 11);
             this.TakeOrderPanel.TabIndex = 73;
             this.TakeOrderPanel.Visible = false;
             // 
@@ -1255,6 +1173,41 @@
             this.SoldQuantityOrder.Size = new System.Drawing.Size(153, 25);
             this.SoldQuantityOrder.TabIndex = 16;
             // 
+            // lbl_suplist_in_show_sup
+            // 
+            this.lbl_suplist_in_show_sup.AutoSize = true;
+            this.lbl_suplist_in_show_sup.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_suplist_in_show_sup.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_suplist_in_show_sup.ForeColor = System.Drawing.Color.Azure;
+            this.lbl_suplist_in_show_sup.Location = new System.Drawing.Point(26, 191);
+            this.lbl_suplist_in_show_sup.Name = "lbl_suplist_in_show_sup";
+            this.lbl_suplist_in_show_sup.Size = new System.Drawing.Size(132, 19);
+            this.lbl_suplist_in_show_sup.TabIndex = 75;
+            this.lbl_suplist_in_show_sup.Text = "Supplier Name*";
+            // 
+            // como_sup_in_show_sup
+            // 
+            this.como_sup_in_show_sup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.como_sup_in_show_sup.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.como_sup_in_show_sup.FormattingEnabled = true;
+            this.como_sup_in_show_sup.Location = new System.Drawing.Point(26, 215);
+            this.como_sup_in_show_sup.Name = "como_sup_in_show_sup";
+            this.como_sup_in_show_sup.Size = new System.Drawing.Size(181, 29);
+            this.como_sup_in_show_sup.TabIndex = 74;
+            // 
+            // btn_show_suplier_prod
+            // 
+            this.btn_show_suplier_prod.BackColor = System.Drawing.Color.Gray;
+            this.btn_show_suplier_prod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_show_suplier_prod.ForeColor = System.Drawing.Color.Black;
+            this.btn_show_suplier_prod.Location = new System.Drawing.Point(26, 257);
+            this.btn_show_suplier_prod.Name = "btn_show_suplier_prod";
+            this.btn_show_suplier_prod.Size = new System.Drawing.Size(101, 34);
+            this.btn_show_suplier_prod.TabIndex = 76;
+            this.btn_show_suplier_prod.Text = "ENTE&R";
+            this.btn_show_suplier_prod.UseVisualStyleBackColor = false;
+            this.btn_show_suplier_prod.Click += new System.EventHandler(this.btn_show_suplier_prod_Click);
+            // 
             // gradientColor1
             // 
             this.gradientColor1.BackColor = System.Drawing.Color.Transparent;
@@ -1271,9 +1224,9 @@
             // SaleButton
             // 
             this.SaleButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SaleButton.BackColor = System.Drawing.Color.Indigo;
+            this.SaleButton.BackColor = System.Drawing.Color.Crimson;
             this.SaleButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaleButton.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.SaleButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.SaleButton.Location = new System.Drawing.Point(688, 13);
             this.SaleButton.Name = "SaleButton";
             this.SaleButton.Size = new System.Drawing.Size(262, 57);
@@ -1285,9 +1238,9 @@
             // btn_Take_Order
             // 
             this.btn_Take_Order.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_Take_Order.BackColor = System.Drawing.Color.Indigo;
+            this.btn_Take_Order.BackColor = System.Drawing.Color.Crimson;
             this.btn_Take_Order.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Take_Order.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Take_Order.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Take_Order.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Take_Order.ImageIndex = 1;
             this.btn_Take_Order.Location = new System.Drawing.Point(335, 13);
@@ -1301,9 +1254,9 @@
             // button25
             // 
             this.button25.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button25.BackColor = System.Drawing.Color.Indigo;
+            this.button25.BackColor = System.Drawing.Color.Crimson;
             this.button25.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button25.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button25.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button25.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button25.ImageIndex = 0;
             this.button25.Location = new System.Drawing.Point(1023, 12);
@@ -1324,20 +1277,20 @@
             this.panel1.Controls.Add(this.btn_Add_main);
             this.panel1.Controls.Add(this.btn_display_Main);
             this.panel1.Controls.Add(this.btn_EXIT_App);
-            this.panel1.Location = new System.Drawing.Point(2, 1);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(299, 631);
+            this.panel1.Size = new System.Drawing.Size(299, 630);
             this.panel1.TabIndex = 75;
             // 
             // btn_Home
             // 
-            this.btn_Home.BackColor = System.Drawing.Color.Indigo;
-            this.btn_Home.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Home.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Home.BackColor = System.Drawing.Color.Crimson;
+            this.btn_Home.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Home.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Home.ImageIndex = 6;
-            this.btn_Home.Location = new System.Drawing.Point(6, 261);
+            this.btn_Home.Location = new System.Drawing.Point(6, 250);
             this.btn_Home.Name = "btn_Home";
-            this.btn_Home.Size = new System.Drawing.Size(279, 50);
+            this.btn_Home.Size = new System.Drawing.Size(279, 61);
             this.btn_Home.TabIndex = 0;
             this.btn_Home.Text = "H&OME";
             this.btn_Home.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -1422,13 +1375,13 @@
             // 
             // btn_Add_main
             // 
-            this.btn_Add_main.BackColor = System.Drawing.Color.Indigo;
-            this.btn_Add_main.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Add_main.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Add_main.BackColor = System.Drawing.Color.Crimson;
+            this.btn_Add_main.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Add_main.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Add_main.ImageIndex = 1;
-            this.btn_Add_main.Location = new System.Drawing.Point(6, 354);
+            this.btn_Add_main.Location = new System.Drawing.Point(6, 343);
             this.btn_Add_main.Name = "btn_Add_main";
-            this.btn_Add_main.Size = new System.Drawing.Size(279, 50);
+            this.btn_Add_main.Size = new System.Drawing.Size(279, 61);
             this.btn_Add_main.TabIndex = 1;
             this.btn_Add_main.Text = "A&DD";
             this.btn_Add_main.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -1437,13 +1390,13 @@
             // 
             // btn_display_Main
             // 
-            this.btn_display_Main.BackColor = System.Drawing.Color.Indigo;
-            this.btn_display_Main.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_display_Main.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_display_Main.BackColor = System.Drawing.Color.Crimson;
+            this.btn_display_Main.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_display_Main.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_display_Main.ImageIndex = 5;
-            this.btn_display_Main.Location = new System.Drawing.Point(6, 446);
+            this.btn_display_Main.Location = new System.Drawing.Point(6, 435);
             this.btn_display_Main.Name = "btn_display_Main";
-            this.btn_display_Main.Size = new System.Drawing.Size(279, 48);
+            this.btn_display_Main.Size = new System.Drawing.Size(279, 59);
             this.btn_display_Main.TabIndex = 2;
             this.btn_display_Main.Text = "DI&SPLAY";
             this.btn_display_Main.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -1452,14 +1405,14 @@
             // 
             // btn_EXIT_App
             // 
-            this.btn_EXIT_App.BackColor = System.Drawing.Color.Indigo;
-            this.btn_EXIT_App.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_EXIT_App.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_EXIT_App.BackColor = System.Drawing.Color.Crimson;
+            this.btn_EXIT_App.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_EXIT_App.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_EXIT_App.ImageIndex = 4;
-            this.btn_EXIT_App.Location = new System.Drawing.Point(6, 536);
+            this.btn_EXIT_App.Location = new System.Drawing.Point(6, 524);
             this.btn_EXIT_App.Name = "btn_EXIT_App";
             this.btn_EXIT_App.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_EXIT_App.Size = new System.Drawing.Size(279, 45);
+            this.btn_EXIT_App.Size = new System.Drawing.Size(279, 57);
             this.btn_EXIT_App.TabIndex = 3;
             this.btn_EXIT_App.Text = "E&XIT   ";
             this.btn_EXIT_App.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -1471,22 +1424,22 @@
             this.pnl_home.ColorBottom = System.Drawing.SystemColors.Highlight;
             this.pnl_home.ColorTop = System.Drawing.Color.Red;
             this.pnl_home.Controls.Add(this.label26);
-            this.pnl_home.Location = new System.Drawing.Point(1173, 19);
+            this.pnl_home.Location = new System.Drawing.Point(348, 156);
             this.pnl_home.Name = "pnl_home";
-            this.pnl_home.Size = new System.Drawing.Size(100, 40);
+            this.pnl_home.Size = new System.Drawing.Size(10, 13);
             this.pnl_home.TabIndex = 74;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.BackColor = System.Drawing.Color.Transparent;
-            this.label26.Font = new System.Drawing.Font("Century Gothic", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Font = new System.Drawing.Font("Forte", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.White;
             this.label26.Location = new System.Drawing.Point(356, 109);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(329, 112);
+            this.label26.Size = new System.Drawing.Size(345, 105);
             this.label26.TabIndex = 0;
-            this.label26.Text = "HOM&E";
+            this.label26.Text = "H&OME";
             // 
             // Dashboard
             // 
@@ -1505,6 +1458,8 @@
             this.Controls.Add(this.DisplayPanel);
             this.Controls.Add(this.AddRecordPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Dashboard";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1524,8 +1479,6 @@
             this.pnl_stok_fields.PerformLayout();
             this.pnl_prod_fields.ResumeLayout(false);
             this.pnl_prod_fields.PerformLayout();
-            this.pnl_suplier_fields.ResumeLayout(false);
-            this.pnl_suplier_fields.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
             this.AddSupplierPanel.ResumeLayout(false);
             this.AddSupplierPanel.PerformLayout();
@@ -1615,13 +1568,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox ProductSizeComboBox;
         private System.Windows.Forms.DataGridView DataGridView;
-        private System.Windows.Forms.Panel pnl_suplier_fields;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox text_sup_Name;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox text_sup_phn;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.RichTextBox text_sup_Address;
         private System.Windows.Forms.Panel pnl_prod_fields;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
@@ -1645,5 +1591,8 @@
         private System.Windows.Forms.TextBox txt_import;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox SupplierAddressTextBox;
+        private System.Windows.Forms.Label lbl_suplist_in_show_sup;
+        private System.Windows.Forms.Button btn_show_suplier_prod;
+        private System.Windows.Forms.ComboBox como_sup_in_show_sup;
     }
 }
