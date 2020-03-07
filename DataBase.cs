@@ -11,7 +11,7 @@ namespace Store
         static DataBase()
         {
             try
-            {
+            {//new verion 1.1.0 commit
                 con = new SqlConnection("Data Source=SPEED_DEVIL;Initial Catalog=Store1;Integrated Security=True");
                 con.Open();
             }
