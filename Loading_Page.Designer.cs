@@ -32,6 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LoadPageLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,12 +63,24 @@
             this.LoadPageLabel.Text = "Loading Please &Wait";
             this.LoadPageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.label6.Location = new System.Drawing.Point(22, 519);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(297, 21);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "© 2020 Abriansoft All Rights Reserved";
+            // 
             // Loading_Page
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1184, 561);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.LoadPageLabel);
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -77,6 +90,7 @@
             this.Load += new System.EventHandler(this.Loading_Page_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -85,5 +99,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label LoadPageLabel;
+        private System.Windows.Forms.Label label6;
     }
 }

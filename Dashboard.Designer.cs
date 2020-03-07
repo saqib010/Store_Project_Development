@@ -60,6 +60,9 @@
             this.btn_Stok_View = new System.Windows.Forms.Button();
             this.btn_Order_View = new System.Windows.Forms.Button();
             this.DisplaySupplierPanel = new System.Windows.Forms.Panel();
+            this.btn_show_suplier_prod = new System.Windows.Forms.Button();
+            this.lbl_suplist_in_show_sup = new System.Windows.Forms.Label();
+            this.como_sup_in_show_sup = new System.Windows.Forms.ComboBox();
             this.pnl_Order_fields = new System.Windows.Forms.Panel();
             this.txt_search_this_order = new System.Windows.Forms.TextBox();
             this.btn_ord_detial = new System.Windows.Forms.Button();
@@ -112,9 +115,6 @@
             this.button13 = new System.Windows.Forms.Button();
             this.CancelOrder = new System.Windows.Forms.Button();
             this.SoldQuantityOrder = new System.Windows.Forms.TextBox();
-            this.lbl_suplist_in_show_sup = new System.Windows.Forms.Label();
-            this.como_sup_in_show_sup = new System.Windows.Forms.ComboBox();
-            this.btn_show_suplier_prod = new System.Windows.Forms.Button();
             this.gradientColor1 = new Store.gradientColor();
             this.SaleButton = new System.Windows.Forms.Button();
             this.btn_Take_Order = new System.Windows.Forms.Button();
@@ -122,10 +122,7 @@
             this.panel1 = new Store.gradientColor();
             this.btn_Home = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.Day = new System.Windows.Forms.Label();
             this.Seconds = new System.Windows.Forms.Label();
-            this.Date = new System.Windows.Forms.Label();
-            this.Time = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_Add_main = new System.Windows.Forms.Button();
             this.btn_display_Main = new System.Windows.Forms.Button();
@@ -507,6 +504,41 @@
             this.DisplaySupplierPanel.Size = new System.Drawing.Size(10, 10);
             this.DisplaySupplierPanel.TabIndex = 72;
             this.DisplaySupplierPanel.Visible = false;
+            // 
+            // btn_show_suplier_prod
+            // 
+            this.btn_show_suplier_prod.BackColor = System.Drawing.Color.Gray;
+            this.btn_show_suplier_prod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_show_suplier_prod.ForeColor = System.Drawing.Color.Black;
+            this.btn_show_suplier_prod.Location = new System.Drawing.Point(26, 257);
+            this.btn_show_suplier_prod.Name = "btn_show_suplier_prod";
+            this.btn_show_suplier_prod.Size = new System.Drawing.Size(101, 34);
+            this.btn_show_suplier_prod.TabIndex = 76;
+            this.btn_show_suplier_prod.Text = "ENTE&R";
+            this.btn_show_suplier_prod.UseVisualStyleBackColor = false;
+            this.btn_show_suplier_prod.Click += new System.EventHandler(this.btn_show_suplier_prod_Click);
+            // 
+            // lbl_suplist_in_show_sup
+            // 
+            this.lbl_suplist_in_show_sup.AutoSize = true;
+            this.lbl_suplist_in_show_sup.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_suplist_in_show_sup.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_suplist_in_show_sup.ForeColor = System.Drawing.Color.Azure;
+            this.lbl_suplist_in_show_sup.Location = new System.Drawing.Point(26, 191);
+            this.lbl_suplist_in_show_sup.Name = "lbl_suplist_in_show_sup";
+            this.lbl_suplist_in_show_sup.Size = new System.Drawing.Size(132, 19);
+            this.lbl_suplist_in_show_sup.TabIndex = 75;
+            this.lbl_suplist_in_show_sup.Text = "Supplier Name*";
+            // 
+            // como_sup_in_show_sup
+            // 
+            this.como_sup_in_show_sup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.como_sup_in_show_sup.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.como_sup_in_show_sup.FormattingEnabled = true;
+            this.como_sup_in_show_sup.Location = new System.Drawing.Point(26, 215);
+            this.como_sup_in_show_sup.Name = "como_sup_in_show_sup";
+            this.como_sup_in_show_sup.Size = new System.Drawing.Size(181, 29);
+            this.como_sup_in_show_sup.TabIndex = 74;
             // 
             // pnl_Order_fields
             // 
@@ -1173,41 +1205,6 @@
             this.SoldQuantityOrder.Size = new System.Drawing.Size(153, 25);
             this.SoldQuantityOrder.TabIndex = 16;
             // 
-            // lbl_suplist_in_show_sup
-            // 
-            this.lbl_suplist_in_show_sup.AutoSize = true;
-            this.lbl_suplist_in_show_sup.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_suplist_in_show_sup.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_suplist_in_show_sup.ForeColor = System.Drawing.Color.Azure;
-            this.lbl_suplist_in_show_sup.Location = new System.Drawing.Point(26, 191);
-            this.lbl_suplist_in_show_sup.Name = "lbl_suplist_in_show_sup";
-            this.lbl_suplist_in_show_sup.Size = new System.Drawing.Size(132, 19);
-            this.lbl_suplist_in_show_sup.TabIndex = 75;
-            this.lbl_suplist_in_show_sup.Text = "Supplier Name*";
-            // 
-            // como_sup_in_show_sup
-            // 
-            this.como_sup_in_show_sup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.como_sup_in_show_sup.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.como_sup_in_show_sup.FormattingEnabled = true;
-            this.como_sup_in_show_sup.Location = new System.Drawing.Point(26, 215);
-            this.como_sup_in_show_sup.Name = "como_sup_in_show_sup";
-            this.como_sup_in_show_sup.Size = new System.Drawing.Size(181, 29);
-            this.como_sup_in_show_sup.TabIndex = 74;
-            // 
-            // btn_show_suplier_prod
-            // 
-            this.btn_show_suplier_prod.BackColor = System.Drawing.Color.Gray;
-            this.btn_show_suplier_prod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_show_suplier_prod.ForeColor = System.Drawing.Color.Black;
-            this.btn_show_suplier_prod.Location = new System.Drawing.Point(26, 257);
-            this.btn_show_suplier_prod.Name = "btn_show_suplier_prod";
-            this.btn_show_suplier_prod.Size = new System.Drawing.Size(101, 34);
-            this.btn_show_suplier_prod.TabIndex = 76;
-            this.btn_show_suplier_prod.Text = "ENTE&R";
-            this.btn_show_suplier_prod.UseVisualStyleBackColor = false;
-            this.btn_show_suplier_prod.Click += new System.EventHandler(this.btn_show_suplier_prod_Click);
-            // 
             // gradientColor1
             // 
             this.gradientColor1.BackColor = System.Drawing.Color.Transparent;
@@ -1301,60 +1298,23 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Controls.Add(this.Day);
             this.panel3.Controls.Add(this.Seconds);
-            this.panel3.Controls.Add(this.Date);
-            this.panel3.Controls.Add(this.Time);
             this.panel3.Controls.Add(this.tableLayoutPanel2);
             this.panel3.Location = new System.Drawing.Point(0, 34);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(299, 140);
             this.panel3.TabIndex = 4;
             // 
-            // Day
-            // 
-            this.Day.BackColor = System.Drawing.Color.Black;
-            this.Day.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Day.ForeColor = System.Drawing.Color.LightSteelBlue;
-            this.Day.Location = new System.Drawing.Point(28, 104);
-            this.Day.Name = "Day";
-            this.Day.Size = new System.Drawing.Size(155, 29);
-            this.Day.TabIndex = 12;
-            this.Day.Text = "THURSDAY";
-            // 
             // Seconds
             // 
             this.Seconds.BackColor = System.Drawing.Color.Black;
-            this.Seconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Seconds.ForeColor = System.Drawing.Color.LightSteelBlue;
-            this.Seconds.Location = new System.Drawing.Point(183, 33);
+            this.Seconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Seconds.ForeColor = System.Drawing.Color.AliceBlue;
+            this.Seconds.Location = new System.Drawing.Point(33, 14);
             this.Seconds.Name = "Seconds";
-            this.Seconds.Size = new System.Drawing.Size(60, 37);
+            this.Seconds.Size = new System.Drawing.Size(237, 116);
             this.Seconds.TabIndex = 11;
-            this.Seconds.Text = "22";
-            // 
-            // Date
-            // 
-            this.Date.BackColor = System.Drawing.Color.Black;
-            this.Date.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Date.ForeColor = System.Drawing.Color.LightSteelBlue;
-            this.Date.Location = new System.Drawing.Point(30, 70);
-            this.Date.Name = "Date";
-            this.Date.Size = new System.Drawing.Size(159, 37);
-            this.Date.TabIndex = 10;
-            this.Date.Text = "JUNE 25 2016";
-            // 
-            // Time
-            // 
-            this.Time.BackColor = System.Drawing.Color.Black;
-            this.Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Time.ForeColor = System.Drawing.Color.LightSteelBlue;
-            this.Time.Location = new System.Drawing.Point(17, 10);
-            this.Time.Name = "Time";
-            this.Time.Size = new System.Drawing.Size(186, 60);
-            this.Time.TabIndex = 9;
-            this.Time.Text = "22:22";
+            this.Seconds.Text = "Amanat Garments";
             // 
             // tableLayoutPanel2
             // 
@@ -1495,10 +1455,7 @@
 
         #endregion
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label Day;
         private System.Windows.Forms.Label Seconds;
-        private System.Windows.Forms.Label Date;
-        private System.Windows.Forms.Label Time;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btn_EXIT_App;
         private System.Windows.Forms.Button btn_display_Main;
