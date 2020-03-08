@@ -16,19 +16,21 @@ namespace Store
         public order() : base("OrderTable")
         { }
 
-       
 
-        public void add_to_cart(String pCode, String qty,String sold_price)
+
+        public void add_to_cart(String pCode, String qty, String sold_price)
         {
             try
             {
                 int prod_ID = Int32.Parse(getProdId(pCode));//Int32.Parse("-105");
-                //int prod_Qty = Int32.Parse(getProdQty(pCode));//Int32.Parse("-105");
-                //Decimal sold_priced = System.Convert.ToDecimal(supp_price);
-                decimal prod_Price = System.Convert.ToDecimal(getProdPrice(pCode));//Get Unit Price
-                if(System.Convert.ToDecimal(sold_price) >= prod_Price)
+                                                            //int prod_Qty = Int32.Parse(getProdQty(pCode));//Int32.Parse("-105");
+                                                            //Decimal sold_priced = System.Convert.ToDecimal(supp_price);
+
+                float prod_Price = System.Convert.ToSingle(getProdPrice(pCode));//Get Unit Price
+
+                if (System.Convert.ToSingle(sold_price) >= prod_Price)
                 {
-                    decimal sprofit = (System.Convert.ToDecimal(sold_price) - prod_Price);
+                    float sprofit = (System.Convert.ToSingle(sold_price) - prod_Price);
                     query = "exec take_order " + pCode + "," + qty + "," + sold_price + "," + sprofit;
                     DataTable result = new DataTable();
                     result = runquery(query);
@@ -44,7 +46,7 @@ namespace Store
                     }
                     else
                     {
-                        MessageBox.Show("Product of code "+pCode+" is out of Stock", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Product of code " + pCode + " is out of Stock", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     }
 
@@ -54,7 +56,7 @@ namespace Store
                     MessageBox.Show("Sold price must be greater or equal to purchase price");
 
                 }
-               
+
             }
             catch (Exception ex)
             {
@@ -69,7 +71,7 @@ namespace Store
             try
             {
 
-                query = "exec total_bill "+id;
+                query = "exec total_bill " + id;
                 result = runquery(query);
                 return result;
 
@@ -104,14 +106,14 @@ namespace Store
         public String getProdId(String pCode)
         {
             try
-            { 
+            {
                 query = "select Product_ID from product where product_Code = '" + pCode + "'";
                 result = runquery(query);
                 DataRow r1 = result.Rows[0];
                 object[] o = r1.ItemArray;
                 String ret = (int)o[0] + "";
                 return ret;
-            } 
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Data is not present");
@@ -123,11 +125,11 @@ namespace Store
         {
             try
             {
-                query = "select Unit_Price from product where product_Code="+pCode;
+                query = "select Unit_Price from product where product_Code=" + pCode;
                 result = runquery(query);
                 DataRow r1 = result.Rows[0];
                 object[] o = r1.ItemArray;
-                String ret = (Decimal)o[0] + "";
+                String ret = Convert.ToSingle(o[0]) + "";
                 return ret;
             }
             catch (Exception ex)
@@ -140,8 +142,8 @@ namespace Store
         {
             try
             {
-                
-                query = "select distinct Stock.Quantity from Stock join Product on Stock.Product_ID = (select Product_ID from Product where Product_Code="+pCode;
+
+                query = "select distinct Stock.Quantity from Stock join Product on Stock.Product_ID = (select Product_ID from Product where Product_Code=" + pCode;
                 result = runquery(query);
                 DataRow r1 = result.Rows[0];
                 object[] o = r1.ItemArray;
@@ -169,6 +171,6 @@ namespace Store
             String ret = (int)o[0] + "";
             return ret;
         }
-        
+
     }
 }
