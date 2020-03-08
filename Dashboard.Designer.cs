@@ -499,9 +499,9 @@
             this.DisplaySupplierPanel.Controls.Add(this.btn_back_display);
             this.DisplaySupplierPanel.Controls.Add(this.btn_update);
             this.DisplaySupplierPanel.Controls.Add(this.txt_search);
-            this.DisplaySupplierPanel.Location = new System.Drawing.Point(364, 139);
+            this.DisplaySupplierPanel.Location = new System.Drawing.Point(387, 8);
             this.DisplaySupplierPanel.Name = "DisplaySupplierPanel";
-            this.DisplaySupplierPanel.Size = new System.Drawing.Size(10, 10);
+            this.DisplaySupplierPanel.Size = new System.Drawing.Size(235, 608);
             this.DisplaySupplierPanel.TabIndex = 72;
             this.DisplaySupplierPanel.Visible = false;
             // 

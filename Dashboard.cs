@@ -586,18 +586,21 @@ namespace Store
         private void txt_search_KeyUp(object sender, KeyEventArgs e)
         {
             txt_search.Enabled = true;
-            
-            if(model is stock && txt_search.Text!="")
+
+            if (model is stock && txt_search.Text != "")
             {
-                
+
                 if (!search_by_ID())
                 {
                     txt_search.Text = "";
-                     dt = new Store.stock().display_stock();
+                    dt = new Store.stock().display_stock();
                     DataGridView.DataSource = dt;
                 }
-            }else if(txt_search.Text!="")
-            getSearched_table();
+            }
+            else if (txt_search.Text != "")
+                getSearched_table();
+            else if (txt_search.Text == "")
+                btn_search_reset_Click(sender,e);
 
         }
 
