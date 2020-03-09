@@ -166,9 +166,9 @@
             this.label57.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.label57.Location = new System.Drawing.Point(405, 21);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(268, 44);
+            this.label57.Size = new System.Drawing.Size(256, 44);
             this.label57.TabIndex = 10;
-            this.label57.Text = "ADD &ROCORD";
+            this.label57.Text = "ADD &RECORD";
             // 
             // AddSupplierButton
             // 
@@ -412,7 +412,7 @@
             this.DisplayPanel.Controls.Add(this.btn_prod_view);
             this.DisplayPanel.Controls.Add(this.btn_Stok_View);
             this.DisplayPanel.Controls.Add(this.btn_Order_View);
-            this.DisplayPanel.Location = new System.Drawing.Point(346, 101);
+            this.DisplayPanel.Location = new System.Drawing.Point(348, 8);
             this.DisplayPanel.Name = "DisplayPanel";
             this.DisplayPanel.Size = new System.Drawing.Size(10, 10);
             this.DisplayPanel.TabIndex = 71;
@@ -501,7 +501,7 @@
             this.DisplaySupplierPanel.Controls.Add(this.txt_search);
             this.DisplaySupplierPanel.Location = new System.Drawing.Point(387, 8);
             this.DisplaySupplierPanel.Name = "DisplaySupplierPanel";
-            this.DisplaySupplierPanel.Size = new System.Drawing.Size(235, 608);
+            this.DisplaySupplierPanel.Size = new System.Drawing.Size(586, 608);
             this.DisplaySupplierPanel.TabIndex = 72;
             this.DisplaySupplierPanel.Visible = false;
             // 

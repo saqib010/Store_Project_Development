@@ -608,7 +608,8 @@ namespace Store
         {
             if (IsDigitsOnly(txt_search.Text))
             {
-                 dt = new Store.stock().get_search_by_Id(txt_search.Text);
+                dt = new Store.stock().get_search_by_Id(txt_search.Text);
+                if (dt != null) { }
                 DataRow r1 = dt.Rows[0];
                 String val = r1.ItemArray[0].ToString();
 
@@ -624,6 +625,7 @@ namespace Store
                     return true;
                 }
             }
+            
             else
             {
                 MessageBox.Show("You can only search by ID !" + txt_search.Text, "information", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -672,11 +674,16 @@ namespace Store
         private void btn_search_reset_Click(object sender, EventArgs e)
         {
             txt_search.Text = "";
+            como_sup_in_show_sup.Text = "";
             clear_grid_pnl_fields();
             cust_Fields_clear();
             if(model is Store.stock)
             {
-                 new Store.stock().display_stock();
+                DataGridView.DataSource = new Store.stock().display_stock();
+            }
+            else if(model is Store.supliers)
+            {
+                DataGridView.DataSource = null;
             }
             else
             get_Table();
@@ -840,10 +847,21 @@ namespace Store
 
         private void btn_show_suplier_prod_Click(object sender, EventArgs e)
         {
-            if (como_sup_in_show_sup.SelectedItem.ToString() != null)
+
+            String a = como_sup_in_show_sup.Text;
+            if (a != null && a!="")
             {
-                DataGridView.DataSource = new Store.supliers().get_sup_prod(como_sup_in_show_sup.SelectedItem.ToString());
-            }
+                Store.supliers ss = new Store.supliers();
+                DataTable dd = ss.get_sup_prod(a);
+                if (dd != null)
+                    DataGridView.DataSource = dd;
+                else
+                    MessageBox.Show("No Product Available for Supplier " + a, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            }else
+            MessageBox.Show("Please select a Supplier !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         /// <summary>
